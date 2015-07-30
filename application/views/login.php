@@ -13,7 +13,7 @@
         <form class="form-horizontal style-form" method="get">
 
 <div class="container centered">
-            <div class="container col-md-6  centered ">
+    <div class="container col-md-6  centered" style="margin-left: 20%;">
 
                 <div class="form-group">
                     <div class="col-sm-12 ">
