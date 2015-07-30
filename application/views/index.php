@@ -12,7 +12,7 @@
       <div class="row">
         <div class="col-lg-4">
           <div class="service_block">
-            <div class="service_icon delay-03s animated wow  zoomIn"> <span><i class="fa fa-android"></i></span> </div>
+            <div class="service_icon delay-03s animated wow  zoomIn"> <span><img  height="100px" width="150px" class="nav-user-photo" src="<?= base_url(); ?>images/loan.png" alt="account" /></span> </div>
             <h3 class="animated fadeInUp wow">Loan Schemes</h3>
             <p class="animated fadeInDown wow">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
           </div>
@@ -20,7 +20,7 @@
         <div class="col-lg-4">	
              <a href="<?php echo base_url() . "index.php/student/register"; ?>">
           <div class="service_block">
-            <div class="service_icon icon2  delay-03s animated wow zoomIn"> <span><img  height="100px" width="150px" class="nav-user-photo" src="<?= base_url(); ?>images/account.png" alt="account" /></span> </div>
+            <div class="service_icon icon2  delay-03s animated wow zoomIn"> <span><img  height="100px" width="150px" class="nav-user-photo" src="<?= base_url(); ?>images/account.png" alt="apply" /></span> </div>
             <h3 class="animated fadeInUp wow">Apply</h3>
             <p class="animated fadeInDown wow">Lorem Ipsum is simply dummy text of the printing and typesetting industry.  </p>
           </div>
@@ -38,7 +38,7 @@
 	   <div class="row">
         <div class="col-lg-4 mrgTop">
           <div class="service_block">
-            <div class="service_icon delay-03s animated wow  zoomIn"> <span><i class="fa fa-dropbox"></i></span> </div>
+            <div class="service_icon delay-03s animated wow  zoomIn"> <span><img  height="100px" width="150px" class="nav-user-photo" src="<?= base_url(); ?>images/recover.png" alt="recover" /></span> </div>
             <h3 class="animated fadeInUp wow">Recovery</h3>
             <p class="animated fadeInDown wow">Lorem Ipsum is simply dummy text of the printing and typesetting industry.  </p>
           </div>

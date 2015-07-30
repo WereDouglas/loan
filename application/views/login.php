@@ -10,7 +10,7 @@
 <div class="container">
     <div class="row">
         <h2> Login</h2>
-        <form class="form-horizontal style-form" method="get">
+       <form id="user-form" name="user-form" enctype="multipart/form-data" class="form-horizontal"  action='<?= base_url(); ?>index.php/administration/authenticate' method="post">
 
 <div class="container centered">
     <div class="container col-md-6  centered" style="margin-left: 20%;">
@@ -35,15 +35,13 @@
 
             </div><!-- /showback -->
 </div>
-
+       </form>
 
     </div><!-- /col-lg-6 -->
 
 
 </div>
-
-
-</form>					
+				
 </div>
 
 
