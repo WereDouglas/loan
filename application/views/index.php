@@ -1,148 +1,142 @@
-
  <?php require_once(APPPATH . 'views/header.php'); ?>
-  <body>
-
-  <section id="container" >
-      <!-- **********************************************************************************************************************************************************
-      TOP BAR CONTENT & NOTIFICATIONS
-      *********************************************************************************************************************************************************** -->
-      <!--header start-->
-     
-      <!--header end-->
-      
-      <!-- **********************************************************************************************************************************************************
-      MAIN SIDEBAR MENU
-      *********************************************************************************************************************************************************** -->
-      <!--sidebar start-->
-     
-      <!--sidebar end-->
-      
-      <!-- **********************************************************************************************************************************************************
-      MAIN CONTENT
-      *********************************************************************************************************************************************************** -->
-      <!--main content start-->
-      <section id="home-main-content ">
-          <section class="wrapper site-min-height">
-          	<h3> Student Loan Repayment and Recovery Management Information System</h3>
-          	<div class="row">
-          		<div class="col-lg-12">
-          		
-					<! -- 1st ROW OF PANELS -->
-					<div class="row">
-						<!-- TWITTER PANEL -->
-						<div class="col-lg-4 col-md-4 col-sm-4 mb">
-							<div class="twitter-panel pn">
-								<i class="fa fa-archive fa-4x"></i>
-								<p>Students & Beneficiaries.</p>
-								<p class="user">@</p>
-							</div>
-						</div><!-- /col-md-4 -->
-						
-						<div class="col-lg-4 col-md-4 col-sm-4 mb">
-							<!-- WHITE PANEL - TOP USER -->
-							<div class="white-panel pn">
-								<div class="white-header">
-									<h5>TOP PAYMENTS</h5>
-								</div>
-								<p><img src="assets/img/ui-zac.jpg" class="img-circle" width="50"></p>
-								<p><b>Zac Snider</b></p>
-									<div class="row">
-										<div class="col-md-6">
-											<p class="small mt">BENEFICIARIES </p>
-											<p>2012</p>
-										</div>
-										<div class="col-md-6">
-											<p class="small mt">TOTAL SPEND</p>
-											<p>$ 47,60</p>
-										</div>
-									</div>
-							</div>
-						</div><!-- /col-md-4 -->
-						
-						<div class="col-lg-4 col-md-4 col-sm-4 mb">
-							<div class="steps pn">
-                                                           
-                                                              <a href="<?php echo base_url() . "index.php/student/register"; ?>"> <div class="green-header">
-                                                                      <label class="green-header">APPLY FOR LOAN</label>
-								</div></a>
-							   
-                                                            <a href="#">  <label for='op1'>MY ACCOUNT</label></a>
-							   
-							   
-                                                            <a href="#">  <label for='op3'>REMITTANCES</label></a>
-							    
-							</div>
-						</div><! --/col-md-4 -->
-					</div><! --/END 1ST ROW OF PANELS -->
-				
-					
-					<! -- 3RD ROW OF PANELS -->
-				
-                    
-					<! -- 5TH ROW OF PANELS -->
-					<div class="row">
-						<div class="col-md-4 col-sm-4 mb">
-							<!-- REVENUE PANEL -->
-							<div class="green-panel pn">
-								<div class="green-header">
-									<h5>REVENUE</h5>
-								</div>
-								<div class="chart mt">
-									<div class="sparkline" data-type="line" data-resize="true" data-height="75" data-width="90%" data-line-width="1" data-line-color="#fff" data-spot-color="#fff" data-fill-color="" data-highlight-line-color="#fff" data-spot-radius="4" data-data="[200,135,667,333,526,996,564,123,890,464,655]"></div>
-								</div>
-								<p class="mt"><b>$ 17,980</b><br/>Month Income</p>
-							</div>
-						</div><!-- /col-md-4 -->
-					
-                      	<div class="col-md-4 col-sm-4 mb">
-					        <div class="stock card">
-					        	<div class="stock-chart">
-					            	<div id="chart"></div>
-								</div>
-								<div class="stock current-price">
-									<div class="row">
-						        		<div class="info col-sm-6 col-xs-6"><abbr>AAPL</abbr>
-						            		<time>Yesterday</time>
-										</div>
-									<div class="changes col-sm-6 col-xs-6">
-										<div class="value up"><i class="fa fa-caret-up hidden-sm hidden-xs"></i> 694.00</div>
-										<div class="change hidden-sm hidden-xs">+4.95 (3.49%)</div>
-									</div>
-									</div>
-								</div>
-								<div class="summary">
-					            	<strong>18.3 M</strong> <span>SHARES TRADED</span>
-								</div>
-					        </div>
-						</div><! -- /col-md-4 -->
-						
-                      	<div class="col-md-4 col-sm-4 mb">
-                      		<div class="darkblue-panel pn">
-                      			<div class="darkblue-header">
-						  			<h5>SITE STATICS</h5>
-                      			</div>
-                      			<h1 class="mt"><i class="fa fa-user fa-3x"></i></h1>
-								<p>+ 1,789 NEW VISITS</p>
-								<footer>
-									<div class="centered">
-										<h5><i class="fa fa-trophy"></i> 17,988</h5>
-									</div>
-								</footer>
-                      		</div><! -- /darkblue panel -->
-                      	</div><!-- /col-md-4 -->
-                    </div><!-- /END 5TH ROW OF PANELS -->
+<!--Header_section--> 
 
 
-					<! -- 6TH ROW OF PANELS -->
-			
+  <h2>Student Loan Repayment and Recovery Management Information System</h2>
+    <h2> <img  height="80px" width="150px" class="nav-user-photo" src="<?= base_url(); ?>images/ministry.png" alt="account" /></h2>
+   
+<!--Service-->
+<section  id="service">
+  <div class="container">
+    <div class="service_wrapper">
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="service_block">
+            <div class="service_icon delay-03s animated wow  zoomIn"> <span><i class="fa fa-android"></i></span> </div>
+            <h3 class="animated fadeInUp wow">Loan Schemes</h3>
+            <p class="animated fadeInDown wow">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
+          </div>
+        </div>
+        <div class="col-lg-4">	
+             <a href="<?php echo base_url() . "index.php/student/register"; ?>">
+          <div class="service_block">
+            <div class="service_icon icon2  delay-03s animated wow zoomIn"> <span><img  height="100px" width="150px" class="nav-user-photo" src="<?= base_url(); ?>images/account.png" alt="account" /></span> </div>
+            <h3 class="animated fadeInUp wow">Apply</h3>
+            <p class="animated fadeInDown wow">Lorem Ipsum is simply dummy text of the printing and typesetting industry.  </p>
+          </div>
+             </a>
+        </div>
+        <div class="col-lg-4">
+             <a href="<?php echo base_url() . "index.php/login"; ?>">
+          <div class="service_block">
+            <div class="service_icon icon3  delay-03s animated wow zoomIn"> <span><i class="fa fa-html5"></i></span> </div>
+            <h3 class="animated fadeInUp wow">My Account</h3>
+            <p class="animated fadeInDown wow">Lorem Ipsum is simply dummy text of the printing and typesetting industry.  </p>
+          </div> </div>
+        </div>
+      </div>
+	   <div class="row">
+        <div class="col-lg-4 mrgTop">
+          <div class="service_block">
+            <div class="service_icon delay-03s animated wow  zoomIn"> <span><i class="fa fa-dropbox"></i></span> </div>
+            <h3 class="animated fadeInUp wow">Recovery</h3>
+            <p class="animated fadeInDown wow">Lorem Ipsum is simply dummy text of the printing and typesetting industry.  </p>
+          </div>
+        </div>
+        <div class="col-lg-4 mrgTop">
+          <div class="service_block">
+            <div class="service_icon icon2  delay-03s animated wow zoomIn"> <span><i class="fa fa-slack"></i></span> </div>
+            <h3 class="animated fadeInUp wow">User Research</h3>
+            <p class="animated fadeInDown wow">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
+          </div>
+        </div>
+        <div class="col-lg-4 mrgTop">
+          <div class="service_block">
+            <div class="service_icon icon3  delay-03s animated wow zoomIn"> <span><i class="fa fa-users"></i></span> </div>
+            <h3 class="animated fadeInUp wow">User Experience</h3>
+            <p class="animated fadeInDown wow">Lorem Ipsum is simply dummy text of the printing and typesetting industry.  </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--Service-->
 
-					
-          		</div>
-          	</div>
-			
-		</section><! --/wrapper -->
-      </section><!-- /MAIN CONTENT -->
 
-      <!--main content end-->
-      <!--footer start-->
-     <?php require_once(APPPATH . 'views/footer.php'); ?>
+
+
+
+<!--/Team-->
+<!--Footer-->
+<footer class="footer_wrapper" id="contact">
+  <div class="container">
+    <section class="page_section contact" id="contact">
+      <div class="contact_section">
+        <h2>Contact Us</h2>
+        <div class="row">
+          <div class="col-lg-4">
+            
+          </div>
+          <div class="col-lg-4">
+           
+          </div>
+          <div class="col-lg-4">
+          
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-4 wow fadeInLeft">	
+		 <div class="contact_info">
+                            <div class="detail">
+                                <h4>UNIQUE Infoway</h4>
+                                <p>104, Some street, NewYork, USA</p>
+                            </div>
+                            <div class="detail">
+                                <h4>call us</h4>
+                                <p>+1 234 567890</p>
+                            </div>
+                            <div class="detail">
+                                <h4>Email us</h4>
+                                <p>support@sitename.com</p>
+                            </div> 
+                        </div>
+       		  
+			  
+          
+          <ul class="social_links">
+            <li class="twitter animated bounceIn wow delay-02s"><a href="javascript:void(0)"><i class="fa fa-twitter"></i></a></li>
+            <li class="facebook animated bounceIn wow delay-03s"><a href="javascript:void(0)"><i class="fa fa-facebook"></i></a></li>
+            <li class="pinterest animated bounceIn wow delay-04s"><a href="javascript:void(0)"><i class="fa fa-pinterest"></i></a></li>
+            <li class="gplus animated bounceIn wow delay-05s"><a href="javascript:void(0)"><i class="fa fa-google-plus"></i></a></li> 
+          </ul>
+        </div>
+        <div class="col-lg-8 wow fadeInLeft delay-06s">
+          <div class="form">
+            <input class="input-text" type="text" name="" value="Your Name *" onFocus="if(this.value==this.defaultValue)this.value='';" onBlur="if(this.value=='')this.value=this.defaultValue;">
+            <input class="input-text" type="text" name="" value="Your E-mail *" onFocus="if(this.value==this.defaultValue)this.value='';" onBlur="if(this.value=='')this.value=this.defaultValue;">
+            <textarea class="input-text text-area" cols="0" rows="0" onFocus="if(this.value==this.defaultValue)this.value='';" onBlur="if(this.value=='')this.value=this.defaultValue;">Your Message *</textarea>
+            <input class="input-btn" type="submit" value="send message">
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <div class="container">
+    <div class="footer_bottom"><span>Copyright © 2014,    Template by <a href="http://webthemez.com">WebThemez.com</a>. </span> </div>
+  </div>
+</footer>
+
+<script type="text/javascript" src="<?= base_url(); ?>js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="<?= base_url(); ?>js/bootstrap.min.js"></script>
+<script type="text/javascript" src="<?= base_url(); ?>js/jquery-scrolltofixed.js"></script>
+<script type="text/javascript" src="<?= base_url(); ?>js/jquery.nav.js"></script> 
+<script type="text/javascript" src="<?= base_url(); ?>js/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="<?= base_url(); ?>js/jquery.isotope.js"></script>
+<script src="<?= base_url(); ?>js/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script> 
+<script type="text/javascript" src="<?= base_url(); ?>js/wow.js"></script> 
+<script type="text/javascript" src="<?= base_url(); ?>js/custom.js"></script>
+
+</body>
+</html>
