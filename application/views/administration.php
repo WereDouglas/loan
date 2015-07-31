@@ -2,7 +2,7 @@
 <html class="no-js">
     
     <head>
-        <title>Admin Home Page</title>
+        <title>HESFB</title>
         <!-- Bootstrap -->
         <link href="<?=  base_url();?>bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
         <link href="<?=  base_url();?>bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
