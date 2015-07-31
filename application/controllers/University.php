@@ -15,55 +15,81 @@ class University extends CI_Controller {
     }
 
     public function index() {
+        
+         $query = $this->MD->show('university');
+ 
+        if ($query) {
+             $data['unis'] = $query;
+        } else {
+            $data['unis'] = array();
+        }
+        $this->load->view('view-university',$data);
+    }
+      public function add() {
+          
         // $query = $this->MD->show('metar');
         //  var_dump($query);
-        $this->load->view('view-university');
+        $this->load->view('add-university');
     }
 
-   
-
-    public function upload() {
-        
-        
-        $this->load->helper(array('form', 'url'));
-
-        $title = $this->input->post('title');
-        $description = $this->input->post('description');     
-
-        $get_result = $this->MD->check($title, 'title', 'service');
-        if ($get_result) {
-            
-             if (!empty($_FILES)) {
-            $tempFile = $_FILES['file']['tmp_name'];
-            $fileName = $_FILES['file']['name'];
-            $targetPath = getcwd() . '/uploads/';
-            $targetFile = $targetPath . $fileName;
-            move_uploaded_file($tempFile, $targetFile);
-            
-            $name= $fileName;            
-          
-            }  
-            
-            $service = array('title' => $title, 'description' => $description,'image'=>$name,'submitted' => date('Y-m-d H:m:s'));
-            $this->MD->save($service, 'service');
-            $this->session->set_flashdata('msg', '<div class="alert alert-info">
-                                                   
-                                                <strong>
-                                                  Project  been submitted	</strong>									
-						</div>');
-
-            redirect('/service/', 'refresh');
-            return;
-        } else {
-            $this->session->set_flashdata('msg', '<div class="alert alert-error">
-                                                   
-                                                <strong>
-                                                A project with the same name exists	</strong>									
-						</div>');
-            redirect('/service', 'refresh');
-        }
+      public function save() {
        
+        $this->load->helper(array('form', 'url')); 
+       
+         $file_element_name = 'imgfile';
+        
+        $config['upload_path'] = 'uploads';
+        
+        $config['allowed_types'] = 'gif|jpg|png';
+        $config['encrypt_name'] = FALSE;
+             
+        $this->load->library('upload', $config);
+       // $this->upload->initialize($config);
+        if (!$this->upload->do_upload($file_element_name))
+        {
+            $status = 'error';
+         echo   $msg = $this->upload->display_errors('', '');
+        }
+        else
+        {
+       
+        $data = $this->upload->data();            
+        $name = $this->input->post('name');
+        $location = $this->input->post('location');
+        $detail = $this->input->post('detail');
+        $type = $this->input->post('type');
+        $created = date('Y-m-d');  
+        $file = $data['file_name'];
+        
+        $university = array('logo' => $file, 'name' => $name, 'location' => $location,'detail' => $detail, 'type' => $type,'created' => date('Y-m-d H:i:s'));
+        $file_id= $this->MD->save($university, 'university');                 
+       
+            if($file_id)
+            {
+               $this->session->set_flashdata('msg', '<div class="alert alert-error">
+                                                   
+                                                <strong>
+                                                information submitted	</strong>									
+						</div>');
+         redirect('/university', 'refresh');
+               
+            }
+            else
+            {
+                unlink($data['full_path']);
+              $this->session->set_flashdata('msg', '<div class="alert alert-error">
+                                                   
+                                                <strong>
+                                               Error submitting	</strong>									
+						</div>');
+         redirect('/university', 'refresh');
+            }
+        }
+        @unlink($_FILES[$file_element_name]);            
+        
     }
+
+  
 
     public function edit() {
         $this->load->helper(array('form', 'url'));
