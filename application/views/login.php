@@ -28,7 +28,7 @@
                 <div class="form-group">
                     <label class="clear"> </label> 
                     <div class="col-sm-12">
-                        <button type="button" class="btn btn-primary">Submit</button> <button type="reset" class="btn btn-info">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Submit</button> <button type="reset" class="btn btn-info">Cancel</button>
                     </div>
                 </div>   
 

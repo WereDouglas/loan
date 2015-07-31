@@ -86,7 +86,7 @@
                             <a href="stats.html"><i class="icon-chevron-right"></i> Fees</a>
                         </li>
                         <li>
-                            <a href="form.html"><i class="icon-chevron-right"></i> Universities</a>
+                            <a target="frame" href="<?php echo base_url() . "index.php/university/"; ?>"><i class="icon-chevron-right"></i> Universities</a>
                         </li>
                         <li>
                             <a href="tables.html"><i class="icon-chevron-right"></i> Courses</a>

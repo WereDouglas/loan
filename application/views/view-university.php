@@ -3,11 +3,22 @@
 <link rel="stylesheet" href="<?= base_url(); ?>ace/ace-responsive.min.css" />
 <link rel="stylesheet" href="<?= base_url(); ?>ace/ace-skins.min.css" />
 <link rel="stylesheet" href="<?= base_url(); ?>ace/font-awesome.min.css" />
+<style>
+    .profile-activity img {
+    border: 2px solid #C9D6E5;
+    border-radius: 0%;
+    max-width: 36px;
+    margin-right: 10px;
+    margin-left: 0px;
+    box-shadow: none;
+}
+    
+</style>
 <div class="widget-box transparent">
     <div class="widget-header widget-header-small">
         <h4 class="blue smaller">
             <i class="icon-4x orange"></i>
-            Applications
+    Universities
         </h4>
 
         <div class="widget-toolbar action-buttons">

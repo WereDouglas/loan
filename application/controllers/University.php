@@ -2,7 +2,7 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Service extends CI_Controller {
+class University extends CI_Controller {
 
     function __construct() {
 
@@ -17,15 +17,7 @@ class Service extends CI_Controller {
     public function index() {
         // $query = $this->MD->show('metar');
         //  var_dump($query);
-
-        $query = $this->MD->show('service');
-        if ($query) {
-            $data['services'] = $query;
-        } else {
-            $data['services'] = array();
-        }
-
-        $this->load->view('admin/service', $data);
+        $this->load->view('view-university');
     }
 
    
