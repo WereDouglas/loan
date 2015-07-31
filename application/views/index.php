@@ -22,7 +22,7 @@
           <div class="service_block">
             <div class="service_icon icon2  delay-03s animated wow zoomIn"> <span><img  height="100px" width="150px" class="nav-user-photo" src="<?= base_url(); ?>images/apply.png" alt="apply" /></span> </div>
             <h3 class="animated fadeInUp wow">Apply</h3>
-            <p class="animated fadeInDown wow">Lorem Ipsum is simply dummy text of the printing and typesetting industry.  </p>
+            <p class="animated fadeInDown wow">submit requests for loans which are then sorted from the record units and forwarded to the loan officer for verification.  </p>
           </div>
              </a>
         </div>
@@ -31,7 +31,7 @@
           <div class="service_block">
             <div class="service_icon icon3  delay-03s animated wow zoomIn"> <span><img  height="100px" width="150px" class="nav-user-photo" src="<?= base_url(); ?>images/identity.png" alt="apply" /></span> </div>
             <h3 class="animated fadeInUp wow">My Account</h3>
-            <p class="animated fadeInDown wow">Lorem Ipsum is simply dummy text of the printing and typesetting industry.  </p>
+            <p class="animated fadeInDown wow">Manage your student account.  </p>
           </div> </div>
         </div>
       </div>
@@ -40,7 +40,7 @@
           <div class="service_block">
             <div class="service_icon delay-03s animated wow  zoomIn"> <span><img  height="100px" width="150px" class="nav-user-photo" src="<?= base_url(); ?>images/recover.png" alt="recover" /></span> </div>
             <h3 class="animated fadeInUp wow">Recovery</h3>
-            <p class="animated fadeInDown wow">Lorem Ipsum is simply dummy text of the printing and typesetting industry.  </p>
+            <p class="animated fadeInDown wow">Benefiaries will be accepted to start repaying the loan, with the specific interest rate, 1 year after completion their higher education studies.  </p>
           </div>
         </div>
         <div class="col-lg-4 mrgTop">
@@ -85,7 +85,7 @@
 <script type="text/javascript" src="<?= base_url(); ?>js/jquery.easing.1.3.js"></script>
 <script type="text/javascript" src="<?= base_url(); ?>js/jquery.isotope.js"></script>
 <script src="<?= base_url(); ?>js/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script> 
-	<script type="text/javascript">
+<script type="text/javascript">
 $(function () {
     $('#container').highcharts({
         chart: {
@@ -96,10 +96,10 @@ $(function () {
             }
         },
         title: {
-            text: 'Contents of Highsoft\'s weekly fruit delivery'
+            text: 'Student loans per year'
         },
         subtitle: {
-            text: '3D donut in Highcharts'
+            text: 'Loans in millions'
         },
         plotOptions: {
             pie: {
@@ -108,17 +108,17 @@ $(function () {
             }
         },
         series: [{
-            name: 'Delivered amount',
+            name: 'Remitted amount(Shs)',
             data: [
-                ['Bananas', 8],
-                ['Kiwi', 3],
-                ['Mixed nuts', 1],
-                ['Oranges', 6],
-                ['Apples', 8],
-                ['Pears', 4],
-                ['Clementines', 4],
-                ['Reddish (bag)', 1],
-                ['Grapes (bunch)', 1]
+                ['2008', 8],
+                ['2009', 3],
+                ['2010', 1],
+                ['2011', 6],
+                ['2012', 8],
+                ['2013', 4],
+                ['2014', 4],
+                ['2015', 1],
+                ['2016', 1]
             ]
         }]
     });
