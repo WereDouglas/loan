@@ -1,9 +1,7 @@
   <footer class="site-footer">
           <div class="text-center">
             
-              <a href="panels.html#" class="go-top">
-                  <i class="fa fa-angle-up"></i>
-              </a>
+             
           </div>
       </footer>
       <!--footer end-->

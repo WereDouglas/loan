@@ -25,22 +25,28 @@
     <div class="widget-body">
         <div class="widget-main padding-8">
             <div id="profile-feed-1" class="profile-feed">
-                <div class="profile-activity clearfix">
+              
+
+          <?php
+                                                            if (is_array($students) && count($students)) {
+                                                                foreach ($students as $loop) {
+                                                                   
+                                                            ?>  
+                
+                
+                          <div class="profile-activity clearfix">
                     <div>
-                        <img class="pull-left" alt="Alex Doe's avatar" src="<?= base_url(); ?>uploads/sss.jpg" />
-                        <a class="user" href="#"> Alex Doe </a>
-                        changed his profile photo.
-                        posajgopsjaopgjospajgposa
-                        adsopfjasopdgjpoasjdgposajopdj
-                        adojsafopdjpojasospjdpj
-                        <a href="#">Take a look</a>
+                        <img class="pull-left" alt="<?= $loop->fname?>" src="<?= base_url(); ?>uploads/<?= $loop->image;?>" />
+                        <a class="user" href="<?php echo base_url() . "index.php/student/view/".$loop->id; ?>"> <?= $loop->fname?> </a>
+                        <?= $loop->gender;?>
+                        <a href="#"><?= $loop->email;?></a>
 
                         <div class="time">
                             <i class="icon-time bigger-110"></i>
-                            an hour ago
+                          <?= $loop->created;?>
                         </div>
                     </div>
-
+                     
                     <div class="tools action-buttons">
                         <a href="#" class="blue">
                             <i class="icon-pencil bigger-125"></i>
@@ -50,218 +56,15 @@
                             <i class="icon-remove bigger-125"></i>
                         </a>
                     </div>
-                </div>
+                </div>  
+                                                                
+                                                                
+                                                                
+                                                                <?php }}?>
 
-                <div class="profile-activity clearfix">
-                    <div>
-                        <img class="pull-left" alt="Susan Smith's avatar" src="assets/avatars/avatar1.png" />
-                        <a class="user" href="#"> Susan Smith </a>
+                
 
-                        is now friends with Alex Doe.
-                        <div class="time">
-                            <i class="icon-time bigger-110"></i>
-                            2 hours ago
-                        </div>
-                    </div>
 
-                    <div class="tools action-buttons">
-                        <a href="#" class="blue">
-                            <i class="icon-pencil bigger-125"></i>
-                        </a>
-
-                        <a href="#" class="red">
-                            <i class="icon-remove bigger-125"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="profile-activity clearfix">
-                    <div>
-                        <i class="pull-left thumbicon icon-ok btn-success no-hover"></i>
-                        <a class="user" href="#"> Alex Doe </a>
-                        joined
-                        <a href="#">Country Music</a>
-
-                        group.
-                        <div class="time">
-                            <i class="icon-time bigger-110"></i>
-                            5 hours ago
-                        </div>
-                    </div>
-
-                    <div class="tools action-buttons">
-                        <a href="#" class="blue">
-                            <i class="icon-pencil bigger-125"></i>
-                        </a>
-
-                        <a href="#" class="red">
-                            <i class="icon-remove bigger-125"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="profile-activity clearfix">
-                    <div>
-                        <i class="pull-left thumbicon icon-picture btn-info no-hover"></i>
-                        <a class="user" href="#"> Alex Doe </a>
-                        uploaded a new photo.
-                        <a href="#">Take a look</a>
-
-                        <div class="time">
-                            <i class="icon-time bigger-110"></i>
-                            5 hours ago
-                        </div>
-                    </div>
-
-                    <div class="tools action-buttons">
-                        <a href="#" class="blue">
-                            <i class="icon-pencil bigger-125"></i>
-                        </a>
-
-                        <a href="#" class="red">
-                            <i class="icon-remove bigger-125"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="profile-activity clearfix">
-                    <div>
-                        <img class="pull-left" alt="David Palms's avatar" src="assets/avatars/avatar4.png" />
-                        <a class="user" href="#"> David Palms </a>
-
-                        left a comment on Alex's wall.
-                        <div class="time">
-                            <i class="icon-time bigger-110"></i>
-                            8 hours ago
-                        </div>
-                    </div>
-
-                    <div class="tools action-buttons">
-                        <a href="#" class="blue">
-                            <i class="icon-pencil bigger-125"></i>
-                        </a>
-
-                        <a href="#" class="red">
-                            <i class="icon-remove bigger-125"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="profile-activity clearfix">
-                    <div>
-                        <i class="pull-left thumbicon icon-edit btn-pink no-hover"></i>
-                        <a class="user" href="#"> Alex Doe </a>
-                        published a new blog post.
-                        <a href="#">Read now</a>
-
-                        <div class="time">
-                            <i class="icon-time bigger-110"></i>
-                            11 hours ago
-                        </div>
-                    </div>
-
-                    <div class="tools action-buttons">
-                        <a href="#" class="blue">
-                            <i class="icon-pencil bigger-125"></i>
-                        </a>
-
-                        <a href="#" class="red">
-                            <i class="icon-remove bigger-125"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="profile-activity clearfix">
-                    <div>
-                        <img class="pull-left" alt="Alex Doe's avatar" src="assets/avatars/avatar5.png" />
-                        <a class="user" href="#"> Alex Doe </a>
-
-                        upgraded his skills.
-                        <div class="time">
-                            <i class="icon-time bigger-110"></i>
-                            12 hours ago
-                        </div>
-                    </div>
-
-                    <div class="tools action-buttons">
-                        <a href="#" class="blue">
-                            <i class="icon-pencil bigger-125"></i>
-                        </a>
-
-                        <a href="#" class="red">
-                            <i class="icon-remove bigger-125"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="profile-activity clearfix">
-                    <div>
-                        <i class="pull-left thumbicon icon-key btn-info no-hover"></i>
-                        <a class="user" href="#"> Alex Doe </a>
-
-                        logged in.
-                        <div class="time">
-                            <i class="icon-time bigger-110"></i>
-                            12 hours ago
-                        </div>
-                    </div>
-
-                    <div class="tools action-buttons">
-                        <a href="#" class="blue">
-                            <i class="icon-pencil bigger-125"></i>
-                        </a>
-
-                        <a href="#" class="red">
-                            <i class="icon-remove bigger-125"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="profile-activity clearfix">
-                    <div>
-                        <i class="pull-left thumbicon icon-off btn-inverse no-hover"></i>
-                        <a class="user" href="#"> Alex Doe </a>
-
-                        logged out.
-                        <div class="time">
-                            <i class="icon-time bigger-110"></i>
-                            16 hours ago
-                        </div>
-                    </div>
-
-                    <div class="tools action-buttons">
-                        <a href="#" class="blue">
-                            <i class="icon-pencil bigger-125"></i>
-                        </a>
-
-                        <a href="#" class="red">
-                            <i class="icon-remove bigger-125"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="profile-activity clearfix">
-                    <div>
-                        <i class="pull-left thumbicon icon-key btn-info no-hover"></i>
-                        <a class="user" href="#"> Alex Doe </a>
-
-                        logged in.
-                        <div class="time">
-                            <i class="icon-time bigger-110"></i>
-                            16 hours ago
-                        </div>
-                    </div>
-
-                    <div class="tools action-buttons">
-                        <a href="#" class="blue">
-                            <i class="icon-pencil bigger-125"></i>
-                        </a>
-
-                        <a href="#" class="red">
-                            <i class="icon-remove bigger-125"></i>
-                        </a>
-                    </div>
-                </div>
             </div>
         </div>
     </div>

@@ -47,7 +47,7 @@ class University extends CI_Controller {
        // $this->upload->initialize($config);
         if (!$this->upload->do_upload($file_element_name))
         {
-            $status = 'error';
+         $status = 'error';
          echo   $msg = $this->upload->display_errors('', '');
         }
         else

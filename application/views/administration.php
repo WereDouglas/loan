@@ -58,7 +58,7 @@
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <a tabindex="-1" target="frame" href="<?php echo base_url() . "index.php/administration/applicant"; ?>">View applications</a>
+                                        <a tabindex="-1" target="frame" href="<?php echo base_url() . "index.php/student/"; ?>">View applications</a>
                                     </li>
                                     <li>
                                         <a tabindex="-1" href="#">Add applications</a>
@@ -109,7 +109,7 @@
                 
                 <!--/span-->
                 <div class="span9" id="content">
-                    <iframe id="frame" style="margin-top: 30px;" name="frame" frameborder="no" border="0" scrolling="no" height="750" width="450" class="span12" src="<?php echo base_url() . "index.php/management/"; ?>"> </iframe>
+                    <iframe id="frame" style="margin-top: 30px;" name="frame" frameborder="no" border="0" scrolling="yes" height="750" width="450" class="span12" src="<?php echo base_url() . "index.php/management/"; ?>"> </iframe>
 
                 </div>
             </div>

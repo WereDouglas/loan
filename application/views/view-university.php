@@ -23,7 +23,11 @@
         <h4 class="blue smaller">
             <i class="icon-4x orange"></i>
     Universities
-        </h4> Search<input type="text" class="span6 focused" id="typeahead"  data-provide="typeahead" data-items="4" data-source='["Alabama","Alaska","Arizona","Arkansas","California","Colorado","Connecticut","Delaware","Florida","Georgia","Hawaii","Idaho","Illinois","Indiana","Iowa","Kansas","Kentucky","Louisiana","Maine","Maryland","Massachusetts","Michigan","Minnesota","Mississippi","Missouri","Montana","Nebraska","Nevada","New Hampshire","New Jersey","New Mexico","New York","North Dakota","North Carolina","Ohio","Oklahoma","Oregon","Pennsylvania","Rhode Island","South Carolina","South Dakota","Tennessee","Texas","Utah","Vermont","Virginia","Washington","West Virginia","Wisconsin","Wyoming"]'>
+        </h4> Search<input type="text" class="span6 focused" id="typeahead"  data-provide="typeahead" data-items="4" data-source='[     <?php
+                                                            if (is_array($unis) && count($unis)) {
+                                                                foreach ($unis as $loop) {
+                                                                   
+                                                            ?>  "<?=$loop->name?>",<?php }} ?>"Other"]'>
                                         <i class="icon-4x orange"></i><a target="frame" href="<?php echo base_url() . "index.php/university/add"; ?>" class="btn btn-small btn-grey"><i class="icon-add"></i>Add</a>
         <a target="frame" href="<?php echo base_url() . "index.php/university"; ?>" class="btn btn-small btn-primary">  <i class="icon-list"></i>List</a>
 
@@ -40,12 +44,12 @@
             <div id="profile-feed-1" class="profile-feed">
                      
                 
-                <?php
+           
+                     <?php
                                                             if (is_array($unis) && count($unis)) {
                                                                 foreach ($unis as $loop) {
                                                                    
                                                             ?>  
-                
                 
                 
                           <div class="profile-activity clearfix">
