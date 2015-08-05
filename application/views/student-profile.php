@@ -11,7 +11,7 @@
 
             <form id="station-form" name="station-form" enctype="multipart/form-data"  action='<?= base_url(); ?>index.php/student/save/'  method="post">            
 
-                <div class=" col-md-4 ">
+                <div class="col-md-4 ">
                     <div class="alert alert-info"> 
                         <input id="imgfile" name="imgfile" type="file" /> 
                         <img id="preview"  width=150px" height="150px" src="<?=  base_url();?>images/placeholder.jpg" alt=" Your profile passport image" />

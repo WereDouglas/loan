@@ -52,22 +52,12 @@
                 <div class="span3" id="sidebar">
                     <ul class="nav nav-list bs-docs-sidenav nav-collapse collapse">
                         <!--<a href="<?php echo base_url() . "index.php/management/"; ?>" target="frame">-->
-                               <li class="dropdown">
-                                <a href="#" role="button" class="dropdown-toggle " data-toggle="dropdown"><span class="badge badge-warning pull-right">56</span>Applicants <i class="caret"></i>
-
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li>
-                                        <a tabindex="-1" target="frame" href="<?php echo base_url() . "index.php/student/"; ?>">View applications</a>
-                                    </li>
-                                    <li>
-                                        <a tabindex="-1" href="#">Add applications</a>
-                                    </li>
-                                    <li>
-                                        <a tabindex="-1" href="#">statistics</a>
-                                    </li>
-                                </ul>
-                            </li>
+                              
+                        <li>
+                            <a target="frame" href="<?php echo base_url() . "index.php/student/"; ?>"><i class="icon-chevron-right"></i><span class="badge badge-error pull-right">54</span> View applications</a>
+                        </li>
+                        
+                        
                       <li class="dropdown">
                                 <a href="#" role="button" class="dropdown-toggle " data-toggle="dropdown"><span class="badge badge-success pull-right">177</span>Students<i class="caret"></i>
 
