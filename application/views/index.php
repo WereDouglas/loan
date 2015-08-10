@@ -37,11 +37,12 @@
       </div>
 	   <div class="row">
         <div class="col-lg-4 mrgTop">
+            <a href="<?php echo base_url() . "index.php/administration/login"; ?>">
           <div class="service_block">
             <div class="service_icon delay-03s animated wow  zoomIn"> <span><img  height="100px" width="150px" class="nav-user-photo" src="<?= base_url(); ?>images/recover.png" alt="recover" /></span> </div>
-            <h3 class="animated fadeInUp wow">Recovery</h3>
+            <h3 class="animated fadeInUp wow">Administration</h3>
             <p class="animated fadeInDown wow">Benefiaries will be accepted to start repaying the loan, with the specific interest rate, 1 year after completion their higher education studies.  </p>
-          </div>
+          </div></a>
         </div>
         <div class="col-lg-4 mrgTop">
           <div class="service_block">

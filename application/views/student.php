@@ -52,37 +52,24 @@
                 <div class="span3" id="sidebar">
                     <ul class="nav nav-list bs-docs-sidenav nav-collapse collapse">
                         <!--<a href="<?php echo base_url() . "index.php/management/"; ?>" target="frame">-->
-                              
+                           <li>
+                          <img id="preview"  width=150px" height="150px" src="<?=base_url(); ?>/uploads/<?=$this->session->userdata('image')?>" alt="Browse for university logo" />   </li>     
                         <li>
-                            <a target="frame" href="<?php echo base_url() . "index.php/student/applications"; ?>"><i class="icon-chevron-right"></i><span class="badge badge-error pull-right">54</span> View applicants</a>
-                        </li>
-                                
-                        <li>
-                            <a target="frame" href="<?php echo base_url() . "index.php/student/approved"; ?>"><i class="icon-chevron-right"></i><span class="badge badge-success pull-right">54</span> View approved</a>
-                        </li>
+                            <a target="frame" href="<?php echo base_url() . "index.php/student/me"; ?>"><i class="icon-chevron-right"></i> application status</a>
+                        </li>                               
+                        
                          <li>
-                            <a target="frame" href="<?php echo base_url() . "index.php/student/denied"; ?>"><i class="icon-chevron-right"></i><span class="badge badge-success pull-right">54</span> View denied</a>
-                        </li>
-                         <li>
-                            <a target="frame" href="<?php echo base_url() . "index.php/student/remit"; ?>"><i class="icon-chevron-right"></i>Remittances</a>
+                            <a target="frame" href="<?php echo base_url() . "index.php/student/student_remit"; ?>"><i class="icon-chevron-right"></i>Remittances</a>
                         </li>                
                       
-                        <li>
-                            <a target="frame" href="<?php echo base_url() . "index.php/university/"; ?>"><i class="icon-chevron-right"></i> Universities</a>
-                        </li>
                         <li>
                             <a href="<?php echo base_url() . "index.php/administration/fund"; ?>"><i class="icon-chevron-right"></i> Courses</a>
                         </li>
                         <li>
-                            <a target="frame"  href="<?php echo base_url() . "index.php/administration/fund"; ?>"><i class="icon-chevron-right"></i> Loans</a>
+                            <a target="frame"  href="<?php echo base_url() . "index.php/administration/fund"; ?>"><i class="icon-chevron-right"></i> Pay back</a>
                         </li>
                       
-                        <li>
-                            <a target="frame" href="interface.html"><i class="icon-chevron-right"></i> Payments</a>
-                        </li>
-                        <li>
-                            <a target="frame" href="<?php echo base_url() . "index.php/user"; ?>"> Users</a>
-                        </li>
+                       
                        
                     </ul>
                 </div>

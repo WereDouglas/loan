@@ -11,9 +11,8 @@
     <div class="row">
         <h2> Login</h2>
         <?php echo $this->session->flashdata('msg');?> 
-<!--       <form id="user-form" name="user-form" enctype="multipart/form-data" class="form-horizontal"  action='<?= base_url(); ?>index.php/administration/authenticate' method="post">-->
- <form id="user-form" name="user-form" enctype="multipart/form-data" class="form-horizontal"  action='<?= base_url(); ?>index.php/student/authenticate' method="post">
-
+        <form id="user-form" name="user-form" enctype="multipart/form-data" class="form-horizontal"  action='<?= base_url(); ?>index.php/user/authenticate' method="post">
+ 
 <div class="container centered">
     <div class="container col-md-6  centered" style="margin-left: 20%;">
 

@@ -16,9 +16,7 @@ class Login extends CI_Controller {
 
     public function index() {
         // $query = $this->MD->show('metar');
-        //  var_dump($query);
-
-       
+        //  var_dump($query);       
 
         $this->load->view('login');
     }

@@ -16,6 +16,11 @@ class Administration extends CI_Controller {
   
 		$this->load->view('admin/index');
 	}
+        public function login()
+	{
+  
+		$this->load->view('login-admin');
+	}
         public function authenticate()
 	{
   
@@ -25,10 +30,15 @@ class Administration extends CI_Controller {
 	{  
 		$this->load->view('view-applicant');
 	}
-        public function login()
-	{
-		$this->load->view('home');
+         public function addfund()
+	{  
+		$this->load->view('add-fund');
 	}
+        public function fund()
+	{  
+		$this->load->view('view-fund');
+	}
+       
          public function user()
 	{
               $query = $this->MD->show('role');

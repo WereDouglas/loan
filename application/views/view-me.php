@@ -53,18 +53,9 @@
 
 </style>
 <div class="widget-box transparent">
-    <div class="widget-header widget-header-small">
-        <h4 class="blue smaller">
-            <i class="icon-4x orange"></i>
-            Applicant
-        </h4>
+    <div class="widget-header widget-header-small">    
 
-        <div class="widget-toolbar action-buttons">
-
-
-
-
-        </div>
+       
     </div>
 
     <div class="widget-body">
@@ -78,9 +69,7 @@
                     if (is_array($profile) && count($profile)) {
                         foreach ($profile as $loop) {
                             ?>  
-                            <span class="span3">
-                                <img id="avatar" height="160px" width="140px" class="editable" alt="" src="<?= base_url(); ?>uploads/<?= $loop->image; ?>" />
-                            </span>
+                          
 
                             <div class="span4">
 
@@ -154,11 +143,9 @@
                                         <div class="span3">
                                             <a href="#" class="thumbnail">
                                                 
-                                                     <img data-src="holder.js/260x180" alt="260x180" style="width: 260px; height: 180px;" src="<?= base_url(); ?>uploads/<?= $loop->image; ?>">
+                                                     <img data-src="holder.js/260x180" alt="260x180" style="width: 160px; height: 80px;" src="<?= base_url(); ?>uploads/<?= $loop->image; ?>">
                                             </a>
-                                            <input type="checkbox" class="edit_tr btn btn-success btn-mini" id="<?= $loop->id; ?>"/>is validate?
-     <span id="Loading_<?= $loop->id; ?>" name="Loading" class ="Loading"><img src="<?= base_url(); ?>images/ajax-loader.gif" alt="ajax Indicator" /></span><br>
-                                     
+                                            
                                         </div>
                             
 
@@ -291,25 +278,14 @@
                                         </td>
 
                                         <td>
-                                            <textarea class="span8" id="comments"><?= $loop->comment; ?></textarea>
+                                        <?= $loop->comment; ?>
 
 
                                         </td>
                                     </tr>
                                      
                                     <tr>
-                                        <td colspan="2">
-                                            <div style="float: right">
-                                                      <span id="Loadings_<?= $loop->id; ?>" name="Loadings" class ="Loadings"><img src="<?= base_url(); ?>images/ajax-loader.gif" alt="ajax Indicator" /></span><br>
-                                     
-   
-                                                
-                                                <a  type="" id="<?= $loop->id; ?>" class=" edit_trs  btn btn-primary">validate</a>
-                                                
-                                            </div>
-
-                                        </td>
-
+                                      
   
 
                                     </tr>
@@ -339,18 +315,7 @@
                                 Fees per year:<?= number_format($loop->fees,0); ?><br>
                                 Is Disabled?:<?= $loop->disabled; ?><br>
                                 Approved<input  type="text" id="approved" value="<?= $loop->approved; ?>"/>
-                                           
-                                
- <div style="float: right">
-                                                      <span id="Loadingsa_<?= $loop->id; ?>" name="Loadingsa" class ="Loading"><img src="<?= base_url(); ?>images/ajax-loader.gif" alt="ajax Indicator" /></span><br>
-                                     
-   
-                                                
-                                                <a  type="" id="<?= $loop->id; ?>" class=" edit_trsa  btn btn-primary">Approve</a>
-                                                <a  type="" id="<?= $loop->id; ?>" class=" edit_trsd  btn btn-danger">dis-approve</a>
-                                                
-                                            </div>
-
+                                          
                                 <?php
                             }
                         }
