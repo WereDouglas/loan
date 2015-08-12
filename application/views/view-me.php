@@ -80,6 +80,12 @@
                                 <br> <div class="time">
                                     <i class="icon-time bigger-110"></i>
                                     Date of Submission:  <?= $loop->created; ?>
+                                    
+                                    <?php 
+                                   if( $loop->IDtype==null)
+                                    $error = "YOUR PROFILE IS INCOMPLETE!<br>PLEASE GO TO REGISTER INPUT YOUR EMAIL AND CONTINUE TO COMPLETE YOUR APPLICATION";
+                                    
+                                    ?>
                                 </div>
                             </div>
 
@@ -92,6 +98,7 @@
                     ?>
 <div id="VoidBox" style="display:none;">approved</div>
 <div id="poidBox" style="display:none;">denied</div>
+
                     <div class="span4 profile-activity clearfix well-large">
 
 
@@ -121,6 +128,7 @@
 
 
                     </div>
+<div class="span11 error alert alert-danger infobox-red"><?php echo $error;?></div>
 
 
                 </div>

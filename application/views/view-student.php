@@ -98,6 +98,15 @@
 
 
                             <?php
+                            
+                             if($loop->IDtype==""){
+                            $error = "THIS PROFILE IS INCOMPLETE!<br>PLEASE PLEASE DONOT VALIDATE";
+                             }
+                             else{
+                                   $error = "";
+                         
+                                 
+                             }
                         }
                     }
                     ?>
@@ -122,7 +131,7 @@
                                 Cost per year:<?= number_format($loop->fees,0);?><br>
                                 Is Disabled?:<?= $loop->disabled; ?><br>
 
-
+  
                                 <?php
                             }
                         }
@@ -132,6 +141,8 @@
 
 
                     </div>
+<div class="span11 error alert alert-danger infobox-red"><?php echo $error;?></div>
+
 
 
                 </div>
@@ -173,7 +184,6 @@
                           </div>
                 </div>
             </div>
-         
             <div class="span12">
 
                 <h4>Profile information</h4>
