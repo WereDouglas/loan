@@ -8,7 +8,7 @@ class Welcome extends CI_Controller {
 
         parent::__construct();
        // error_reporting(E_PARSE);
-        $this->load->model('MD');
+        $this->load->model('Md');
         $this->load->library('session');
         $this->load->library('encrypt');
     }
@@ -16,7 +16,27 @@ class Welcome extends CI_Controller {
     public function index() {
         $this -> session -> sess_destroy();
         
-        $this->load->view('index');
+        $query = $this->Md->show('student');
+        if ($query) {
+            $data['students'] = $query;
+        } else {
+            $data['students'] = array();
+        }
+        $query = $this->Md->show('university');
+        if ($query) {
+            $data['unis'] = $query;
+        } else {
+            $data['unis'] = array();
+        }
+         $query = $this->Md->query('SELECT DISTINCT course FROM course ');
+        if ($query) {
+            $data['courses'] = $query;
+        } else {
+            $data['courses'] = array();
+        }
+        
+        
+        $this->load->view('index',$data);
     }
 
     public function projects() {
