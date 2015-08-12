@@ -29,7 +29,8 @@
                     <?php
                     if (is_array($profile) && count($profile)) {
                         foreach ($profile as $loop) {
-                            ?>                          
+                            ?>  
+                          
 
                             <div class="span4">
 
@@ -85,7 +86,7 @@
                 </div>
             </div>
             <div id="profile-feed-1" class=" profile-feed">
-                <h3>Pay out form</h3>
+                <h3>Refund form</h3>
 
                 <div class="row-fluid">
                     <div class="block">
@@ -98,7 +99,7 @@
             <div class="span12">
 
                
-               <form id="station-form" name="station-form" enctype="multipart/form-data"  action='<?= base_url(); ?>index.php/student//'  method="post">            
+               <form id="station-form" name="station-form" enctype="multipart/form-data"  action='<?= base_url(); ?>index.php/student/refunding/'  method="post">            
 
                     <table class="table table-bordered table-striped">
                         
@@ -202,8 +203,7 @@
 						                  <th>Method</th>
 						                  <th>Amount</th>
                                                                   <th>Date of Registration</th>
-                                                                  <th>User</th>
-                                                                   <th>Received</th>
+                                                                  <th>Received/Approved</th>
 						                </tr>
 						              </thead>
 						              <tbody>
@@ -218,8 +218,11 @@
 						                  <td><?=$loop->method;?></td>
 						                  <td><?=number_format($loop->amount,0);?></td>
 						                  <td><?=$loop->created;?></td>
-                                                                   <td><?=$loop->user;?></td>
-                                                                    <td><?=$loop->active;?></td>
+                                                                   <td>
+                                                                   
+                                                  <?=$loop->active;?>
+                                                                   
+                                                                   </td>
 						                </tr>
                             <?php }}?>
 						                

@@ -54,14 +54,14 @@
                         <!--<a href="<?php echo base_url() . "index.php/management/"; ?>" target="frame">-->
                               
                         <li>
-                            <a target="frame" href="<?php echo base_url() . "index.php/student/applications"; ?>"><i class="icon-chevron-right"></i><span class="badge badge-error pull-right">54</span> View applicants</a>
+                            <a target="frame" href="<?php echo base_url() . "index.php/student/applications"; ?>"><i class="icon-chevron-right"></i><span class="badge badge-error pull-right"><?php echo count($students);?></span> View applicants</a>
                         </li>
                                 
                         <li>
-                            <a target="frame" href="<?php echo base_url() . "index.php/student/approved"; ?>"><i class="icon-chevron-right"></i><span class="badge badge-success pull-right">54</span> View approved</a>
+                            <a target="frame" href="<?php echo base_url() . "index.php/student/approved"; ?>"><i class="icon-chevron-right"></i><span class="badge badge-success pull-right"><?php echo count($studentsyes);?></span> View approved</a>
                         </li>
                          <li>
-                            <a target="frame" href="<?php echo base_url() . "index.php/student/denied"; ?>"><i class="icon-chevron-right"></i><span class="badge badge-success pull-right">54</span> View denied</a>
+                            <a target="frame" href="<?php echo base_url() . "index.php/student/denied"; ?>"><i class="icon-chevron-right"></i><span class="badge badge-success pull-right"><?php echo count($studentsno);?></span> View denied</a>
                         </li>
                          <li>
                             <a target="frame" href="<?php echo base_url() . "index.php/student/remit"; ?>"><i class="icon-chevron-right"></i>Remittances</a>
@@ -70,18 +70,16 @@
                         <li>
                             <a target="frame" href="<?php echo base_url() . "index.php/university/"; ?>"><i class="icon-chevron-right"></i> Universities</a>
                         </li>
-                        <li>
-                            <a href="<?php echo base_url() . "index.php/administration/fund"; ?>"><i class="icon-chevron-right"></i> Courses</a>
-                        </li>
-                        <li>
-                            <a target="frame"  href="<?php echo base_url() . "index.php/administration/fund"; ?>"><i class="icon-chevron-right"></i> Loans</a>
-                        </li>
+                     
                       
                         <li>
-                            <a target="frame" href="interface.html"><i class="icon-chevron-right"></i> Payments</a>
+                            <a target="frame" href="<?php echo base_url() . "index.php/student/payment"; ?>"><i class="icon-chevron-right"></i> Payments</a>
                         </li>
                         <li>
                             <a target="frame" href="<?php echo base_url() . "index.php/user"; ?>"> Users</a>
+                        </li>
+                          <li>
+                            <a target="frame" href="<?php echo base_url() . "index.php/administration/report"; ?>"> Reports</a>
                         </li>
                        
                     </ul>
@@ -89,7 +87,7 @@
                 
                 <!--/span-->
                 <div class="span9" id="content">
-                    <iframe id="frame" style="margin-top: 30px;" name="frame" frameborder="no" border="0" scrolling="yes" height="750" width="450" class="span12" src="<?php echo base_url() . "index.php/management/"; ?>"> </iframe>
+                    <iframe id="frame" style="margin-top: 30px;" name="frame" frameborder="no" border="0" scrolling="yes" height="750" width="450" class="span12" src="<?php echo base_url() . "index.php/administration/report"; ?>"> </iframe>
 
                 </div>
             </div>

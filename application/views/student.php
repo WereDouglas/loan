@@ -60,13 +60,9 @@
                         
                          <li>
                             <a target="frame" href="<?php echo base_url() . "index.php/student/student_remit"; ?>"><i class="icon-chevron-right"></i>Remittances</a>
-                        </li>                
-                      
+                        </li> 
                         <li>
-                            <a href="<?php echo base_url() . "index.php/administration/fund"; ?>"><i class="icon-chevron-right"></i> Courses</a>
-                        </li>
-                        <li>
-                            <a target="frame"  href="<?php echo base_url() . "index.php/administration/fund"; ?>"><i class="icon-chevron-right"></i> Pay back</a>
+                            <a target="frame"  href="<?php echo base_url() . "index.php/student/refund"; ?>"><i class="icon-chevron-right"></i> Pay back</a>
                         </li>
                       
                        
@@ -76,7 +72,7 @@
                 
                 <!--/span-->
                 <div class="span9" id="content">
-                    <iframe id="frame" style="margin-top: 30px;" name="frame" frameborder="no" border="0" scrolling="yes" height="750" width="450" class="span12" src="<?php echo base_url() . "index.php/management/"; ?>"> </iframe>
+                    <iframe id="frame" style="margin-top: 30px;" name="frame" frameborder="no" border="0" scrolling="yes" height="750" width="450" class="span12" src="<?php echo base_url() . "index.php/administration/report"; ?>"> </iframe>
 
                 </div>
             </div>

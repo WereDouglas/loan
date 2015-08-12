@@ -21,6 +21,11 @@ class Administration extends CI_Controller {
   
 		$this->load->view('login-admin');
 	}
+       public function report()
+        {
+  
+		$this->load->view('admin-report');
+	}
         public function authenticate()
 	{
   

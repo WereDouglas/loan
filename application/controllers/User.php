@@ -80,7 +80,27 @@ class User extends CI_Controller {
 
         if ($this->session->userdata('name') != "") {
           //  echo $this->session->userdata('name');
-            $this->load->view('administration');
+             $query = $this->Md->query("SELECT * FROM student where approved='none' ");
+        if ($query) {
+            $data['students'] = $query;
+        } else {
+            $data['students'] = array();
+        }
+        
+        $query = $this->Md->query("SELECT * FROM student where approved='Yes' ");
+        if ($query) {
+            $data['studentsyes'] = $query;
+        } else {
+            $data['studentsyes'] = array();
+        }
+        $query = $this->Md->query("SELECT * FROM student where approved='No' ");
+        if ($query) {
+            $data['studentsno'] = $query;
+        } else {
+            $data['studentsno'] = array();
+        }
+        
+            $this->load->view('administration',$data);
             return;
         }
 
@@ -110,8 +130,26 @@ class User extends CI_Controller {
                     );
 
                     $this->session->set_userdata($newdata);
- 
-                   $this->load->view('administration');
+                $query = $this->Md->query("SELECT * FROM student where approved='none' ");
+        if ($query) {
+            $data['students'] = $query;
+        } else {
+            $data['students'] = array();
+        }
+        
+        $query = $this->Md->query("SELECT * FROM student where approved='Yes' ");
+        if ($query) {
+            $data['studentsyes'] = $query;
+        } else {
+            $data['studentsyes'] = array();
+        }
+        $query = $this->Md->query("SELECT * FROM student where approved='No' ");
+        if ($query) {
+            $data['studentsno'] = $query;
+        } else {
+            $data['studentsno'] = array();
+        }
+                   $this->load->view('administration',$data);
                    return;
                 } else {
                     $this->session->set_flashdata('msg', 'Login Invalid user');

@@ -26,14 +26,46 @@ class Student extends CI_Controller {
         }
         $this->load->view('view-applicant', $data);
     }
+ public function recieved() {
+		$this -> load -> helper(array('form', 'url'));
+		$id = trim($this -> input -> post('id'));
+		$actives = trim($this -> input -> post('actives'));
+		if ($actives == "True") {
+			$active = "False";
+		}
+		if ($actives == "False") {
+			$active = "True";
+		}
 
+		$data = array('active' => $active, );
+                // $this->MD->update($id, $student, 'student');
+		$this -> Md ->update($id, $data,'remittance');
+                echo ''.$id;
+	}
+        public function refunded() {
+		$this -> load -> helper(array('form', 'url'));
+		$id = trim($this -> input -> post('id'));
+		$actives = trim($this -> input -> post('actives'));
+		if ($actives == "True") {
+			$active = "False";
+		}
+		if ($actives == "False") {
+			$active = "True";
+		}
+
+		$data = array('active' => $active, );
+                // $this->MD->update($id, $student, 'student');
+		$this -> Md ->update($id, $data,'refund');
+                echo ''.$id;
+	}
     public function authenticate() {
 
         if ($this->session->userdata('name') != "") {
-            echo $this->session->userdata('name');
+          //  echo $this->session->userdata('name');
             $this->load->view('student');
             return;
         }
+       
 
         $this->load->helper(array('form', 'url'));
         $email = $this->input->post('email');
@@ -152,6 +184,18 @@ class Student extends CI_Controller {
             $data['students'] = array();
         }
         $this->load->view('remit', $data);
+    }
+      public function payment() {
+        // $query = $this->MD->show('metar');
+        //  var_dump($query);
+
+        $query = $this->Md->query("SELECT * FROM student where approved='Yes'");
+        if ($query) {
+            $data['students'] = $query;
+        } else {
+            $data['students'] = array();
+        }
+        $this->load->view('view-payment-student', $data);
     }
 
     public function denied() {
@@ -299,7 +343,7 @@ class Student extends CI_Controller {
             $created = date('Y-m-d');
             $user = 'Dennis Ogwang';
             $file = $data['file_name'];
-            $student = array('proof' => $file, 'studentID' => $studentID, 'dor' => $dor, 'method' => $method, 'amount' => $amount, 'comment' => $comments, 'created' => $created, 'user' => $user);
+            $student = array('proof' => $file, 'studentID' => $studentID, 'dor' => $dor, 'method' => $method, 'amount' => $amount, 'comment' => $comments, 'created' => $created, 'user' => $user,'active'=>'False');
             $id = $this->Md->save($student, 'remittance');
             if ($id) {
                 $this->session->set_flashdata('msg', '<div class="alert alert-error">
@@ -360,6 +404,102 @@ class Student extends CI_Controller {
         @unlink($_FILES[$file_element_name]);
         $this->load->view('student-qualification');
     }
+    
+     public function refunding() {
+
+        $this->load->helper(array('form', 'url'));
+
+        $file_element_name = 'imgfile';
+
+        $config['upload_path'] = 'uploads';
+
+        $config['allowed_types'] = '*';
+        $config['encrypt_name'] = FALSE;
+
+        $this->load->library('upload', $config);
+        // $this->upload->initialize($config);
+        if (!$this->upload->do_upload($file_element_name)) {
+            $status = 'error';
+            $msg = $this->upload->display_errors('', '');
+            $this->session->set_flashdata('msg', '<div class="alert alert-error">                                                  
+                                                <strong>' . $msg . ' </strong>									
+						</div>');
+            echo $msg;
+            return;
+        } else {
+
+            $data = $this->upload->data();
+            $studentID = $this->input->post('id');
+            $dor = $this->input->post('dor');
+            $method = $this->input->post('method');
+            $amount = $this->input->post('amount');
+            $comments = $this->input->post('comments');
+
+            $created = date('Y-m-d H:i:s');
+           
+            $file = $data['file_name'];
+            $refund = array('proof' => $file, 'studentID' => $studentID,'dor' => $dor, 'method' => $method, 'amount' => $amount, 'comment' => $comments, 'created' => $created,'active'=>'False');
+            $id = $this->Md->save($refund, 'refund');
+            if ($id) {
+                $this->session->set_flashdata('msg', '<div class="alert alert-error">
+                                                   
+                                                <strong>
+                                                information submitted	</strong>									
+						</div>');
+                $query = $this->Md->get('id', $studentID, 'student');
+
+                if ($query) {
+
+                    $query = $this->Md->get('id', $studentID, 'student');
+                }
+
+                if ($query) {
+                    $data['profile'] = $query;
+                } else {
+                    $data['profile'] = array();
+                }
+
+                $query = $this->Md->get('studentID', $studentID, 'application');
+
+                if ($query) {
+                    $data['application'] = $query;
+                } else {
+                    $data['application'] = array();
+                }
+
+                 $query = $this->Md->get('studentID', $studentID, 'refund');
+
+        if ($query) {
+            $data['refund'] = $query;
+        } else {
+            $data['refund'] = array();
+        }
+
+                $query = $this->Md->get('studentID', $studentID, 'course');
+
+                if ($query) {
+                    $data['course'] = $query;
+                } else {
+                    $data['course'] = array();
+                }
+
+                $this->load->view('view-refund', $data);
+                return;
+            } else {
+                unlink($data['full_path']);
+                $this->session->set_flashdata('msg', '<div class="alert alert-error">
+                                                   
+                                                <strong>
+                                               Error submitting	</strong>									
+						</div>');
+                $this->load->view('student-profile');
+                return;
+            }
+        }
+        @unlink($_FILES[$file_element_name]);
+        $this->load->view('student-qualification');
+    }
+    
 
     public function address() {
 
@@ -669,6 +809,85 @@ class Student extends CI_Controller {
 
         $this->load->view('view-remit', $data);
     }
+    
+     public function view_payment() {
+
+        $this->load->helper(array('form', 'url'));
+        $studentID = $this->uri->segment(3);
+
+
+        $query = $this->Md->get('id', $studentID, 'student');
+
+        if ($query) {
+            $data['profile'] = $query;
+        } else {
+            $data['profile'] = array();
+        }
+
+        $query = $this->Md->get('studentID', $studentID, 'application');
+
+        if ($query) {
+            $data['application'] = $query;
+        } else {
+            $data['application'] = array();
+        }
+        $query = $this->Md->get('studentID', $studentID, 'course');
+
+        if ($query) {
+            $data['course'] = $query;
+        } else {
+            $data['course'] = array();
+        }
+        $query = $this->Md->get('studentID', $studentID, 'refund');
+
+        if ($query) {
+            $data['refund'] = $query;
+        } else {
+            $data['refund'] = array();
+        }
+
+        $this->load->view('view-payment', $data);
+    }
+    
+      public function refund() {
+
+        $this->load->helper(array('form', 'url'));
+        $studentID = $this->session->userdata('id');
+
+
+        $query = $this->Md->get('id', $studentID, 'student');
+
+        if ($query) {
+            $data['profile'] = $query;
+        } else {
+            $data['profile'] = array();
+        }
+
+        $query = $this->Md->get('studentID', $studentID, 'application');
+
+        if ($query) {
+            $data['application'] = $query;
+        } else {
+            $data['application'] = array();
+        }
+        $query = $this->Md->get('studentID', $studentID, 'course');
+
+        if ($query) {
+            $data['course'] = $query;
+        } else {
+            $data['course'] = array();
+        }
+        $query = $this->Md->get('studentID', $studentID, 'refund');
+
+        if ($query) {
+            $data['refund'] = $query;
+        } else {
+            $data['refund'] = array();
+        }
+
+        $this->load->view('view-refund', $data);
+    }
+
 
     public function edit() {
         $this->load->helper(array('form', 'url'));

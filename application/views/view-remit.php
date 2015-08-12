@@ -206,6 +206,7 @@
 						                  <th>Amount</th>
                                                                   <th>Date of Registration</th>
                                                                   <th>User</th>
+                                                                   <th>Recieved</th>
 						                </tr>
 						              </thead>
 						              <tbody>
@@ -221,6 +222,7 @@
 						                  <td><?=number_format($loop->amount,0);?></td>
 						                  <td><?=$loop->created;?></td>
                                                                    <td><?=$loop->user;?></td>
+                                                                    <td><?=$loop->active;?></td>
 						                </tr>
                             <?php }}?>
 						                
