@@ -60,12 +60,12 @@
     <ul class="tiles">
       <div class="col1 clearfix">
         <li class="tile tile-big tile-1 slideTextUp" data-page-type="r-page" data-page-name="random-r-page">
-          <div><p>This tile's content slides up</p></div>
-          <div><p>View all tasks</p></div>
+          <div><p>Courses:<?php   foreach ($courses as $loop) {  echo $loop->course.'<br>'; }?></p></div>
+          <div><p><?php   foreach ($courses as $loop) {  echo $loop->course.'<br>'; }?></p></div>
         </li>
         <li class="tile tile-small tile tile-2 slideTextRight" data-page-type="s-page" data-page-name ="random-restored-page">
           <div><p class="icon-arrow-right"></p></div>
-          <div><p>Tile's content slides right. Page opens from left</p></div>
+          <div><p><?php echo 'Number of universities:'. count($unis).'<br>'; ?></p></div>
         </li>
         <li class="tile tile-small last tile-3" data-page-type="r-page" data-page-name="random-r-page">
           <p class="icon-calendar-alt-fill"></p>
@@ -110,11 +110,14 @@
         <li class="tile tile-2xbig tile-9 fig-tile" data-page-type="custom-page" data-page-name="random-r-page">
           <figure>
             <img src="<?= base_url(); ?>images/summer.jpg" />
-            <figcaption class="tile-caption caption-bottom"><?php echo 'Number of applicants:'. count($students).'<br>'; ?><?php echo 'Number of universities:'. count($unis).'<br>'; ?>
+            <figcaption class="tile-caption caption-bottom"><?php echo 'Number of applicants:'. count($students).'<br>'; ?><?php echo 'Number of universities:'. count($unis).'<br>'; ?><?php echo 'Courses:'. count($courses).'<br>'; ?>
             </figure>
         </li>
         <li class="tile tile-big tile-10" data-page-type="s-page" data-page-name="custom-page">
-          <div><p>Windows-8-like Animations with CSS3 &amp; jQuery &copy; Sara Soueidan. Licensed under MIT.</p></div>
+          <div>  <?php   foreach ($unis as $loop) {  ?>
+                        
+                        <img style="height: 40px;width: 50px;" src="<?= base_url(); ?>uploads/<?=$loop->logo;?>" />
+                        <?php }?>  </div>
         </li>
       </div>
     </ul>
@@ -279,7 +282,7 @@
                 $('#container3').highcharts('Map', {
                     
                     title : {
-                        text : 'Highmaps basic demo'
+                        text : 'Applicants per district'
                     },
 
                     subtitle : {
