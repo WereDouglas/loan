@@ -1,165 +1,279 @@
- <?php require_once(APPPATH . 'views/header-home.php'); ?>
-<!--Header_section--> 
- <link rel="stylesheet" href="<?= base_url(); ?>css/demo-styles.css" />
-   <style type="text/css">
-            #container3 {
-                height: 500px; 
-                min-width: 310px; 
-                max-width: 800px; 
-                margin: 0 auto; 
-            }
-            .loading {
-                margin-top: 10em;
-                text-align: center;
-                color: gray;
-            }
-        </style>
+<!DOCTYPE html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>HESFB</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <h2>Student Loan Repayment and Recovery Management Information System</h2>
-    
-<!--Service-->
-<section  id="service">
-  <div class="container">
-         
-	   <div class="row">
-       <header>
-   <a href="#" class="tutorial-link"><img  height="80px" width="450px" class="nav-user-photo" src="<?= base_url(); ?>images/header1.png" alt="account" /></a>
-   <a href="<?php echo base_url() . "index.php/administration/login"; ?>"> <img style="float: right;" height="80px" width="150px" class="nav-user-photo" src="<?= base_url(); ?>images/ministry.png" alt="account" /></a>
-   
-       
-       </header>
-  <!--===============================Start Demo====================================================-->
-<div class="demo-wrapper">
-<!-- classnames for the pages should include: 1) type of page 2) page name-->
-  <div class="s-page random-restored-page">
-    <h2 class="page-title">Some minimized App</h2>
-    <div class="close-button s-close-button">x</div>
-  </div>
-  <div class="s-page custom-page">
-    <h2 class="page-title">Thank You!</h2>
-    <div class="close-button s-close-button">x</div>
-  </div>
-  <div class="r-page random-r-page">
-
-    <div class="page-content">
-      <h2 class="page-title">App Screen</h2>
-      <p>Chew iPad power cord chew iPad power cord attack feet chase mice leave dead animals as gifts and stick butt in face chew iPad power cord. Chase mice. Run in circles use lap as chair why must they do that. Intrigued by the shower destroy couch leave hair everywhere sleep on keyboard chew iPad power cord. Use lap as chair. Missing until dinner time stand in front of the computer screen, intently sniff hand. Find something else more interesting. Destroy couch play time so inspect anything brought into the house hate dog burrow under covers. Sleep on keyboard destroy couch so hate dog so hide when guests come over. Chase mice destroy couch lick butt throwup on your pillow use lap as chair yet intrigued by the shower but climb leg. Stare at ceiling make muffins or hunt anything that moves claw drapes. Intently sniff hand intrigued by the shower. Why must they do that. Cat snacks leave dead animals as gifts or inspect anything brought into the house sweet beast so stare at ceiling give attitude. Flop over claw drapes but sun bathe lick butt, and chase mice. Rub face on everything lick butt leave hair everywhere lick butt, missing until dinner time for use lap as chair lick butt. Make muffins leave dead animals as gifts play time. Chew foot intrigued by the shower stare at ceiling inspect anything brought into the house yet hopped up on goofballs. 
-
-      Hunt anything that moves intently sniff hand for hunt anything that moves play time. Chew foot climb leg throwup on your pillow so lick butt yet make muffins hate dog. Intrigued by the shower. Intently sniff hand shake treat bag. Cat snacks burrow under covers make muffins but all of a sudden go crazy find something else more interesting. Flop over chase mice. Give attitude. Inspect anything brought into the house. Stick butt in face sun bathe so find something else more interesting and intrigued by the shower. Rub face on everything use lap as chair. 
-
-      Under the bed claw drapes chase mice but leave hair everywhere yet make muffins yet claw drapes. Use lap as chair. Find something else more interesting stretch for under the bed. Nap all day intrigued by the shower, hate dog sweet beast intently sniff hand so hate dog nap all day. Swat at dog hide when guests come over and mark territory chase mice for cat snacks. Use lap as chair. Lick butt throwup on your pillow need to chase tail. 
-
-      Mark territory. Stick butt in face shake treat bag yet hunt anything that moves, yet hopped up on goofballs yet stare at ceiling under the bed. Give attitude chase imaginary bugs stretch so hunt anything that moves so hide when guests come over but intrigued by the shower find something else more interesting. Make muffins behind the couch for chew foot. Sweet beast flop over but throwup on your pillow. Intently sniff hand use lap as chair and missing until dinner time and chase imaginary bugs. 
-      </p>
-    </div>
-    
-    <div class="close-button r-close-button">x</div>
-  </div>
-<!--each tile should specify what page type it opens (to determine which animation) and the corresponding page name it should open-->
-  <div class="dashboard clearfix">
-    <ul class="tiles">
-      <div class="col1 clearfix">
-        <li class="tile tile-big tile-1 slideTextUp" data-page-type="r-page" data-page-name="random-r-page">
-          <div><p>Courses:<?php   foreach ($courses as $loop) {  echo $loop->course.'<br>'; }?></p></div>
-          <div><p><?php   foreach ($courses as $loop) {  echo $loop->course.'<br>'; }?></p></div>
-        </li>
-        <li class="tile tile-small tile tile-2 slideTextRight" data-page-type="s-page" data-page-name ="random-restored-page">
-          <div><p class="icon-arrow-right"></p></div>
-          <div><p><?php echo 'Number of universities:'. count($unis).'<br>'; ?></p></div>
-        </li>
-        <li class="tile tile-small last tile-3" data-page-type="r-page" data-page-name="random-r-page">
-          <p class="icon-calendar-alt-fill"></p>
-        </li>
-        <li class="tile tile-big tile-4 fig-tile" data-page-type="r-page" data-page-name="random-r-page">
-          <figure>
-            <img src="<?= base_url(); ?>images/blue.jpg" />
-            <figcaption class="tile-caption caption-left">Slide-out Caption from left</figcaption>
-          </figure>
-        </li>
-      </div>
-
-      <div class="col2 clearfix">
-            <a href="<?php echo base_url() . "index.php/login"; ?>">
-        <li class="tile tile-big tile-5" data-page-type="r-page" data-page-name="random-r-page">
-            <div><p>  <img style="height: 120px;width: 130px;" src="<?= base_url(); ?>images/account.png" />My account</p></div>
-        </li></a>
-           <a href="<?php echo base_url() . "index.php/student/register"; ?>">
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
         
-        <li class="tile tile-big tile-6 slideTextLeft" data-page-type="r-page" data-page-name="random-r-page">
-          <div><p><img style="height: 120px;width: 130px;" src="<?= base_url(); ?>images/applii.png" />Register</p></div>
-          <div><p>Apply</p></div>
-        </li></a>
-        <!--Tiles with a 3D effect should have the following structure:
-            1) a container inside the tile with class of .faces
-            2) 2 figure elements, one with class .front and the other with class .back-->
-        <li class="tile tile-small tile-7 rotate3d rotate3dX" data-page-type="r-page" data-page-name="random-r-page">
-          <div class="faces">
-            <div class="front"><span class="icon-picassa"></span></div>
-            <div class="back"><p>Launch Picassa</p></div>
-          </div>
-        </li>
-        <li class="tile tile-small last tile-8 rotate3d rotate3dY" data-page-type="r-page" data-page-name="random-r-page">
-          <div class="faces">
-            <div class="front"><span class="icon-instagram"></span></div>
-            <div class="back"><p>Launch Instagram</p></div>
-          </div>
-        </li>
-      </div>
+        <!-- Fonts -->
 
-      <div class="col3 clearfix">      
-        <li class="tile tile-2xbig tile-9 fig-tile" data-page-type="custom-page" data-page-name="random-r-page">
-          <figure>
-            <img src="<?= base_url(); ?>images/summer.jpg" />
-            <figcaption class="tile-caption caption-bottom"><?php echo 'Number of applicants:'. count($students).'<br>'; ?><?php echo 'Number of universities:'. count($unis).'<br>'; ?><?php echo 'Courses:'. count($courses).'<br>'; ?>
-            </figure>
-        </li>
-        <li class="tile tile-big tile-10" data-page-type="s-page" data-page-name="custom-page">
-          <div>  <?php   foreach ($unis as $loop) {  ?>
-                        
-                        <img style="height: 40px;width: 50px;" src="<?= base_url(); ?>uploads/<?=$loop->logo;?>" />
-                        <?php }?>  </div>
-        </li>
-      </div>
-    </ul>
-  </div><!--end dashboard-->
 
-</div>
-<!--====================================end demo wrapper================================================-->
-  
-  <script src="<?= base_url(); ?>js/scripts.js"></script>
 
-</body>     
-      </div>
-       <div class="container">
-    <div class="service_wrapper">
-        <div class="col6">
-            
-<!--              <div id="container4" style="height: 400px"></div>-->
-              <div id="container3"></div>
-            
+
+        <!-- CSS -->
+
+        <link rel="stylesheet" href="<?= base_url(); ?>css/bootstrap.min.css">
+        <link rel="stylesheet" href="<?= base_url(); ?>css/font-awesome.min.css">
+        <link rel="stylesheet" href="<?= base_url(); ?>css/main.css">
+        <link rel="stylesheet" href="<?= base_url(); ?>css/animate.css">
+        <link rel="stylesheet" href="<?= base_url(); ?>css/responsive.css">
+        
+
+        <!-- Js -->
+        <script src="<?= base_url(); ?>js/vendor/modernizr-2.6.2.min.js"></script>
+        <script src="<?= base_url(); ?>js/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="<?= base_url(); ?>js/jquery-1.10.2.min.js"><\/script>')</script>
+        <script src="<?= base_url(); ?>js/bootstrap.min.js"></script>
+        <script src="<?= base_url(); ?>js/plugins.js"></script>
+        <script src="<?= base_url(); ?>js/main.js"></script>
+        <script src="<?= base_url(); ?>js/wow.min.js"></script>
+        <script>
+         new WOW(
+            ).init();
+        </script>
+
+        <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+          ga('create', 'UA-57708809-1', 'auto');
+          ga('send', 'pageview');
+
+        </script>
+
+    </head>
+    <body>
+
+
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-xs-6 col-sm-3">
+                    <a href="#" class="logo">
+                        <img src="<?= base_url(); ?>images/header1.png" alt="">
+                    </a>
+                </div>
+                <div class="col-md-6 col-xs-6 col-sm-6">
+                    <div class="menu">
+                        <nav class="navbar navbar-default" role="navigation">
+                            <div class="container-fluid">
+                                <!-- Brand and toggle get grouped for better mobile display -->
+                                <div class="navbar-header">
+                                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    </button>
+                                </div>
+
+                                <!-- Collect the nav links, forms, and other content for toggling -->
+                                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                                    <ul class="nav navbar-nav">
+                                        <li><a href="#banner">Home</a></li>
+                                        
+                                        <li><a href="#feature">Feature</a></li>
+                                        <li><a href="#utility">Utility</a></li>
+                                        <li><a href="#subscribe">Subscribe</a></li>
+                                    </ul>
+                                  
+                                </div><!-- /.navbar-collapse -->
+                            </div><!-- /.container-fluid -->
+                        </nav>
+                    </div>
+                </div>
+                <div class="col-md-3 col-xs-12 col-sm-3">
+                    <ul class="social-info">
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
-           <div class="col6">
-               <div id="container4" style="height: 400px"></div></div>>    
-        
-    </div></div>
-    </div>
-  </div>
-</section>
+    </header>
 
-<!--Service-->
-<script src="<?= base_url(); ?>js/modernizr-1.5.min.js"></script>
-
-<script type="text/javascript" src="<?= base_url(); ?>js/jquery.min.js"></script>
+    
 
 
-<script type="text/javascript" src="<?= base_url(); ?>js/jquery-1.11.0.min.js"></script>
-<script type="text/javascript" src="<?= base_url(); ?>js/bootstrap.min.js"></script>
-<script type="text/javascript" src="<?= base_url(); ?>js/jquery-scrolltofixed.js"></script>
-<script type="text/javascript" src="<?= base_url(); ?>js/jquery.nav.js"></script> 
-<script type="text/javascript" src="<?= base_url(); ?>js/jquery.easing.1.3.js"></script>
-<script type="text/javascript" src="<?= base_url(); ?>js/jquery.isotope.js"></script>
-<script src="<?= base_url(); ?>js/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script> 
+    <section id="banner" class="wow fadeInUp">
+        <div class="container">
+            <div class="row">
 
+                <div class="col-md-4 col-sm-6">
+                    <div class="block">
+                        <img class="app-img img-responsive" src="<?= base_url(); ?>images/app.png" alt="">
+                    </div>
+                    
+                </div>
+                <div class="col-md-6 col-md-offset-1 col-sm-6">
+                    <div class="block">
+                        <h1>
+                           Increasing Access to Higher Education
+                        </h1>
+                        <p>
+                           This loan shall be porcessed for free and no one should solicit funds from any applicant for purposes of securing this education loan.
+                        </p>
+
+                        <ul class="download-btn">
+                            <li>
+                                <a href="<?php echo base_url() . "index.php/login"; ?>" class="btn btn-default btn-apple"> <i class="fa fa-apple"></i>My  account</a>
+                            </li>
+                            <li>
+                                <a href="<?php echo base_url() . "index.php/administration/login"; ?>" class="btn btn-default btn-andriod"><i class="fa fa-android"></i>Administration</a>
+                            </li>
+                            <li>
+                                <a href="<?php echo base_url() . "index.php/student/register"; ?>" class="btn btn-default btn-windows"><i class="fa fa-windows"></i>Register</a>
+                            </li>
+                        </ul>
+                        
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section id="feature">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-sm-6 wow fadeInRight" data-wow-delay=".8s">
+                    <h2 class="title">Our Focused on Feature</h2>
+
+                    <div class="feature-item">
+
+                       <div id="container3" style="height: 400px"></div>
+                    </div>
+
+                    <div class="feature-item">
+
+                        <div class="media">
+                            <div class="pull-left icon" href="#">
+                                <i class="fa fa-qrcode"></i>
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading">Everything is perfectly orgainized</h4>
+                                <p>Aipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="feature-item">
+
+                        <div class="media">
+                            <div class="pull-left icon" href="#">
+                                <i class="fa fa-recycle"></i>
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading">Rapid customer support</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6 wow fadeInLeft" data-wow-delay=".8s">
+                    <div class="block">
+                        <img class="img-responsive" src="<?= base_url(); ?>images/featured-app.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="utility">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-sm-6 wow fadeInUp" data-wow-delay=".8s">
+                    <img class="img-responsive" src="images/mockup.png" alt="">
+                </div>
+                <div class="col-md-6 col-sm-6 wow fadeInDown" data-wow-delay=".8s">
+                    <div class="block">
+                        <h2>Amazing Compatibility.</h2>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea com Neque porro quisqua
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="utility-2">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-sm-6 wow fadeInLeft" data-wow-delay=".8s">
+                    <div class="block">
+                        <h2>Remarkable Features</h2>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea com Neque porro quisquam est, 
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6 wow fadeInRight" data-wow-delay=".8s">
+                    <img class="img-responsive" src="images/app-screen.png" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="subscribe" >
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 wow fadeInDown" data-wow-delay=".8s">
+                    <div class="block">
+                        <div class="title text-center">
+                            <h2>Stay Connected</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic, non!</p>
+                        </div>
+                        
+                        
+
+                        <form class="form-inline text-center col-sm-12 col-xs-12" role="form">
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="signup-form" >
+                                
+                                
+                            </div>
+                            <a href="" type="submit" class="btn btn-default btn-signup">
+                                <i class="fa fa-paper-plane"></i>
+                            </a>
+                        </form>
+                    </div>
+                    
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="wow fadeInUp" data-wow-delay=".8s">
+        <div class="container text-center">
+            <div class="row">
+                <div class="col-md-12">
+                        <a class="footer-logo"href="#">
+                            <img class="img-responsive" src="<?= base_url(); ?>images/footer-logo.png" alt="">
+                        </a>
+                    <p>Copyright © 2014</p>
+                    
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
 <script type="text/javascript">
             $(function () {
 
@@ -319,46 +433,7 @@
             });
         </script>
         
-                
-<script type="text/javascript">
-$(function () {
-    $('#container4').highcharts({
-        chart: {
-            type: 'pie',
-            options3d: {
-                enabled: true,
-                alpha: 45
-            }
-        },
-        title: {
-            text: 'Student loans per year'
-        },
-        subtitle: {
-            text: 'Loans in millions'
-        },
-        plotOptions: {
-            pie: {
-                innerSize: 100,
-                depth: 45
-            }
-        },
-        series: [{
-            name: 'Remitted amount(Shs)',
-            data: [
-                ['2008', 8],
-                ['2009', 3],
-                ['2010', 1],
-                ['2011', 6],
-                ['2012', 8],
-                ['2013', 4],
-                ['2014', 4],
-                ['2015', 1],
-                ['2016', 1]
-            ]
-        }]
-    });
-});
-		</script>   
+
   
 <script src="<?= base_url(); ?>js/highmaps.js"></script>
  
@@ -368,8 +443,3 @@ $(function () {
 <script type="text/javascript"  src="<?= base_url(); ?>js/modules/exporting.js"></script>
 <script type="text/javascript" src="<?= base_url(); ?>js/highcharts-3d.js"></script>
  
- 
-
-
-</body>
-</html>
