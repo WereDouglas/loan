@@ -553,6 +553,89 @@ class Student extends CI_Controller {
 						</div>';
         }
     }
+    
+    public function sibling() {
+
+        $id = $this->session->userdata('session');
+        $studentID = $id;
+        if ($id != "") {
+            $this->load->helper(array('form', 'url'));
+
+           
+           
+            $sibName = $this->input->post('sibName');
+              $sibType = $this->input->post('sibType');
+                    $sibSchool = $this->input->post('sibSchool');
+                          $sibStudy = $this->input->post('sibStudy');
+                                $sibFees = $this->input->post('sibFees');
+           
+          
+            $created = date('Y-m-d');
+            $siblings = array('studentID' => $studentID, 'sibName' => $sibName, 'sibType' => $sibType, 'sibSchool' => $sibSchool, 'sibStudy' => $sibStudy, 'sibFees' => $sibFees,'created' => $created);
+            $id = $this->Md->save($siblings, 'sibling');
+            
+            echo '<div class="alert alert-error">                                                  
+                                                <strong>INFORMATION SUBMITTED</strong>									
+						</div>';
+            $get_result = $this->Md->get('studentID', $studentID, 'sibling');
+
+
+
+            $message = '<div  >
+             <table >
+
+                    <tbody>  
+                          
+                        <tr>
+                          
+                          
+                            <td >
+                                <a href="#">Name</a>
+                            </td>
+                            <td >
+                                <a href="#">Type</a>
+                            </td>
+                             <td >
+                                <a href="#">School</a>
+                            </td>
+                             <td >
+                                <a href="#">Study</a>
+                            </td>
+                             <td >
+                                <a href="#">Fees</a>
+                            </td>
+                            
+                        </tr>';
+            if ($get_result) {
+                foreach ($get_result as $vars) {
+
+                    $message .= '<tr>
+                           
+                            <td  >' . $loop->sibName . '</td>
+                            <td >' . $loop->sibType . ' </td>
+                            <td >' . $loop->sibSchool. '</td>
+                            <td >' . $loop->sibStudy. '</td>
+                            <td >' . $loop->sibFees. '</td>
+                     
+                             </tr>   ';
+                }
+            }
+
+            $message . '</tbody>
+                </table>
+
+
+                                                </div>
+                                            </div>';
+
+            echo $message;
+        } else {
+
+            echo '<div class="alert alert-error">                                                  
+                                                <strong>No valid registration process/session </strong>									
+						</div>';
+        }
+    }
 
     public function residential() {
 

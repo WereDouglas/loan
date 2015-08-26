@@ -701,11 +701,7 @@
 
    <h3>Details of Sibling </h3>
 
-                        <div class="col-md-4 ">
-
-                         
-                          
-                            <div class="form-group">
+                        <div class="col-md-4 "> <div class="form-group">
                                 <div class="col-sm-12">
                                     Type of beneficiary <select class="form-control" name="sibType" id="sibType">
                                         <option>Sibling</option>
@@ -759,7 +755,9 @@
 
 
 
-                    </form>	    
+                    </form>
+                     <span id="loading_sibling"  name ="loading_sibling"><img src="<?= base_url(); ?>images/loading.gif" alt="Loading" /></span><br>
+
                 </div>
             </div>
         </section>
@@ -1258,6 +1256,47 @@
         } else {
             alert("Please insert missing information");
             $('#loading_parent').hide();
+        }
+
+        function finishAjax(id, response) {
+            $('#' + id).html(unescape(response));
+            $('#' + id).fadeIn();
+        }
+
+
+
+    })
+    
+    
+    $('#loading_sibling').hide();
+      $("#sibling-form").submit(function (e) {
+        e.preventDefault();
+       // console.log($(this).serializeArray());
+        $('#loading_sibling').show();
+        var posts = $(this).serializeArray();
+        var sibName = $("#sibName").val();
+        var sibType = $("#sibType").val();
+        var sibSchool = $("#sibSchool").val();
+        var sibStudy = $("#sibStudy").val();
+        var sibFees = $("#sibFees").val();
+      
+       
+        //  var dataString = 'posts=' +posts;
+        $("#sibName").html('<img src="<?= base_url(); ?>images/loading.gif" />'); // Loading image
+       
+
+        if (sibName.length > 0)        {
+
+            $.post("<?php echo base_url() ?>index.php/student/sibling", {sibName:sibName,sibType: sibType,sibSchool:sibSchool, sibStudy:sibStudy,sibFees: sibFees}
+            , function (response) {
+                //#emailInfo is a span which will show you message
+                $('#loading_sibling').hide();
+                setTimeout(finishAjax('loading_sibling', escape(response)), 200);
+
+            }); //end change
+        } else {
+            alert("Please insert missing information");
+            $('#loading_sibling').hide();
         }
 
         function finishAjax(id, response) {
