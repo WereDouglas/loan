@@ -524,7 +524,7 @@ class Student extends CI_Controller {
                             
                         </tr>';
             if ($get_result) {
-                foreach ($get_result as $vars) {
+                foreach ($get_result as $loop) {
 
                     $message .= '<tr>
                            
@@ -554,6 +554,86 @@ class Student extends CI_Controller {
         }
     }
     
+    public function guarantee() {
+
+        $id = $this->session->userdata('session');
+        $studentID = $id;
+        if ($id != "") {
+            $this->load->helper(array('form', 'url'));           
+           
+            $name = $this->input->post('name');
+            $profession = $this->input->post('profession');
+            $occupation = $this->input->post('occupation');
+            $contact = $this->input->post('contact');
+                            
+           
+          
+            $created = date('Y-m-d');
+            $guarantee = array('studentID' => $studentID, 'name' => $name, 'profession' => $profession, 'occupation' => $occupation, 'contact' => $contact);
+            $id = $this->Md->save($guarantee, 'guarantee');
+            
+            echo '<div class="alert alert-error">                                                  
+                                                <strong>INFORMATION SUBMITTED</strong>									
+						</div>';
+            $get_result = $this->Md->get('studentID', $studentID, 'sibling');
+
+
+
+            $message = '<div  >
+             <table >
+
+                    <tbody>  
+                          
+                        <tr>
+                          
+                          
+                            <td >
+                                <a href="#">Name</a>
+                            </td>
+                            <td >
+                                <a href="#">Type</a>
+                            </td>
+                             <td >
+                                <a href="#">School</a>
+                            </td>
+                             <td >
+                                <a href="#">Study</a>
+                            </td>
+                             <td >
+                                <a href="#">Fees</a>
+                            </td>
+                            
+                        </tr>';
+            if ($get_result) {
+                foreach ($get_result as $loop) {
+
+                    $message .= '<tr>
+                           
+                            <td  >' . $loop->sibName . '</td>
+                            <td >' . $loop->sibType . ' </td>
+                            <td >' . $loop->sibSchool. '</td>
+                            <td >' . $loop->sibStudy. '</td>
+                            <td >' . $loop->sibFees. '</td>
+                     
+                             </tr>   ';
+                }
+            }
+
+            $message . '</tbody>
+                </table>
+
+
+                                                </div>
+                                            </div>';
+
+            echo $message;
+        } else {
+
+            echo '<div class="alert alert-error">                                                  
+                                                <strong>No valid registration process/session </strong>									
+						</div>';
+        }
+    } 
     public function sibling() {
 
         $id = $this->session->userdata('session');
@@ -607,7 +687,7 @@ class Student extends CI_Controller {
                             
                         </tr>';
             if ($get_result) {
-                foreach ($get_result as $vars) {
+                foreach ($get_result as $loop) {
 
                     $message .= '<tr>
                            
@@ -636,6 +716,7 @@ class Student extends CI_Controller {
 						</div>';
         }
     }
+    
 
     public function residential() {
 
@@ -662,6 +743,55 @@ class Student extends CI_Controller {
 
             echo '<div class="alert alert-error">                                                  
                                                 <strong>No valid registration process/session </strong>									
+						</div>';
+        }
+    }
+    
+     public function economic() {
+        $this->load->helper(array('form', 'url'));
+        $id = $this->session->userdata('session');
+        $studentID = $id;
+
+        if ($id != "") {
+            $file_element_name = 'imgfile';
+            $posts = $this->input->post('posts');
+
+            $personal = new stdClass();
+            //foreach($posts as $item){
+            foreach ($posts as $key => $value) {
+
+                $personal->$value['name'] = $value['value'];
+            }
+            $personal = json_encode($personal);
+
+            $personal = array('economic' => $personal, 'created' => date('Y-m-d H:i:s'));
+            $this->Md->update($id, $personal, 'studentinfo');
+            echo '<div class="alert alert-error">                                                  
+                                                <strong>INFORMATION SUBMITTED</strong>									
+						</div>';
+        }
+    }
+     public function check() {
+        $this->load->helper(array('form', 'url'));
+        $id = $this->session->userdata('session');
+        $studentID = $id;
+
+        if ($id != "") {
+            
+            $posts = $this->input->post('posts');
+
+            $personal = new stdClass();
+            //foreach($posts as $item){
+            foreach ($posts as $key => $value) {
+
+                $personal->$value['name'] = $value['value'];
+            }
+            $personal = json_encode($personal);
+
+            $personal = array('check' => $personal, 'created' => date('Y-m-d H:i:s'));
+            $this->Md->update($id, $personal, 'studentinfo');
+            echo '<div class="alert alert-error">                                                  
+                                                <strong>INFORMATION SUBMITTED</strong>									
 						</div>';
         }
     }

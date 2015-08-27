@@ -765,34 +765,34 @@
             <div class="container">
                 <div class="row">
   <h3>Family Social Economic Indicators</h3>
-                    <form id="station-form" name="station-form" enctype="multipart/form-data"  action='<?= base_url(); ?>index.php/student/course/'  method="post">            
+                    <form id="economic-form" name="economic-form" enctype="multipart/form-data"  action='<?= base_url(); ?>index.php/student/economic/'  method="post">            
               <div class="col-md-4 ">
 
                           
                             <?php echo $this->session->flashdata('action'); ?>
                             <div class="form-group">
                                 <div class="col-sm-12">
-                                    Total number of children from biological father <input type="text" name="stdNo" class="form-control">
+                                    Total number of children from biological father <input type="text" name="children" id="children" class="form-control">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="col-sm-12">
-                                    Total number of children from biological mother <input type="text" name="course" class="form-control">
+                                    Total number of children from biological mother <input type="text" name="mothers" id="mothers" class="form-control">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="col-sm-12">
-                                    Are your parents staying together? <input type="text" name="course" class="form-control">
+                                    Are your parents staying together? <input type="text" name="stay" id="parentstogether" class="form-control">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="col-sm-12">
-                                    If no who do you stay with? <input type="text" name="course" class="form-control">
+                                    If no who do you stay with? <input type="text" name="stayingparent" id="stayingparent" class="form-control">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="col-sm-12">
-                                    Type of family residence. <select class="form-control" name="famresidence">
+                                    Type of family residence. <select class="form-control" name="familyresidence" id="familyresidence">
                                         <option>Rented</option>
                                         <option>Owned</option>
                                         <option>Employer's</option>
@@ -809,7 +809,7 @@
                         <div class="col-md-2 ">
                              <div class="form-group">
                                 <div class="col-sm-12">
-                                    Type of house. <select class="form-control" name="famresidence">
+                                    Type of house. <select class="form-control" name="housetype" id="housetype">
                                         <option>Permanent</option>
                                         <option>Semi Permanent</option>
 
@@ -818,18 +818,18 @@
                             </div>
                                     <div class="form-group">
                                 <div class="col-sm-12">
-                                    Number of rooms in the family house<input type="text" name="course" class="form-control">
+                                    Number of rooms in the family house<input type="text" name="rooms" id="rooms" class="form-control">
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <div class="col-sm-12">
-                                    Average Household monthly expenditure<input type="text" name="course" class="form-control">
+                                    Average Household monthly expenditure<input type="text" name="monthly" id="monthly" class="form-control">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="col-sm-12">
-                                    Monthly Expenses incurred by family on: <select class="form-control" name="famresidence">
+                                    Monthly Expenses incurred by family on: <select class="form-control" name="expenses" id="expenses">
                                         <option>Rent</option>
                                         <option>Food</option>
                                         <option>Clothing</option>
@@ -844,7 +844,7 @@
                                         <option>Pay TV</option>
                                         <option>Transport</option>
 
-                                    </select><input type="text" name="course" class="form-control">
+                                    </select><input type="text" name="cost" id="cost" class="form-control">
                                 </div>
                             </div>
                             
@@ -855,7 +855,7 @@
                             
                             <div class="form-group">
                                 <div class="col-sm-12">
-                                    Medical care: <select class="form-control" name="famresidence">
+                                    Medical care: <select class="form-control" name="medical" id="medical">
                                         <option>Government health Facility</option>
                                         <option>Private missionary hospital</option>
                                         <option>Private commercial Hospital/Clinic</option>
@@ -871,7 +871,7 @@
 
                             <div class="form-group">
                                 <div class="col-sm-12">
-                                    Family means of transport: <select class="form-control" name="famresidence">
+                                    Family means of transport: <select class="form-control" name="transportmeans" id="transportmeans">
                                         <option>Private</option>
                                         <option>Public means</option>
                                         <option>Employer's Motor Vehicle</option>
@@ -885,7 +885,7 @@
                             <div class="form-group">
                                 <div class="col-sm-12">
                                     Reason for borrowing form government to finance your university/Tertiary Education 
-                                    <textarea class="form-control"></textarea>
+                                    <textarea class="form-control" id="reasons" name="reasons"></textarea>
 
 
                                     </select>
@@ -894,7 +894,7 @@
                             <div class="form-group">
                                 <div class="col-sm-12">
                                     Historical background of how your Education has been funded 
-                                    <br><textarea class="form-control"></textarea>
+                                    <br><textarea class="form-control" id="educationhistory" name="educationhistory"></textarea>
 
 
                                     </select>
@@ -911,6 +911,7 @@
                             
                         </div>
         
+ <span id="loading_economic"  name ="loading_economic"><img src="<?= base_url(); ?>images/loading.gif" alt="Loading" /></span><br>
 
                     </form>	    
                 </div>
@@ -923,7 +924,7 @@
                 <div class="row">
    <h3>Loan guarantee(family/persons who can support you by paying back small installments of your loan while you are at the university)</h3>
                          
-                    <form id="station-form" name="station-form" enctype="multipart/form-data"  action='<?= base_url(); ?>index.php/student/course/'  method="post">            
+                    <form id="guarantee-form" name="guarantee-form" enctype="multipart/form-data"  action='<?= base_url(); ?>index.php/student/guarantee/'  method="post">            
               
                         <div class="col-md-6 ">
 
@@ -931,12 +932,12 @@
 
                             <div class="form-group">
                                 <div class="col-sm-12">
-                                    Name <input type="text" name="stdNo" class="form-control">
+                                    Name <input type="text" name="name" id="name" class="form-control">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="col-sm-12">
-                                    Profession <input type="text" name="course" class="form-control">
+                                    Profession <input type="text" name="profession"id="profession" class="form-control">
                                 </div>
                             </div>
                        
@@ -945,12 +946,12 @@
                          <div class="col-md-6 ">
                                   <div class="form-group">
                                 <div class="col-sm-12">
-                                    Occupation/Source of income <input type="text" name="course" class="form-control">
+                                    Occupation/Source of income <input type="text" name="occupation" id="occupation" class="form-control">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="col-sm-12">
-                                    Contact/Telephone <input type="text" name="course" class="form-control">
+                                    Contact/Telephone <input type="text" name="contact" id="contact" class="form-control">
                                 </div>
                             </div>
                          <span class="clear"><br> </span> 
@@ -962,6 +963,8 @@
                                     </div>
                                 </div>
                          </div>
+                        <span id="loading_gua"  name ="loading_gua"><img src="<?= base_url(); ?>images/loading.gif" alt="Loading" /></span><br>
+
                     </form>	    
                 </div>
             </div>
@@ -991,24 +994,21 @@
                 </div>
                 <div class="row">
 
-                    <form id="station-form" name="station-form" enctype="multipart/form-data"  action='<?= base_url(); ?>index.php/student/course/'  method="post">            
+                    <form id="check-form" name="check-form" enctype="multipart/form-data"  action='<?= base_url(); ?>index.php/student/check/'  method="post">            
                         <div class="col-md-4 "></div>
                         <div class="col-md-4 ">
                             <div class="col-sm-12"><input type="checkbox" id="nationalID" name="nationalID">   Applicant's national ID</div>
-                            <div class="col-sm-12">  <input type="checkbox" id="nationalID" name="nationalID">Institution admission letter </div>
-                            <div class="col-sm-12">   <input type="checkbox" id="nationalID" name="nationalID">Copy of fees structure</div>
-                            <div class="col-sm-12"> <input type="checkbox" id="nationalID" name="nationalID"> Guardian /Parent's nation ID</div>
-                            <div class="col-sm-12">  <input type="checkbox" id="nationalID" name="nationalID">Death certificates if orphaned</div>
-                            <div class="col-sm-12">  <input type="checkbox" id="nationalID" name="nationalID">Copies of Slips UCE and UACE</div>
-                            <div class="col-sm-12">  <input type="checkbox" id="nationalID" name="nationalID">Declarations </div>
-                            <div class="col-sm-12"> <input type="checkbox" id="nationalID" name="nationalID">Agreements and recommendations</div>
+                            <div class="col-sm-12">  <input type="checkbox" id="admission" name="admission">Institution admission letter </div>
+                            <div class="col-sm-12">   <input type="checkbox" id="fees" name="fees">Copy of fees structure</div>
+                            <div class="col-sm-12"> <input type="checkbox" id="parentID" name="parentID"> Guardian /Parent's nation ID</div>
+                            <div class="col-sm-12">  <input type="checkbox" id="certificate" name="certificate">Death certificates if orphaned</div>
+                            <div class="col-sm-12">  <input type="checkbox" id="slips" name="slips">Copies of Slips UCE and UACE</div>
+                            <div class="col-sm-12">  <input type="checkbox" id="declarations" name="declarations">Declarations </div>
+                            <div class="col-sm-12"> <input type="checkbox" id="agreements" name="agreements">Agreements and recommendations</div>
  <span class="clear"><br> </span> 
 
-                                <div class="form-group">
-                                    <input type="text" class="form-control" id="signup-form" >
-
-
-                                </div>
+                             <span id="loading_check"  name ="loading_check"><img src="<?= base_url(); ?>images/loading.gif" alt="Loading" /></span><br>
+ 
                                
                            
                                 <div class="form-group">
@@ -1307,7 +1307,106 @@
 
 
     })
+     $('#loading_economic').hide();
+     $("#economic-form").submit(function (e) {
+        e.preventDefault();
+       // console.log($(this).serializeArray());
+        $('#loading_economic').show();
+        var posts = $(this).serializeArray();
+               
+       
+
+        if (posts.length > 0 ) {
+
+            $.post("<?php echo base_url() ?>index.php/student/economic", {posts:posts}
+            , function (response) {
+                //#emailInfo is a span which will show you message
+                $('#loading_economic').hide();
+                setTimeout(finishAjax('loading_economic', escape(response)), 200);
+
+            }); //end change
+        } else {
+            alert("Please insert missing information");
+            $('#loading_economic').hide();
+        }
+
+        function finishAjax(id, response) {
+            $('#' + id).html(unescape(response));
+            $('#' + id).fadeIn();
+        }
+
+
+
+    })
     
+     $('#loading_gua').hide();
+      $("#guarantee-form").submit(function (e) {
+        e.preventDefault();
+       // console.log($(this).serializeArray());
+        $('#loading_gua').show();
+       
+        var name = $("#name").val();
+        var profession = $("#profession").val();
+        var contact = $("#contact").val();
+        var occupation = $("#occupation").val();
+       
+      
+       
+        //  var dataString = 'posts=' +posts;
+        $("#name").html('<img src="<?= base_url(); ?>images/loading.gif" />'); // Loading image
+       
+
+        if (name.length > 0)        {
+
+            $.post("<?php echo base_url() ?>index.php/student/guarantee", {name:name,profession: profession,contact:contact,occupation:occupation}
+            , function (response) {
+                //#emailInfo is a span which will show you message
+                $('#loading_gua').hide();
+                setTimeout(finishAjax('loading_gua', escape(response)), 200);
+
+            }); //end change
+        } else {
+            alert("Please insert missing information");
+            $('#loading_gua').hide();
+        }
+
+        function finishAjax(id, response) {
+            $('#' + id).html(unescape(response));
+            $('#' + id).fadeIn();
+        }
+
+
+
+    })
+    
+     $('#loading_check').hide();
+      $("#check-form").submit(function (e) {
+        e.preventDefault();
+       // console.log($(this).serializeArray());
+        $('#loading_check').show();
+        var posts = $(this).serializeArray();
+        if (posts.length > 0 ) {
+
+            $.post("<?php echo base_url() ?>index.php/student/check", {posts:posts}
+            , function (response) {
+                //#emailInfo is a span which will show you message
+                $('#loading_check').hide();
+                setTimeout(finishAjax('loading_check', escape(response)), 200);
+
+            }); //end change
+        } else {
+            alert("Please insert missing information");
+            $('#loading_check').hide();
+        }
+
+        function finishAjax(id, response) {
+            $('#' + id).html(unescape(response));
+            $('#' + id).fadeIn();
+        }
+
+
+
+    })
 
 
 </script>
