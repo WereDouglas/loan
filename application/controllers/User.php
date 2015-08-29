@@ -80,20 +80,20 @@ class User extends CI_Controller {
 
         if ($this->session->userdata('name') != "") {
           //  echo $this->session->userdata('name');
-             $query = $this->Md->query("SELECT * FROM student where approved='none' ");
+             $query = $this->Md->query("SELECT * FROM studentinfo where approved='none' ");
         if ($query) {
             $data['students'] = $query;
         } else {
             $data['students'] = array();
         }
         
-        $query = $this->Md->query("SELECT * FROM student where approved='Yes' ");
+        $query = $this->Md->query("SELECT * FROM studentinfo where approved='Yes' ");
         if ($query) {
             $data['studentsyes'] = $query;
         } else {
             $data['studentsyes'] = array();
         }
-        $query = $this->Md->query("SELECT * FROM student where approved='No' ");
+        $query = $this->Md->query("SELECT * FROM studentinfo where approved='No' ");
         if ($query) {
             $data['studentsno'] = $query;
         } else {

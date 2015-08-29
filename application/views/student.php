@@ -53,7 +53,7 @@
                     <ul class="nav nav-list bs-docs-sidenav nav-collapse collapse">
                         <!--<a href="<?php echo base_url() . "index.php/management/"; ?>" target="frame">-->
                            <li>
-                          <img id="preview"  width=150px" height="150px" src="<?=base_url(); ?>/uploads/<?=$this->session->userdata('image')?>" alt="Browse for university logo" />   </li>     
+                          <img id="preview"  width=150px" height="150px" src="<?=base_url(); ?>/uploads/<?=$this->session->userdata('image')?>" alt="passport logo" />   </li>     
                         <li>
                             <a target="frame" href="<?php echo base_url() . "index.php/student/me"; ?>"><i class="icon-chevron-right"></i> application status</a>
                         </li>                               
@@ -72,7 +72,7 @@
                 
                 <!--/span-->
                 <div class="span9" id="content">
-                    <iframe id="frame" style="margin-top: 30px;" name="frame" frameborder="no" border="0" scrolling="yes" height="750" width="450" class="span12" src="<?php echo base_url() . "index.php/administration/report"; ?>"> </iframe>
+                    <iframe id="frame" style="margin-top: 30px;" name="frame" frameborder="no" border="0" scrolling="yes" height="950" width="450" class="span12" src="<?php echo base_url() . "index.php/administration/report"; ?>"> </iframe>
 
                 </div>
             </div>

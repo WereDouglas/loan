@@ -75,12 +75,12 @@ class Student extends CI_Controller {
         $password_now = $this->input->post('password');
 
         $key = $email;
-        $get_result = $this->Md->check($email, 'email', 'student');
+        $get_result = $this->Md->check($email, 'email', 'studentinfo');
         if (!$get_result) {
             // echo 'here';
             //$this->session->set_flashdata('msg', 'Welcome'.$email);
             //get($field,$value,$table)
-            $result = $this->Md->get('email', $email, 'student');
+            $result = $this->Md->get('email', $email, 'studentinfo');
             // var_dump($result);
             foreach ($result as $res) {
                 $key = $email;
@@ -90,7 +90,7 @@ class Student extends CI_Controller {
 
                     $newdata = array(
                         'id' => $res->id,
-                        'name' => $res->fname . ' ' . $res->lname,
+                        'name' => $res->name ,
                         'email' => $res->email,
                         'image' => $res->image,
                         'approved' => $res->approved,
@@ -122,7 +122,7 @@ class Student extends CI_Controller {
 
         $studentID = $this->session->userdata('id');
 
-        $query = $this->Md->get('id', $studentID, 'student');
+        $query = $this->Md->get('id', $studentID, 'studentinfo');
 
         if ($query) {
             $data['profile'] = $query;
@@ -152,7 +152,7 @@ class Student extends CI_Controller {
         // $query = $this->MD->show('metar');
         //  var_dump($query);
 
-        $query = $this->Md->query("SELECT * FROM student where approved='Yes'");
+        $query = $this->Md->query("SELECT * FROM studentinfo where approved='Yes'");
         if ($query) {
             $data['students'] = $query;
         } else {
@@ -165,7 +165,7 @@ class Student extends CI_Controller {
         // $query = $this->MD->show('metar');
         //  var_dump($query);
 
-        $query = $this->Md->query("SELECT * FROM student where approved='none' ");
+        $query = $this->Md->query("SELECT * FROM studentinfo where approved='none' ");
         if ($query) {
             $data['students'] = $query;
         } else {
@@ -178,7 +178,7 @@ class Student extends CI_Controller {
         // $query = $this->MD->show('metar');
         //  var_dump($query);
 
-        $query = $this->Md->query("SELECT * FROM student where approved='Yes'");
+        $query = $this->Md->query("SELECT * FROM studentinfo where approved='Yes'");
         if ($query) {
             $data['students'] = $query;
         } else {
@@ -191,7 +191,7 @@ class Student extends CI_Controller {
         // $query = $this->MD->show('metar');
         //  var_dump($query);
 
-        $query = $this->Md->query("SELECT * FROM student where approved='Yes'");
+        $query = $this->Md->query("SELECT * FROM studentinfo where approved='Yes'");
         if ($query) {
             $data['students'] = $query;
         } else {
@@ -204,7 +204,7 @@ class Student extends CI_Controller {
         // $query = $this->MD->show('metar');
         //  var_dump($query);
 
-        $query = $this->Md->query("SELECT * FROM student where approved='No'");
+        $query = $this->Md->query("SELECT * FROM studentinfo where approved='No'");
         if ($query) {
             $data['students'] = $query;
         } else {
@@ -723,13 +723,17 @@ class Student extends CI_Controller {
         $this->load->helper(array('form', 'url'));
         $id = $this->session->userdata('session');
         if ($id != "") {
-            $residential = $this->input->post('residential');
+            $residential = $this->input->post('residential');#
+            var_dump($residential);
 
             $resident = new stdClass();
 
-            foreach ($residential as $key => $value) {
-
-                $resident->$value['name'] = $value['value'];
+//            foreach ($residential as $key => $value) {
+//
+//                $resident->$value['name'] = $value['value'];
+//            }
+            foreach ($residential as $obj){
+                $residential->{self::getCleanName($obj['name'])} = $obj['value'];
             }
             $resident = json_encode($resident);
 
@@ -745,6 +749,51 @@ class Student extends CI_Controller {
                                                 <strong>No valid registration process/session </strong>									
 						</div>';
         }
+    }
+    
+    public static function GetCleanName($dirtyName){
+        switch($dirtyName){ //reassign names of matched keys
+            case 'fName':
+                return 'First name';
+            case 'lName':
+                return 'Last name';
+            case 'idType':
+                return 'Identification Type';
+            case 'oname':
+                return 'Other name';
+             case 'pobox':
+                return 'Address';
+                  case 'married':
+                return 'Marital status';
+                       case 'KinName':
+                return 'Kin name';
+                            case 'KinContact':
+                return 'Kin contact';
+                                 case 'ContactNo':
+                return 'Contact number';
+                                      case 'ContactName':
+                return 'Contact name';
+                                           case 'ContactNo':
+                return 'Contact number';
+                                                case 'IDtype':
+                return 'Identification type';
+                                                     case 'IDnumber':
+                return 'Identification number';
+                case 'stayingparent':
+                return 'Staying with parents?';
+                  case 'familyresidence':
+                return 'Type of family residence'; 
+                        case 'housetype':
+                return 'Type of house';
+                              case 'medical':
+                return 'where do you get our medication?';
+                                    case 'transportmeans':
+                return 'Family means of transport?';
+                      
+                
+            //add more as you see fit...
+        }
+        return $dirtyName; //return unknown keys as is
     }
     
      public function economic() {
@@ -1074,7 +1123,7 @@ class Student extends CI_Controller {
         // function update($id, $data,$table)
 
         $application = array('valid' => 'True', 'comment' => $comment);
-        $this->Md->update($id, $application, 'student');
+        $this->Md->update($id, $application, 'studentinfo');
         $this->session->set_flashdata('msg', '<div class="alert alert-info"> <strong>
                                                  Information validated	</strong>									
 						</div>');
@@ -1090,7 +1139,7 @@ class Student extends CI_Controller {
 
         $application = array('approved' => 'Yes');
         $this->Md->update($id, $application, 'course');
-        $this->Md->update($id, $application, 'student');
+        $this->Md->update($id, $application, 'studentinfo');
         $this->session->set_flashdata('msg', '<div class="alert alert-info"> <strong>
                                                  Information validated	</strong>									
 						</div>');
@@ -1106,7 +1155,7 @@ class Student extends CI_Controller {
 
         $application = array('approved' => 'No');
         $this->Md->update($id, $application, 'course');
-        $this->Md->update($id, $application, 'student');
+        $this->Md->update($id, $application, 'studentinfo');
         $this->session->set_flashdata('msg', '<div class="alert alert-info"> <strong>
                                                  Information validated	</strong>									
 						</div>');
@@ -1142,7 +1191,7 @@ class Student extends CI_Controller {
         $this->session->set_flashdata('msg', '<div class="alert alert-error">
                 <strong> information submitted	</strong>									
 						</div>');
-        $query = $this->Md->get('id', $studentID, 'student');
+        $query = $this->Md->get('id', $studentID, 'studentinfo');
 
         if ($query) {
             $data['profile'] = $query;
@@ -1200,8 +1249,7 @@ class Student extends CI_Controller {
         $this->load->helper(array('form', 'url'));
         $studentID = $this->uri->segment(3);
 
-
-        $query = $this->Md->get('id', $studentID, 'student');
+        $query = $this->Md->get('id', $studentID, 'studentinfo');
 
         if ($query) {
             $data['profile'] = $query;
@@ -1233,7 +1281,7 @@ class Student extends CI_Controller {
         $studentID = $this->session->userdata('id');
 
 
-        $query = $this->Md->get('id', $studentID, 'student');
+        $query = $this->Md->get('id', $studentID, 'studentinfo');
 
         if ($query) {
             $data['profile'] = $query;
@@ -1272,7 +1320,7 @@ class Student extends CI_Controller {
         $studentID = $this->uri->segment(3);
 
 
-        $query = $this->Md->get('id', $studentID, 'student');
+        $query = $this->Md->get('id', $studentID, 'studentinfo');
 
         if ($query) {
             $data['profile'] = $query;
@@ -1311,7 +1359,7 @@ class Student extends CI_Controller {
         $studentID = $this->uri->segment(3);
 
 
-        $query = $this->Md->get('id', $studentID, 'student');
+        $query = $this->Md->get('id', $studentID, 'studentinfo');
 
         if ($query) {
             $data['profile'] = $query;
@@ -1350,7 +1398,7 @@ class Student extends CI_Controller {
         $studentID = $this->session->userdata('id');
 
 
-        $query = $this->Md->get('id', $studentID, 'student');
+        $query = $this->Md->get('id', $studentID, 'studentinfo');
 
         if ($query) {
             $data['profile'] = $query;

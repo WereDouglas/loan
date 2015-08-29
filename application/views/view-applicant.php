@@ -48,8 +48,8 @@
                 
                           <div class="profile-activity clearfix">
                     <div>
-                        <img class="pull-left" alt="<?= $loop->fname?>" src="<?= base_url(); ?>uploads/<?= $loop->image;?>" />
-                        <a class="user" href="<?php echo base_url() . "index.php/student/view/".$loop->id; ?>"> <?= $loop->fname?> </a>
+                        <img class="pull-left" alt="<?= $loop->name?>" src="<?= base_url(); ?>uploads/<?= $loop->image;?>" />
+                        <a class="user" href="<?php echo base_url() . "index.php/student/view/".$loop->id; ?>"> <?= $loop->name?> </a>
                         <?= $loop->gender;?>
                         <a href="#"><?= $loop->email;?></a>
 

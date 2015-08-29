@@ -84,7 +84,7 @@
 
                             <div class="span4">
 
-                                <h2> <?= $loop->fname . ' ' . $loop->lname ?> </h2>
+                                <h2> <?= $loop->name  ?> </h2>
                                 <br> Gender:<?= $loop->gender; ?>
                                 <br>E-mail:  <a href="#"><?= $loop->email; ?></a>
 
@@ -99,7 +99,7 @@
 
                             <?php
                             
-                             if($loop->IDtype==""){
+                             if($loop->check==""){
                             $error = "THIS PROFILE IS INCOMPLETE!<br>PLEASE PLEASE DONOT VALIDATE";
                              }
                              else{
@@ -189,10 +189,10 @@
                 <h4>Profile information</h4>
                 <form id="station-form" name="station-form" enctype="multipart/form-data"  action='<?= base_url(); ?>index.php/student/rating/'  method="post">            
 
-                    <table class="table table-bordered table-striped">
+                 <table class="table table-bordered table-striped">
                         <thead>
                         <td colspan="2">
-                           
+
                         </td>
 
                         </thead>        
@@ -205,6 +205,8 @@
                                     <tr>
                                         <td>
                                             Gender
+                                            <input type="text" id="id" value="<?= $loop->id; ?>"/>
+   
                                         </td>
 
                                         <td>
@@ -239,22 +241,27 @@
                                             <?= $loop->email; ?>
                                         </td>
                                     </tr>
+
                                     <tr>
                                         <td>
-                                            Social media
+                                            Details and information:
                                         </td>
 
                                         <td>
-                                            <?= $loop->social; ?>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            Location
-                                        </td>
+                                            <?php
+                                            $details = $loop->personal;
+//echo $details;
+                                            $details = json_decode($details);
 
-                                        <td>
-                                            <?= 'Country:' . $loop->country . ' ' . $loop->residence; ?>
+// Put everyting to the screen with var_dump;
+//var_dump($details); 
+if (is_array($details) && count($details)) {
+                                            foreach ($details as $key => $value) {
+
+                                                echo "$key:$value\n";
+                                            }
+}
+                                            ?>
                                         </td>
                                     </tr>
                                     <tr>
@@ -263,69 +270,74 @@
                                         </td>
 
                                         <td>
-                                            <?= $loop->IDtype . ' Number: ' . $loop->IDnumber; ?>
+                                            
+                                            
+                                            <?php
+                                            $details = $loop->resident;
+//echo $details;
+                                            $details = json_decode($details);
+
+// Put everyting to the screen with var_dump;
+//var_dump($details);
+                                           if (is_array($details) && count($details)) {
+                                            foreach ($details as $key => $value) {
+
+                                                echo "$key:$value\n";
+                                           }}
+                                            ?>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>
-                                            1<sup>st</sup> Guarantee
+                                            Parent
                                         </td>
 
                                         <td>
-                                            <?= $loop->GuaranteeName . ' Contact: ' . $loop->GuaranteeContact; ?>
+                                            <?= $loop->parent; ?>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>
-                                            2<sup>st</sup> Guarantee
+                                            Submissions
                                         </td>
 
                                         <td>
-                                            <?= $loop->GuaranteeName2 . ' Contact: ' . $loop->GuaranteeContact2; ?>
-                                        </td>
-                                    </tr>
-                                   
-                                      <tr>
-                                        <td>
-                                        
-
-                                        <td>
-                                         Profile verification
-                                        </td>
-
-                                       
-                                    </tr>
-                                      <tr>
-                                        <td>
-                                          Comments/Details
-                                        </td>
-
-                                        <td>
-                                            <textarea class="span8" id="comments"><?= $loop->comment; ?></textarea>
-
-
+                                            <?= $loop->check; ?>
                                         </td>
                                     </tr>
-                                     
+
                                     <tr>
-                                        <td colspan="2">
-                                            <div style="float: right">
-                                                      <span id="Loadings_<?= $loop->id; ?>" name="Loadings" class ="Loadings"><img src="<?= base_url(); ?>images/ajax-loader.gif" alt="ajax Indicator" /></span><br>
-                                     
-   
-                                                
-                                                <a  type="" id="<?= $loop->id; ?>" class=" edit_trs  btn btn-primary">validate</a>
-                                                
-                                            </div>
+                                        <td>
 
+
+                                        <td>
+                                            Profile verification
                                         </td>
 
-  
 
                                     </tr>
-                                    
-                                <?php }
-                            } ?>
+                                    <tr>
+                                        <td>
+                                            Comments/Details
+                                        </td>
+
+                                        <td>
+                                            <?= $loop->comment; ?>
+
+
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+
+
+
+                                    </tr>
+
+                                <?php
+                                }
+                            }
+                            ?>
                         </tbody>
                     </table>
                 </form>

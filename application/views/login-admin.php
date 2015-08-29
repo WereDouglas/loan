@@ -3,7 +3,7 @@
 
 
 <h2>Student Loan Repayment and Recovery Management Information System</h2>
-<h2> <img  height="80px" width="150px" class="nav-user-photo" src="<?= base_url(); ?>images/ministry.png" alt="account" /></h2>
+<h2> <img  height="80px" width="550px" class="nav-user-photo" src="<?= base_url(); ?>images/header1.png" alt="account" /></h2>
 
 
 
