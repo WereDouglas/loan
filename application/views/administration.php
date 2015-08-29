@@ -24,6 +24,7 @@
                      <span class="icon-bar"></span>
                     </a>
                     <a class="brand" href="#"><img  height="60px" width="300px" class="nav-user-photo" src="<?= base_url(); ?>images/header1.png" alt="account" /></a>
+                   
                     <div class="nav-collapse collapse">
                         <ul class="nav pull-right">
                             <li class="dropdown">
@@ -52,7 +53,7 @@
                 <div class="span3" id="sidebar">
                     <ul class="nav nav-list bs-docs-sidenav nav-collapse collapse">
                         <!--<a href="<?php echo base_url() . "index.php/management/"; ?>" target="frame">-->
-                              
+                        <li>   <strong> <?php echo $this->session->userdata('level');?></strong>  </li>
                         <li>
                             <a target="frame" href="<?php echo base_url() . "index.php/student/applications"; ?>"><i class="icon-chevron-right"></i><span class="badge badge-error pull-right"><?php echo count($students);?></span> View applicants</a>
                         </li>
