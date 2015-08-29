@@ -39,6 +39,16 @@
                                               <input class="focused span6" id="email" name="email" placeholder="email" type="text" >
                                           </div>
                                         </div>
+              <div class="">
+                                            <div class="controls control-group">
+                                                User level <br><select class="focused span6" name="level" id="level" >
+                                             
+                                              <option>Loan office</option>
+                                              <option>Operations manager</option>
+                                             
+                                            </select>
+                                          </div>
+                                        </div>
                                            <div class="form-group">
                         <div class="col-sm-12">
                          <input type="password" name="password" id="password"  class="form-control focused span6" placeholder="password">

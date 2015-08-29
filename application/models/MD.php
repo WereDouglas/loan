@@ -67,6 +67,13 @@ class Md extends CI_Model {
 		$result = $query->result();
                  return $result;
 	}
+         function query_single($string) {
+           
+                //$query = $this->db->query($string);
+		//$result = $query->result();
+                 //return $result;
+              return  $this->db->query($string)->row()->studentID;
+	}
 
 }
 

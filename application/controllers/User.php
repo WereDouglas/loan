@@ -41,6 +41,7 @@ class User extends CI_Controller {
             $email = $this->input->post('email');
             $social = $this->input->post('social');
             $password = $this->input->post('password');
+            $level = $this->input->post('level');
             $password = $password;
             $key = $email;
             //check($value,$field,$table)
@@ -55,7 +56,7 @@ class User extends CI_Controller {
             $password = $this->encrypt->encode($password, $key);
             $created = date('Y-m-d');
             $file = $data['file_name'];
-            $user = array('name' => $name,'email' => $email, 'password' => $password, 'created' => date('Y-m-d H:i:s'));
+            $user = array('name' => $name,'email' => $email,'level'=>$level, 'password' => $password, 'created' => date('Y-m-d H:i:s'));
             $id = $this->Md->save($user, 'user');
             if ($id) {
                 $this->session->set_flashdata('msg', '<div class="alert alert-error">
@@ -125,7 +126,8 @@ class User extends CI_Controller {
                     $newdata = array(
                         'id' => $res->id,
                         'name' => $res->name,
-                        'email' => $res->email,                     
+                        'email' => $res->email,   
+                         'level' => $res->level,   
                         'logged_in' => TRUE
                     );
 

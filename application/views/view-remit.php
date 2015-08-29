@@ -36,7 +36,7 @@
 
                             <div class="span4">
 
-                                <h2> <?= $loop->fname . ' ' . $loop->lname ?> </h2>
+                                <h2> <?= $loop->name ?> </h2>
                                 <br> Gender:<?= $loop->gender; ?>
                                 <br>E-mail:  <a href="#"><?= $loop->email; ?></a>
 

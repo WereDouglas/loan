@@ -886,11 +886,11 @@ class Student extends CI_Controller {
                                                 <strong>
                                                 information submitted	</strong>									
 						</div>');
-                $query = $this->Md->get('id', $studentID, 'student');
+                $query = $this->Md->get('id', $studentID, 'studentinfo');
 
                 if ($query) {
 
-                    $query = $this->Md->get('id', $studentID, 'student');
+                    $query = $this->Md->get('id', $studentID, 'studentinfo');
                 }
 
                 if ($query) {
@@ -985,7 +985,7 @@ class Student extends CI_Controller {
 
                 if ($query) {
 
-                    $query = $this->Md->get('id', $studentID, 'student');
+                    $query = $this->Md->get('id', $studentID, 'studentinfo');
                 }
 
                 if ($query) {
@@ -1134,12 +1134,16 @@ class Student extends CI_Controller {
         $this->load->helper(array('form', 'url'));
 
         // $id = $this->input->post('id');
-        $id = $this->input->post('id');
+       $id = $this->input->post('id');
+      //echo   $id = 2;
         // function update($id, $data,$table)
+       $studentID =  $this->Md->query_single("select studentID from course where id = '".$id."'");      
+        
+        
 
         $application = array('approved' => 'Yes');
         $this->Md->update($id, $application, 'course');
-        $this->Md->update($id, $application, 'studentinfo');
+        $this->Md->update($studentID, $application, 'studentinfo');
         $this->session->set_flashdata('msg', '<div class="alert alert-info"> <strong>
                                                  Information validated	</strong>									
 						</div>');
@@ -1152,10 +1156,10 @@ class Student extends CI_Controller {
         // $id = $this->input->post('id');
         $id = $this->input->post('id');
         // function update($id, $data,$table)
-
+       $studentID =  $this->Md->query_single("select studentID from course where id = '".$id."'"); 
         $application = array('approved' => 'No');
         $this->Md->update($id, $application, 'course');
-        $this->Md->update($id, $application, 'studentinfo');
+        $this->Md->update($studentID, $application, 'studentinfo');
         $this->session->set_flashdata('msg', '<div class="alert alert-info"> <strong>
                                                  Information validated	</strong>									
 						</div>');
@@ -1248,6 +1252,7 @@ class Student extends CI_Controller {
 
         $this->load->helper(array('form', 'url'));
         $studentID = $this->uri->segment(3);
+
 
         $query = $this->Md->get('id', $studentID, 'studentinfo');
 
