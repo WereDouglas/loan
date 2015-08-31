@@ -7,7 +7,7 @@ class Student extends CI_Controller {
     function __construct() {
 
         parent::__construct();
-        // error_reporting(E_PARSE);
+        error_reporting(E_PARSE);
         $this->load->model('Md');
         $this->load->library('session');
         $this->load->library('encrypt');
@@ -198,6 +198,48 @@ class Student extends CI_Controller {
             $data['students'] = array();
         }
         $this->load->view('view-payment-student', $data);
+    }
+     public function image() {
+
+        $this->load->helper(array('form', 'url'));
+        $action = $this->uri->segment(3);     
+        $studentID = $this->session->userdata('id');
+         //$studentID = 6;
+        
+       
+        if ($studentID != "") {
+
+            $file_element_name = 'imgfile';
+            $config['upload_path'] = 'uploads/';
+            // $config['upload_path'] = '/uploads/';
+            $config['allowed_types'] = '*';
+            $config['encrypt_name'] = FALSE;
+
+            $this->load->library('upload', $config);
+            if (!$this->upload->do_upload($file_element_name)) {
+                $status = 'error';
+                echo $msg = $this->upload->display_errors('', '');
+            } 
+
+            $data = $this->upload->data();          
+                        
+            $file = $data['file_name'];            
+            $user = array('image'=>$file);            
+            $this->Md->update($studentID, $user, 'studentinfo');
+           // $file_id = $this->Md->save($user, 'users');
+               echo '<div class="alert alert-error">                                                  
+                                                <strong>Image uploaded successfully </strong>									
+						</div>';
+            
+        }
+        else {
+
+            echo '<div class="alert alert-error">                                                  
+                                                <strong>No valid registration process/session </strong>									
+						</div>';
+        }
+
+       // $this->load->view('image', $data);
     }
 
     public function denied() {
@@ -1491,7 +1533,7 @@ class Student extends CI_Controller {
         }
     }
 
-    public function image() {
+    public function images() {
         $id = $this->uri->segment(3);
         $query = $this->MD->remove($id);
         $query = $this->MD->delete($id, 'image');

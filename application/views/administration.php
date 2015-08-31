@@ -14,8 +14,14 @@
         <![endif]-->
         <script src="<?=  base_url();?>vendors/modernizr-2.6.2-respond-1.1.0.min.js"></script>
     </head>
+    <script>
+function alertsize(pixels){
+    pixels+=32;
+    document.getElementById('frame').style.height=pixels+"px";
+}
+</script>
     
-    <body>
+    <body onload="parent.alertsize(document.body.scrollHeight);">
         <div class="navbar navbar-fixed-top">
             <div class="navbar-inner">
                 <div class="container-fluid">
@@ -88,7 +94,7 @@
                 
                 <!--/span-->
                 <div class="span9" id="content">
-                    <iframe id="frame" style="margin-top: 30px;" name="frame" frameborder="no" border="0" scrolling="yes" height="750" width="450" class="span12" src="<?php echo base_url() . "index.php/administration/report"; ?>"> </iframe>
+                    <iframe id="frame" style="margin-top: 30px;" name="frame" frameborder="no" border="0" scrolling="no" height="auto" width="450" class="span12" src="<?php echo base_url() . "index.php/administration/report"; ?>"> </iframe>
 
                 </div>
             </div>

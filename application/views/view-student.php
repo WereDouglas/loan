@@ -189,7 +189,7 @@
                 <h4>Profile information</h4>
                 <form id="station-form" name="station-form" enctype="multipart/form-data"  action='<?= base_url(); ?>index.php/student/rating/'  method="post">            
 
-                 <table class="table table-bordered table-striped">
+                        <table class="table table-bordered table-striped">
                         <thead>
                         <td colspan="2">
 
@@ -205,8 +205,6 @@
                                     <tr>
                                         <td>
                                             Gender
-                                            <input type="text" id="id" value="<?= $loop->id; ?>"/>
-   
                                         </td>
 
                                         <td>
@@ -254,13 +252,11 @@
                                             $details = json_decode($details);
 
 // Put everyting to the screen with var_dump;
-//var_dump($details); 
-if (is_array($details) && count($details)) {
+//var_dump($details);
                                             foreach ($details as $key => $value) {
 
                                                 echo "$key:$value\n";
                                             }
-}
                                             ?>
                                         </td>
                                     </tr>
@@ -274,26 +270,34 @@ if (is_array($details) && count($details)) {
                                             
                                             <?php
                                             $details = $loop->resident;
-//echo $details;
+
                                             $details = json_decode($details);
 
-// Put everyting to the screen with var_dump;
-//var_dump($details);
-                                           if (is_array($details) && count($details)) {
+
                                             foreach ($details as $key => $value) {
 
-                                                echo "$key:$value\n";
-                                           }}
+                                                echo "$key:$value\n,";
+                                            }
                                             ?>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>
-                                            Parent
+                                            Parent information
                                         </td>
 
                                         <td>
-                                            <?= $loop->parent; ?>
+                                            <?php
+                                            $details = $loop->parent;
+
+                                            $details = json_decode($details);
+
+
+                                            foreach ($details as $key => $value) {
+
+                                                echo "$key:$value\n,";
+                                            }
+                                            ?>
                                         </td>
                                     </tr>
                                     <tr>
@@ -302,7 +306,17 @@ if (is_array($details) && count($details)) {
                                         </td>
 
                                         <td>
-                                            <?= $loop->check; ?>
+                                            <?php
+                                            $details = $loop->check;
+
+                                            $details = json_decode($details);
+
+
+                                            foreach ($details as $key => $value) {
+
+                                                echo "$key:$value\n,";
+                                            }
+                                            ?>
                                         </td>
                                     </tr>
 

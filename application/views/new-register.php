@@ -11,7 +11,7 @@
 
         <!-- Fonts -->
 
-
+   <link rel="stylesheet" href="<?= base_url(); ?>social/style.css">
 
 
         <!-- CSS -->
@@ -33,53 +33,51 @@
 
 
         <header>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-3 col-xs-6 col-sm-3">
-                        <a href="#" class="logo">
-                            <img src="<?= base_url(); ?>images/header1.png" alt="">
-                        </a>
-                    </div>
-                    <div class="col-md-6 col-xs-6 col-sm-6">
-                        <div class="menu">
-                            <nav class="navbar navbar-default" role="navigation">
-                                <div class="container-fluid">
-                                    <!-- Brand and toggle get grouped for better mobile display -->
-                                    <div class="navbar-header">
-                                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                                            <span class="sr-only">Toggle navigation</span>
-                                            <span class="icon-bar"></span>
-                                            <span class="icon-bar"></span>
-                                            <span class="icon-bar"></span>
-                                        </button>
-                                    </div>
+         <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-xs-6 col-sm-3">
+                    <a href="#" class="logo">
+                        <img src="<?= base_url(); ?>images/header1.png" alt="">
+                    </a>
+                </div>
+                <div class="col-md-6 col-xs-6 col-sm-6">
+                    <div class="menu">
+                        <nav class="navbar navbar-default" role="navigation">
+                            <div class="container-fluid">
+                                <!-- Brand and toggle get grouped for better mobile display -->
+                                <div class="navbar-header">
+                                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    </button>
+                                </div>
 
-                                    <!-- Collect the nav links, forms, and other content for toggling -->
-                                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                                        <ul class="nav navbar-nav">
-                                            <li><a href="#banner">Personal</a></li>
-                                            <li><a href="#service">Residential</a></li>
-                                            <li><a href="#feature">Institution</a></li>
-                                            <li><a href="#utility">Loan</a></li>
-                                            <!--                                        <li><a href="#subscribe">Subscribe</a></li>-->
-                                            <li><a href="#">Home</a></li>
-                                        </ul>
-
-                                    </div><!-- /.navbar-collapse -->
-                                </div><!-- /.container-fluid -->
-                            </nav>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-xs-12 col-sm-3">
-                        <ul class="social-info">
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                        </ul>
+                                <!-- Collect the nav links, forms, and other content for toggling -->
+                                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                                    <ul class="nav navbar-nav">
+                                        <li><a href="<?=  base_url()?>index.php">Home</a></li>
+                                        
+                                       
+                                    </ul>
+                                  
+                                </div><!-- /.navbar-collapse -->
+                            </div><!-- /.container-fluid -->
+                        </nav>
                     </div>
                 </div>
+                <div class="col-md-3 col-xs-12 col-sm-3">
+    
+   <ul>
+<li><a href="" class="icon facebook">Facebook</a></li>
+<li><a href="" class="icon twitter">Twitter</a></li>
+<li><a href="" class="icon googleplus">Google Plus</a></li>
+</ul>
+  
+                </div>
             </div>
+        </div>
         </header>
 
 
@@ -94,10 +92,7 @@
                         <form id="personal-form" name="personal-form" enctype="multipart/form-data"  action='<?= base_url(); ?>index.php/student/personal/'  method="post">            
 
                             <div class="col-md-4 ">
-                                <div class="alert"> 
-                                    <input id="imgfile" name="imgfile" type="file" /> 
-                                    <img id="preview"  width=150px" height="150px" src="<?= base_url(); ?>images/placeholder.jpg" alt=" Your profile passport image" />
-                                </div>
+                              
                                 <div class="form-group">                              
                                     <div class="col-sm-12">
                                         First name  <input type="text" id="fname" name="fname"  class="form-control">
@@ -247,7 +242,10 @@
 
             </div>
         </section>
+ <div class="span9" id="content">
+                    <iframe id="frame" style="margin-top: 30px; padding-left: 30%;" name="frame" frameborder="no" border="0" scrolling="no" height="300px" width="950" class="span12" src="<?php echo base_url() . "index.php/administration/image"; ?>"> </iframe>
 
+                </div>
 
         <section id="service">
             <div class="container">

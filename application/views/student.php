@@ -72,7 +72,7 @@
                 
                 <!--/span-->
                 <div class="span9" id="content">
-                    <iframe id="frame" style="margin-top: 30px;" name="frame" frameborder="no" border="0" scrolling="yes" height="950" width="450" class="span12" src="<?php echo base_url() . "index.php/administration/report"; ?>"> </iframe>
+                    <iframe id="frame" style="margin-top: 30px;" name="frame" frameborder="no" border="0" scrolling="no" height="1500" width="450" class="span12" src="<?php echo base_url() . "index.php/administration/report"; ?>"> </iframe>
 
                 </div>
             </div>

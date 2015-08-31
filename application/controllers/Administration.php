@@ -16,6 +16,11 @@ class Administration extends CI_Controller {
   
 		$this->load->view('admin/index');
 	}
+        public function image()
+	{
+  
+		$this->load->view('image');
+	}
         public function login()
 	{
   

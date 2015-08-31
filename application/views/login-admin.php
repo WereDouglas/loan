@@ -29,8 +29,8 @@
                 <div class="form-group">
                     <label class="clear"> </label> 
                     <div class="col-sm-12">
-                        <button type="submit" class="btn btn-primary">Submit</button> <button type="reset" class="btn btn-info">Cancel</button>
-                    </div>
+                        <button type="submit" class="btn btn-primary">Submit</button> <a href="<?=  base_url()?>index.php" type="reset" class="btn btn-info">Cancel</a>
+                      </div>
                 </div>   
 
 

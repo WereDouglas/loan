@@ -7,7 +7,7 @@ class User extends CI_Controller {
     function __construct() {
 
         parent::__construct();
-        // error_reporting(E_PARSE);
+         error_reporting(E_PARSE);
         $this->load->model('Md');
         $this->load->library('session');
         $this->load->library('encrypt');
@@ -132,20 +132,20 @@ class User extends CI_Controller {
                     );
 
                     $this->session->set_userdata($newdata);
-                $query = $this->Md->query("SELECT * FROM student where approved='none' ");
+                $query = $this->Md->query("SELECT * FROM studentinfo where approved='none' ");
         if ($query) {
             $data['students'] = $query;
         } else {
             $data['students'] = array();
         }
         
-        $query = $this->Md->query("SELECT * FROM student where approved='Yes' ");
+        $query = $this->Md->query("SELECT * FROM studentinfo where approved='Yes' ");
         if ($query) {
             $data['studentsyes'] = $query;
         } else {
             $data['studentsyes'] = array();
         }
-        $query = $this->Md->query("SELECT * FROM student where approved='No' ");
+        $query = $this->Md->query("SELECT * FROM studentinfo where approved='No' ");
         if ($query) {
             $data['studentsno'] = $query;
         } else {
