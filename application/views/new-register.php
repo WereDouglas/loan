@@ -118,16 +118,8 @@
                                             <option>Female</option>
 
                                         </select>
-                                    </div> </div>
-
-
-                            </div><!-- /col-lg-6 -->
-                            <div class="col-md-4 ">
-
-                                <div class="showback">
-                                    <?php echo $this->session->flashdata('msg'); ?>	
-
-
+                                    </div> 
+                                
 
                                     <div class="form-group">
                                         <div class="col-sm-12">
@@ -139,6 +131,15 @@
                                             Post office Box number <input type="text" class="form-control" name="pobox" id="pobox">
                                         </div>
                                     </div>
+                                </div>
+
+
+                            </div><!-- /col-lg-6 -->
+                            <div class="col-md-4 ">
+
+                                <div class="showback">
+                                   
+
                                     <div class="form-group">
                                         <div class="col-sm-12">
                                             District of origin <input type="text" class="form-control" name="district" id="district">
@@ -146,7 +147,7 @@
                                     </div>
                                     <div class="form-group">
                                         <div class="col-sm-12">
-                                            Subcounty of origin <input type="text" class="form-control" name="county" id="county">
+                                            Sub county of origin <input type="text" class="form-control" name="county" id="county">
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -242,9 +243,10 @@
 
             </div>
         </section>
- <div class="span9" id="content">
+ <div class="span9 padding-10" id="content">
+     <div class="container"><h4>Add user profile image /passport photo</h4>
                     <iframe id="frame" style="margin-top: 30px; padding-left: 30%;" name="frame" frameborder="no" border="0" scrolling="no" height="300px" width="950" class="span12" src="<?php echo base_url() . "index.php/administration/image"; ?>"> </iframe>
-
+     </div>
                 </div>
 
         <section id="service">
