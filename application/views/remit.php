@@ -54,20 +54,12 @@
                         <a href="#"><?= $loop->email;?></a>
 
                         <div class="time">
-                            <i class="icon-time bigger-110"></i>
-                          <?= $loop->created;?><span class="badge badge-hot">Approved?:<?=$loop->approved?></span> <span class="badge badge-success"> Validated?:<?=$loop->valid?></span>
+                           
+                         <span class="badge badge-warning"> Remitted funds to date:<?=number_format($loop->credit)?></span>
                         </div>
                     </div>
                      
-                    <div class="tools action-buttons">
-                        <a href="#" class="blue">
-                            <i class="icon-pencil bigger-125"></i>
-                        </a>
-
-                        <a href="#" class="red">
-                            <i class="icon-remove bigger-125"></i>
-                        </a>
-                    </div>
+         
                 </div>  
                                                                 
                                                                 

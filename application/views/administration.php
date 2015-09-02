@@ -14,12 +14,7 @@
         <![endif]-->
         <script src="<?=  base_url();?>vendors/modernizr-2.6.2-respond-1.1.0.min.js"></script>
     </head>
-    <script>
-function alertsize(pixels){
-    pixels+=32;
-    document.getElementById('frame').style.height=pixels+"px";
-}
-</script>
+
     
     <body onload="parent.alertsize(document.body.scrollHeight);">
         <div class="navbar navbar-fixed-top">
@@ -60,6 +55,8 @@ function alertsize(pixels){
                     <ul class="nav nav-list bs-docs-sidenav nav-collapse collapse">
                         <!--<a href="<?php echo base_url() . "index.php/management/"; ?>" target="frame">-->
                         <li>   <strong> <?php echo $this->session->userdata('level');?></strong>  </li>
+                        
+                         <?php if ($this->session->userdata('level')=="Loan officer"){?>
                         <li>
                             <a target="frame" href="<?php echo base_url() . "index.php/student/applications"; ?>"><i class="icon-chevron-right"></i><span class="badge badge-error pull-right"><?php echo count($students);?></span> View applicants</a>
                         </li>
@@ -70,31 +67,52 @@ function alertsize(pixels){
                          <li>
                             <a target="frame" href="<?php echo base_url() . "index.php/student/denied"; ?>"><i class="icon-chevron-right"></i><span class="badge badge-success pull-right"><?php echo count($studentsno);?></span> View denied</a>
                         </li>
-                         <li>
-                            <a target="frame" href="<?php echo base_url() . "index.php/student/remit"; ?>"><i class="icon-chevron-right"></i>Remittances</a>
-                        </li>                
-                      
-                        <li>
+                         <?php }?>
+                                                <?php if ($this->session->userdata('level')=="Operations manager"){?>
+                                                      <li>
                             <a target="frame" href="<?php echo base_url() . "index.php/university/"; ?>"><i class="icon-chevron-right"></i> Universities</a>
                         </li>
-                     
-                      
                         <li>
-                            <a target="frame" href="<?php echo base_url() . "index.php/student/payment"; ?>"><i class="icon-chevron-right"></i> Payments</a>
+                            <a target="frame" href="<?php echo base_url() . "index.php/student/applications"; ?>"><i class="icon-chevron-right"></i><span class="badge badge-error pull-right"><?php echo count($students);?></span> View applicants</a>
                         </li>
                         <li>
-                            <a target="frame" href="<?php echo base_url() . "index.php/user"; ?>"> Users</a>
+                            <a target="frame" href="<?php echo base_url() . "index.php/student/approved"; ?>"><i class="icon-chevron-right"></i><span class="badge badge-success pull-right"><?php echo count($studentsyes);?></span> View approved</a>
+                        </li>
+                         <li>
+                            <a target="frame" href="<?php echo base_url() . "index.php/student/denied"; ?>"><i class="icon-chevron-right"></i><span class="badge badge-success pull-right"><?php echo count($studentsno);?></span> View denied</a>
                         </li>
                           <li>
+                            <a target="frame" href="<?php echo base_url() . "index.php/student/remit"; ?>"><i class="icon-chevron-right"></i>Fund remittance</a>
+                        </li> 
+                        
+                        <li>
+                            <a target="frame" href="<?php echo base_url() . "index.php/student/payment"; ?>"><i class="icon-chevron-right"></i>Student Payments</a>
+                        </li>
+                          <li>
+                            <a target="frame" href="<?php echo base_url() . "index.php/student/recover"; ?>"><i class="icon-chevron-right"></i>Loan recoveries</a>
+                        </li>
+                       
+                                <li>
                             <a target="frame" href="<?php echo base_url() . "index.php/administration/report"; ?>"> Reports</a>
                         </li>
+                                                    <?php }?>
+
+                         
+                        <?php if ($this->session->userdata('level')=="Administrator"){?>
+                        
+                        
+                      
+                            <a target="frame" href="<?php echo base_url() . "index.php/user"; ?>"> Users</a>
+                        </li>
+                        <?php }?>
+                      
                        
                     </ul>
                 </div>
                 
                 <!--/span-->
                 <div class="span9" id="content">
-                    <iframe id="frame" style="margin-top: 30px;" name="frame" frameborder="no" border="0" scrolling="no" height="auto" width="450" class="span12" src="<?php echo base_url() . "index.php/administration/report"; ?>"> </iframe>
+                    <iframe id="frame" style="margin-top: 30px;" name="frame" frameborder="no" border="0" scrolling="no" height="1500" width="450" class="span12" src="<?php echo base_url() . "index.php/administration/report"; ?>"> </iframe>
 
                 </div>
             </div>

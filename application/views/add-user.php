@@ -43,8 +43,9 @@
                                             <div class="controls control-group">
                                                 User level <br><select class="focused span6" name="level" id="level" >
                                              
-                                              <option>Loan office</option>
+                                              <option>Loan officer</option>
                                               <option>Operations manager</option>
+                                                <option>Administrator</option>
                                              
                                             </select>
                                           </div>

@@ -19,7 +19,7 @@
     <div class="widget-header widget-header-small">
         <h4 class="blue smaller">
             <i class="icon-4x orange"></i>
-      Payments
+            Students
         </h4>
 
         <div class="widget-toolbar action-buttons">
@@ -48,30 +48,26 @@
                 
                           <div class="profile-activity clearfix">
                     <div>
-                        <img class="pull-left" alt="<?= $loop->fname?>" src="<?= base_url(); ?>uploads/<?= $loop->image;?>" />
-                        <a class="user" href="<?php echo base_url() . "index.php/student/view_payment/".$loop->id; ?>"> <?= $loop->fname?> </a>
- <?= $loop->name;?>                       
-GENDER: <?= $loop->gender;?>
-                   EMAIL:    <?= $loop->email;?>
+                        <img class="pull-left" alt="<?= $loop->name?>" src="<?= base_url(); ?>uploads/<?= $loop->image;?>" />
+                        <a class="user" href="<?php echo base_url() . "index.php/student/view/".$loop->id; ?>"> <?= $loop->name?> </a>
+                        <?= $loop->gender;?>
+                        <a href="#"><?= $loop->email;?></a>
 
                         <div class="time">
-                                                                <?php if($loop->yearpay<=  date('Y-m-d')){?>
-                                     <span class="badge badge-warning"> Overdue<?=' '.$loop->yearpay.' Current paid sum :'.number_format($loop->debit).' Total amount loaned:'.number_format($loop->total)?> </span>
-                                                                            
-                                                                    <?php }?>
-                            
-                             <?php if($loop->yearpay>= date('Y-m-d')){?>
-                                      <span class="badge badge-success">Pending <?=' '.$loop->yearpay.' Current paid sum :'.number_format($loop->debit).' Total amount loaned:'.number_format($loop->total)?> </span>
-                          
-                                                                                               <?php }?>
-                      
-                       
-                       
-                      
+                            <i class="icon-time bigger-110"></i>
+                          <?= $loop->created;?><span class="badge badge-hot">Approved?:<?=$loop->approved?></span> <span class="badge badge-success"> Validated?:<?=$loop->valid?></span>
                         </div>
                     </div>
                      
-                  
+                    <div class="tools action-buttons">
+                        <a href="#" class="blue">
+                            <i class="icon-pencil bigger-125"></i>
+                        </a>
+
+                        <a href="#" class="red">
+                            <i class="icon-remove bigger-125"></i>
+                        </a>
+                    </div>
                 </div>  
                                                                 
                                                                 

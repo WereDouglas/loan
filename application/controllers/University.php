@@ -8,7 +8,7 @@ class University extends CI_Controller {
 
         parent::__construct();
         // error_reporting(E_PARSE);
-        $this->load->model('MD');
+        $this->load->model('Md');
         $this->load->library('session');
         $this->load->library('encrypt');
         date_default_timezone_set("Africa/Nairobi");
@@ -16,7 +16,7 @@ class University extends CI_Controller {
 
     public function index() {
         
-         $query = $this->MD->show('university');
+         $query = $this->Md->show('university');
  
         if ($query) {
              $data['unis'] = $query;
@@ -30,6 +30,20 @@ class University extends CI_Controller {
         // $query = $this->MD->show('metar');
         //  var_dump($query);
         $this->load->view('add-university');
+    }
+     public function students() {
+           $this->load->helper(array('form', 'url')); 
+           
+           $university = urldecode( $this->uri->segment(3));
+           echo $university;
+          $query = $this->Md->query("SELECT * FROM COURSE RIGHT JOIN studentinfo ON course.studentID = studentinfo.id  WHERE course.university= '".$university."'  ");
+ 
+        if ($query) {
+             $data['students'] = $query;
+        } else {
+            $data['students'] = array();
+        }
+        $this->load->view('university-students',$data);
     }
 
       public function save() {

@@ -42,29 +42,25 @@
           <?php
                                                             if (is_array($students) && count($students)) {
                                                                 foreach ($students as $loop) {
-                                                                   
+                                                                 if($loop->yearpay<=  date('Y-m-d')){  
                                                             ?>  
                 
                 
                           <div class="profile-activity clearfix">
                     <div>
                         <img class="pull-left" alt="<?= $loop->fname?>" src="<?= base_url(); ?>uploads/<?= $loop->image;?>" />
-                        <a class="user" href="<?php echo base_url() . "index.php/student/view_payment/".$loop->id; ?>"> <?= $loop->fname?> </a>
- <?= $loop->name;?>                       
+                        <a class="user" href="<?php echo base_url() . "index.php/student/view_job/".$loop->id; ?>"> <?= $loop->name?> </a>
+                     
 GENDER: <?= $loop->gender;?>
                    EMAIL:    <?= $loop->email;?>
+                   CONTACT:    <?= $loop->contact;?>
 
                         <div class="time">
-                                                                <?php if($loop->yearpay<=  date('Y-m-d')){?>
+                                                                
                                      <span class="badge badge-warning"> Overdue<?=' '.$loop->yearpay.' Current paid sum :'.number_format($loop->debit).' Total amount loaned:'.number_format($loop->total)?> </span>
                                                                             
-                                                                    <?php }?>
-                            
-                             <?php if($loop->yearpay>= date('Y-m-d')){?>
-                                      <span class="badge badge-success">Pending <?=' '.$loop->yearpay.' Current paid sum :'.number_format($loop->debit).' Total amount loaned:'.number_format($loop->total)?> </span>
-                          
-                                                                                               <?php }?>
-                      
+                                                             
+                         
                        
                        
                       
@@ -76,7 +72,7 @@ GENDER: <?= $loop->gender;?>
                                                                 
                                                                 
                                                                 
-                                                                <?php }}?>
+                                                                 <?php }}}?>
 
                 
 

@@ -54,15 +54,17 @@
                 
                           <div class="profile-activity clearfix">
                     <div>
-                        <img class="pull-left" alt="<?= $loop->name?>" src="<?= base_url(); ?>uploads/<?= $loop->logo;?>" />
-                        <a class="user" href="#"> <?= $loop->name?> </a>
+                        <a target="frame" href="<?php echo base_url() . "index.php/university/students/".$loop->name; ?>">
+                           <img class="pull-left" alt="<?= $loop->name?>" src="<?= base_url(); ?>uploads/<?= $loop->logo;?>" />
+                      <?= $loop->name?> 
                         <?= $loop->detail;?>
-                        <a href="#"><?= $loop->type;?></a>
+                       <?= $loop->type;?>
 
                         <div class="time">
                             <i class="icon-time bigger-110"></i>
                           <?= $loop->created;?>
                         </div>
+                         </a>  
                     </div>
                      
                     <div class="tools action-buttons">
@@ -74,8 +76,10 @@
                             <i class="icon-remove bigger-125"></i>
                         </a>
                     </div>
-                </div>  
-                                                                
+                </div>
+                     
+                     
+                                                                               
                                                                 
                                                                 
                                                                 <?php }}?>

@@ -333,9 +333,15 @@
                                 <div class="form-group">
                                     <div class="col-sm-12">University/Institute
                                         <select class="form-control" name="institute" id="institute">
-                                            <option>Makerere university</option>
+                                            
+                                             <?php
+                                                            if (is_array($unis) && count($unis)) {
+                                                                foreach ($unis as $loop) {
+                                                                   
+                                                            ?>  
+                                            <option><?=  $loop->name; ?></option>
 
-                                            <option>MUBS</option>
+                                                            <?php }}?>
                                         </select>
                                     </div>
                                 </div>
@@ -354,6 +360,11 @@
                                         Year of admission: <input type="text" name="yearadmitted" id="yearadmitted" class="form-control">
                                     </div>
                                 </div>
+                                  <div class="form-group">
+                                    <div class="col-sm-12">
+                                        Current year of study: <input type="text" name="yearstudy" id="yearstudy" class="form-control">
+                                    </div>
+                                </div>
 
 
                             </div>
@@ -362,7 +373,7 @@
                             <div class="col-md-4 ">
                                 <div class="form-group">
                                     <div class="col-sm-12">
-                                        Current year of study: <input type="text" name="yearstudy" id="yearstudy" class="form-control">
+                                         Start if loan repayment: <input type="text" name="yearpay" id="yearpay" class="form-control">
                                     </div>
                                 </div>
                                 <div class="form-group">

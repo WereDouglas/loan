@@ -64,6 +64,9 @@
                         <li>
                             <a target="frame"  href="<?php echo base_url() . "index.php/student/refund"; ?>"><i class="icon-chevron-right"></i> Pay back</a>
                         </li>
+                        <li>
+                            <a target="frame"  href="<?php echo base_url() . "index.php/student/employement"; ?>"><i class="icon-chevron-right"></i> Employment/Income</a>
+                        </li>
                       
                        
                        

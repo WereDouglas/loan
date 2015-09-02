@@ -303,6 +303,25 @@
 
                                         </td>
                                     </tr>
+                                    <tr>
+                                        <td>
+                                            Employment information:
+                                        </td>
+
+                                        <td>
+                                            <?php
+                                            $details = $loop->employement;
+
+                                            $details = json_decode($details);
+
+
+                                            foreach ($details as $key => $value) {
+
+                                                echo "<strong>$key</strong>:$value".'<br>';
+                                            }
+                                            ?>
+                                        </td>
+                                    </tr>
 
                                     <tr>
 
