@@ -71,8 +71,8 @@
                                         <li><a href="#banner">Home</a></li>
                                         
                                         <li><a href="#feature">Reports</a></li>
-                                        <li><a href="#utility">Social media</a></li>
-                                        <li><a href="#subscribe">Subscribe</a></li>
+                                        <li><a href="#utility">Community</a></li>
+                                       
                                     </ul>
                                   
                                 </div><!-- /.navbar-collapse -->
@@ -108,12 +108,13 @@
                 </div>
                 <div class="col-md-6 col-md-offset-1 col-sm-6">
                     <div class="block">
-                        <h1>
+                        <h3>
                            Increasing Access to Higher Education
-                        </h1>
+                        </h3>
                         <p>
-                           This loan shall be porcessed for free and no one should solicit funds from any applicant for purposes of securing this education loan.
-                        </p>
+                            <Strong> Welcome</strong> <br>
+The Student Loans Repayment and Recovery System is a system for the HESFB that helps to process students' loans online. The loan is processed for free and no one should solicit funds from any applicant for purposes of securing the loan
+   </p>
 
                         <ul class="download-btn">
                               <li>
@@ -148,31 +149,9 @@
                        <div id="container3" style="height: 400px"></div>
                     </div>
 
-                    <div class="feature-item">
+                  
 
-                        <div class="media">
-                            <div class="pull-left icon" href="#">
-                                <i class="fa fa-qrcode"></i>
-                            </div>
-                            <div class="media-body">
-                                <h4 class="media-heading">Everything is perfectly orgainized</h4>
-                                <p>Aipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="feature-item">
-
-                        <div class="media">
-                            <div class="pull-left icon" href="#">
-                                <i class="fa fa-recycle"></i>
-                            </div>
-                            <div class="media-body">
-                                <h4 class="media-heading">Rapid customer support</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad</p>
-                            </div>
-                        </div>
-                    </div>
+                    
                 </div>
                 <div class="col-md-6 col-sm-6 wow fadeInLeft" data-wow-delay=".8s">
                     <div class="block">
@@ -192,10 +171,13 @@
                 </div>
                 <div class="col-md-6 col-sm-6 wow fadeInDown" data-wow-delay=".8s">
                     <div class="block">
-                        <h2>Amazing Compatibility.</h2>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea com Neque porro quisqua
-                        </p>
+                      
+                          <h4 class="media-heading"> REQUIREMENTS</h4>
+                             
+In order to benefit from the system you must be a student that has completed A level and qualifies to join any institution of higher learning. If you are not a student you will not be able to benefit from the system. Actually you will be treated as an un-authorised user. If you are a student you can click on Regester to be able to go through the application process. 
+WRONG INPUTS 
+Wrong information may affect the success of your application make sure that you give only correct information to complete the task successful. 
+             
                     </div>
                 </div>
             </div>
@@ -208,10 +190,9 @@
             <div class="row">
                 <div class="col-md-6 col-sm-6 wow fadeInLeft" data-wow-delay=".8s">
                     <div class="block">
-                        <h2>Remarkable Features</h2>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea com Neque porro quisquam est, 
-                        </p>
+                       <h4> WRONG INPUTS </h4>
+Wrong information may affect the success of your application make sure that you give only correct information to complete the task successful. 
+
                     </div>
                 </div>
                 <div class="col-md-6 col-sm-6 wow fadeInRight" data-wow-delay=".8s">
@@ -221,36 +202,6 @@
         </div>
     </section>
 
-
-    <section id="subscribe" >
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 wow fadeInDown" data-wow-delay=".8s">
-                    <div class="block">
-                        <div class="title text-center">
-                            <h2>Subscribe</h2>
-                            <p></p>
-                        </div>
-                        
-                        
-
-                        <form class="form-inline text-center col-sm-12 col-xs-12" role="form">
-                            <div class="form-group">
-                                <input type="text" class="form-control" id="signup-form" >
-                                
-                                
-                            </div>
-                            <a href="" type="submit" class="btn btn-default btn-signup">
-                                <i class="fa fa-paper-plane"></i>
-                            </a>
-                        </form>
-                    </div>
-                    
-
-                </div>
-            </div>
-        </div>
-    </section>
 
     <footer class="wow fadeInUp" data-wow-delay=".8s">
         <div class="container text-center">
