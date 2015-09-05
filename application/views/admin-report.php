@@ -37,10 +37,10 @@ $(function () {
             }
         },
         title: {
-            text: 'Student loans per year'
+            text: 'Payments Vs Loan'
         },
         subtitle: {
-            text: 'Loans in millions'
+            text: 'Amount in shillings'
         },
         plotOptions: {
             pie: {
@@ -49,17 +49,19 @@ $(function () {
             }
         },
         series: [{
-            name: 'Remitted amount(Shs)',
+            name: 'amount(Shs)',
             data: [
-                ['2008', 8],
-                ['2009', 3],
-                ['2010', 1],
-                ['2011', 6],
-                ['2012', 8],
-                ['2013', 4],
-                ['2014', 4],
-                ['2015', 1],
-                ['2016', 1]
+                ['Refund',  <?php
+                                                            if (is_array($refund) && count($refund)) {
+                                                                foreach ($refund as $loop) {
+                                                         echo   $loop->sum;        
+                                                         }}?>],
+                ['Remittance', <?php
+                                                            if (is_array($remittance) && count($remittance)) {
+                                                                foreach ($remittance as $loop) {
+                                                         echo   $loop->sum;        
+                                                         }}?>]         
+               
             ]
         }]
     });
@@ -146,7 +148,6 @@ $(function () {
 	<script type="text/javascript" src="<?= base_url(); ?>js/highcharts.js"></script>
 <script type="text/javascript" src="<?= base_url(); ?>js/highcharts-3d.js"></script>
 <script type="text/javascript"  src="<?= base_url(); ?>js/modules/exporting.js"></script>
-
 
 </body>
 </html>

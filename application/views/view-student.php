@@ -98,9 +98,9 @@
 
 
                             <?php
-                            
+                        //  echo  $loop->check;
                              if($loop->check==""){
-                            $error = "THIS PROFILE IS INCOMPLETE!<br>PLEASE PLEASE DONOT VALIDATE";
+                            $error = "THIS PROFILE IS INCOMPLETE!PLEASE PLEASE DONOT VALIDATE";
                              }
                              else{
                                    $error = "";
@@ -388,7 +388,7 @@
                                 Duration:  <?= $loop->duration; ?><br>
                                 Fees per year:<?= number_format($loop->fees,0); ?><br>
                                 Is Disabled?:<?= $loop->disabled; ?><br>
-                                Approved<input  type="text" id="approved" value="<?= $loop->approved; ?>"/>
+                                Approved<span   id="approved" value="<?= $loop->approved; ?>"><?= $loop->approved; ?></span>
                                            
                                 
  <div style="float: right">

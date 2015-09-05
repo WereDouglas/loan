@@ -52,7 +52,7 @@ ul li {
 .menu .navbar-nav {
      float: right;
     display: inline-block;
-    margin: 28px -145px 32px 29px;
+   // margin: 28px -145px 32px 29px;
 
 }
 .menu .navbar {

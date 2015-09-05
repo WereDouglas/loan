@@ -70,8 +70,8 @@
                                     <ul class="nav navbar-nav">
                                         <li><a href="#banner">Home</a></li>
                                         
-                                        <li><a href="#feature">Feature</a></li>
-                                        <li><a href="#utility">Utility</a></li>
+                                        <li><a href="#feature">Reports</a></li>
+                                        <li><a href="#utility">Social media</a></li>
                                         <li><a href="#subscribe">Subscribe</a></li>
                                     </ul>
                                   
@@ -102,7 +102,7 @@
 
                 <div class="col-md-4 col-sm-6">
                     <div class="block">
-                        <img class="app-img img-responsive" src="<?= base_url(); ?>images/app.png" alt="">
+                        <img class="app-img img-responsive" src="<?= base_url(); ?>images/app.jpg" alt="">
                     </div>
                     
                 </div>
@@ -116,15 +116,16 @@
                         </p>
 
                         <ul class="download-btn">
+                              <li>
+                                <a href="<?php echo base_url() . "index.php/student/register"; ?>" class="btn btn-default btn-windows"><i class="fa fa-windows"></i>Register</a>
+                            </li>
                             <li>
                                 <a href="<?php echo base_url() . "index.php/login"; ?>" class="btn btn-default btn-apple"> <i class="fa fa-apple"></i>My  account</a>
                             </li>
                             <li>
-                                <a href="<?php echo base_url() . "index.php/administration/login"; ?>" class="btn btn-default btn-andriod"><i class="fa fa-android"></i>Administration</a>
+                                <a href="<?php echo base_url() . "index.php/administration/login"; ?>" class="btn btn-default btn-andriod"><i class="fa fa-android"></i>Administrator</a>
                             </li>
-                            <li>
-                                <a href="<?php echo base_url() . "index.php/student/register"; ?>" class="btn btn-default btn-windows"><i class="fa fa-windows"></i>Register</a>
-                            </li>
+                          
                         </ul>
                         
 

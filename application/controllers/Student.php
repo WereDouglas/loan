@@ -158,6 +158,7 @@ class Student extends CI_Controller {
         } else {
             $data['students'] = array();
         }
+         $this->session->set_flashdata('msg', 'approved');
         $this->load->view('view-applicant', $data);
     }
 
@@ -183,6 +184,7 @@ class Student extends CI_Controller {
         } else {
             $data['students'] = array();
         }
+         $this->session->set_flashdata('msg', '');
         $this->load->view('view-applicant', $data);
     }
 
@@ -279,6 +281,7 @@ class Student extends CI_Controller {
         } else {
             $data['students'] = array();
         }
+          $this->session->set_flashdata('msg', 'denied');
         $this->load->view('view-applicant', $data);
     }
 
@@ -843,7 +846,7 @@ class Student extends CI_Controller {
         $id = $this->session->userdata('session');
         if ($id != "") {
             $residential = $this->input->post('residential'); #
-            var_dump($residential);
+           // var_dump($residential);
 
             $resident = new stdClass();
 

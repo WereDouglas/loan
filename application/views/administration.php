@@ -86,13 +86,13 @@
                         </li> 
                         
                         <li>
-                            <a target="frame" href="<?php echo base_url() . "index.php/student/payment"; ?>"><i class="icon-chevron-right"></i>Student Payments</a>
+                            <a target="frame" href="<?php echo base_url() . "index.php/student/payment"; ?>"><i class="icon-chevron-right"></i>Student re-payments</a>
                         </li>
                           <li>
-                            <a target="frame" href="<?php echo base_url() . "index.php/student/recover"; ?>"><i class="icon-chevron-right"></i>Loan recoveries</a>
+                            <a target="frame" href="<?php echo base_url() . "index.php/student/recover"; ?>"><i class="icon-chevron-right"></i>Loans to  recover</a>
                         </li>
                        
-                                <li>
+                        <li>
                             <a target="frame" href="<?php echo base_url() . "index.php/administration/report"; ?>"> Reports</a>
                         </li>
                                                     <?php }?>

@@ -7,7 +7,7 @@ class Administration extends CI_Controller {
 
         parent::__construct();
        // error_reporting(E_PARSE);
-        $this->load->model('MD');
+        $this->load->model('Md');
         $this->load->library('session');
         $this->load->library('encrypt');
     }
@@ -28,8 +28,21 @@ class Administration extends CI_Controller {
 	}
        public function report()
         {
+                  $query = $this->Md->query("SELECT sum(amount) as sum from remittance");
+        if ($query) {
+            $data['remittance'] = $query;
+        } else {
+            $data['remittance'] = array();
+        }
+         $query = $this->Md->query("SELECT sum(amount) as sum from refund");
+        if ($query) {
+            $data['refund'] = $query;
+        } else {
+            $data['refund'] = array();
+        }
+        
   
-		$this->load->view('admin-report');
+		$this->load->view('admin-report',$data);
 	}
         public function authenticate()
 	{
@@ -83,7 +96,23 @@ class Administration extends CI_Controller {
 	}
         public function reports()
 	{
-		$this->load->view('reports');
+        
+            $query = $this->Md->query("SELECT sum(amount) as sum from remittance");
+        if ($query) {
+            $data['remittance'] = $query;
+        } else {
+            $data['remittance'] = array();
+        }
+         $query = $this->Md->query("SELECT sum(amount) as sum from refund");
+        if ($query) {
+            $data['refund'] = $query;
+        } else {
+            $data['refund'] = array();
+        }
+        
+        
+        
+		$this->load->view('reports',$data);
 	}
          public function form()
 	{

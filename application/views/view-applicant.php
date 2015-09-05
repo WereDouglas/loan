@@ -19,7 +19,7 @@
     <div class="widget-header widget-header-small">
         <h4 class="blue smaller">
             <i class="icon-4x orange"></i>
-            Applications
+            View <?php echo $this->session->flashdata('msg'); ?> applications
         </h4>
 
         <div class="widget-toolbar action-buttons">
