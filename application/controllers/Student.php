@@ -221,7 +221,7 @@ class Student extends CI_Controller {
         //  var_dump($query);
       //  $query = $this->Md->query("SELECT *,(SELECT sum(remittance.amount)FROM remittance WHERE remittance.studentID = studentinfo.id) AS credit FROM studentinfo WHERE approved='Yes'");
        
-        $query = $this->Md->query("SELECT *,(SELECT sum(refund.amount)FROM refund WHERE refund.studentID = studentinfo.id) AS debit FROM studentinfo inner join course ON studentinfo.id = course.studentID ");
+        $query = $this->Md->query("SELECT *,(SELECT sum(refund.amount)FROM refund WHERE refund.studentID = studentinfo.id) AS debit,studentinfo.id as id FROM studentinfo inner join course ON studentinfo.id = course.studentID ");
         if ($query) {
             $data['students'] = $query;
         } else {

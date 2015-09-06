@@ -123,11 +123,11 @@
                                       <div class="btn-group" data-toggle="buttons" data-toggle-default-class="btn-default">
  <label class="btn btn-xs btn-default" data-toggle-class="btn-success" value="<?= $loop->id; ?>">
   <input type="radio" name="status" id="<?= $loop->active; ?>" value="<?= $loop->id; ?>" />
-  Active
+Yes
  </label>
  <label class="btn btn-xs btn-danger active" data-toggle-class="btn-danger" value="<?= $loop->id; ?>">
   <input type="radio" name="status" id="<?= $loop->active; ?>" value="<?= $loop->id; ?>" checked />
-  Off
+  No
  </label>
 </div> 
     <?php } ?>
@@ -138,11 +138,11 @@
                                       <div class="btn-group" data-toggle="buttons" data-toggle-default-class="btn-default">
  <label class="btn btn-xs btn-success active" data-toggle-class="btn-success">
   <input type="radio" name="status" id="<?= $loop->active; ?>" value="<?= $loop->id; ?>" checked />
-  Active
+  Yes
  </label>
  <label class="btn btn-xs btn-default " data-toggle-class="btn-danger">
   <input type="radio" name="status" id="<?= $loop->active; ?>" value="<?= $loop->id; ?>"  />
-  Off
+  No
  </label>
 </div> 
                                     <?php } ?>

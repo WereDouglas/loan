@@ -19,7 +19,7 @@
     <div class="widget-header widget-header-small">
         <h4 class="blue smaller">
             <i class="icon-4x orange"></i>
-      Payments
+  Student repayments
         </h4>
 
         <div class="widget-toolbar action-buttons">
@@ -47,10 +47,10 @@
                 
                 
                           <div class="profile-activity clearfix">
-                    <div>
-                        <img class="pull-left" alt="<?= $loop->fname?>" src="<?= base_url(); ?>uploads/<?= $loop->image;?>" />
-                        <a class="user" href="<?php echo base_url() . "index.php/student/view_payment/".$loop->id; ?>"> <?= $loop->fname?> </a>
- <?= $loop->name;?>                       
+                   <a class="user" href="<?php echo base_url() . "index.php/student/view_payment/".$loop->id; ?>"> 
+  <div>
+                        <img class="pull-left" alt="<?= $loop->name?>" src="<?= base_url(); ?>uploads/<?= $loop->image;?>" />
+                                       
 GENDER: <?= $loop->gender;?>
                    EMAIL:    <?= $loop->email;?>
 
@@ -69,7 +69,7 @@ GENDER: <?= $loop->gender;?>
                        
                       
                         </div>
-                    </div>
+  </div></a>
                      
                   
                 </div>  
