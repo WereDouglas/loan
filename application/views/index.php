@@ -31,13 +31,20 @@
         <script src="<?= base_url(); ?>js/bootstrap.min.js"></script>
         <script src="<?= base_url(); ?>js/plugins.js"></script>
         <script src="<?= base_url(); ?>js/main.js"></script>
-        <script src="<?= base_url(); ?>js/wow.min.js"></script>
+     
         <script>
          new WOW(
             ).init();
         </script>
 
-        
+        <script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4&appId=440972012749987";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
 
     </head>
     <body>
@@ -109,7 +116,7 @@
                 <div class="col-md-6 col-md-offset-1 col-sm-6">
                     <div class="block">
                         <h3>
-                           Increasing Access to Higher Education
+                        Student Loan Repayment and Recovery Management Information System
                         </h3>
                         <p>
                             <Strong> Welcome</strong> <br>
@@ -146,7 +153,7 @@ The Student Loans Repayment and Recovery System is a system for the HESFB that h
 
                     <div class="feature-item">
 
-                       <div id="container3" style="height: 400px"></div>
+                        <div id="container" style="height: 430px"></div>
                     </div>
 
                   
@@ -155,7 +162,8 @@ The Student Loans Repayment and Recovery System is a system for the HESFB that h
                 </div>
                 <div class="col-md-6 col-sm-6 wow fadeInLeft" data-wow-delay=".8s">
                     <div class="block">
-                        <img class="img-responsive" src="<?= base_url(); ?>images/featured-app.png" alt="">
+                   
+              <div id="container2" style="min-width: 410px; height: 400px; margin: 0 auto"></div>
                     </div>
                 </div>
             </div>
@@ -167,11 +175,11 @@ The Student Loans Repayment and Recovery System is a system for the HESFB that h
         <div class="container">
             <div class="row">
                 <div class="col-md-6 col-sm-6 wow fadeInUp" data-wow-delay=".8s">
-                    <img class="img-responsive" src="images/mockup.png" alt="">
-                </div>
+                   <div class="fb-page" data-href="https://www.facebook.com/pages/Higher-Education-Students-Financing-Board/1418927295060943" data-width="700" data-height="300" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/pages/Civic-Response-on-Environment-Development/1412115559052900"><a href="https://www.facebook.com/pages/Civic-Response-on-Environment-Development/1412115559052900">Civic Response on Environment &amp; Development</a></blockquote></div></div>
+  </div>
                 <div class="col-md-6 col-sm-6 wow fadeInDown" data-wow-delay=".8s">
                     <div class="block">
-                      
+                           
                           <h4 class="media-heading"> REQUIREMENTS</h4>
                              
 In order to benefit from the system you must be a student that has completed A level and qualifies to join any institution of higher learning. If you are not a student you will not be able to benefit from the system. Actually you will be treated as an un-authorised user. If you are a student you can click on Regester to be able to go through the application process. 
@@ -218,172 +226,130 @@ Wrong information may affect the success of your application make sure that you 
 
 </body>
 </html>
+
+         <script type="text/javascript">
+$(function () {
+    $('#container').highcharts({
+        chart: {
+            type: 'pie',
+            options3d: {
+                enabled: true,
+                alpha: 45
+            }
+        },
+        title: {
+            text: 'Payments Vs Loan'
+        },
+        subtitle: {
+            text: 'Amount in shillings'
+        },
+        plotOptions: {
+            pie: {
+                innerSize: 100,
+                depth: 45
+            }
+        },
+        series: [{
+            name: 'amount(Shs)',
+            data: [
+                ['Refund',  <?php
+                                                            if (is_array($refund) && count($refund)) {
+                                                                foreach ($refund as $loop) {
+                                                         echo   $loop->sum;        
+                                                         }}?>],
+                ['Remittance', <?php
+                                                            if (is_array($remittance) && count($remittance)) {
+                                                                foreach ($remittance as $loop) {
+                                                         echo   $loop->sum;        
+                                                         }}?>]         
+               
+            ]
+        }]
+    });
+});
+ </script>
 <script type="text/javascript">
-            $(function () {
+$(function () {
+    $('#container2').highcharts({
+        chart: {
+            zoomType: 'xy'
+        },
+        title: {
+            text: 'Monthly Applications by gender'
+        },
+        subtitle: {
+            text: ''
+        },
+        xAxis: [{
+            categories: ['Male', 'Female'],
+            crosshair: true
+        }],
+        yAxis: [{ // Primary yAxis
+            labels: {
+                format: '{value} No.',
+                style: {
+                    color: Highcharts.getOptions().colors[1]
+                }
+            },
+            title: {
+                text: 'Students',
+                style: {
+                    color: Highcharts.getOptions().colors[1]
+                }
+            }
+        }, { // Secondary yAxis
+            title: {
+                text: 'Students',
+                style: {
+                    color: Highcharts.getOptions().colors[0]
+                }
+            },
+            labels: {
+                format: '{value} No.',
+                style: {
+                    color: Highcharts.getOptions().colors[0]
+                }
+            },
+            opposite: true
+        }],
+        tooltip: {
+            shared: true
+        },
+        legend: {
+            layout: 'vertical',
+            align: 'left',
+            x: 120,
+            verticalAlign: 'top',
+            y: 100,
+            floating: true,
+            backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'
+        },
+        series: [{
+            name: 'Number/count',
+            type: 'column',
+            yAxis: 1,
+            data: [<?php echo count($female); ?>, <?php  echo count($male); ?> ],
+            tooltip: {
+                valueSuffix: 'No.'
+            }
 
-                // Prepare demo data
-                var data = [{ 'hc-key': 'ug-2595', value: 0 },
-                    { 'hc-key': 'ug-7073', value: 1 },
-                    { 'hc-key': 'ug-7074', value: 2 },
-                    { 'hc-key': 'ug-7075', value: 3 },
-                    { 'hc-key': 'ug-2785', value: 4 },
-                    { 'hc-key': 'ug-2791', value: 5 },
-                    { 'hc-key': 'ug-3385', value: 6 },
-                    { 'hc-key': 'ug-3388', value: 7 },
-                    { 'hc-key': 'ug-2786', value: 8 },
-                    { 'hc-key': 'ug-7056', value: 9 },
-                    { 'hc-key': 'ug-7084', value: 10 },
-                    { 'hc-key': 'ug-7058', value: 11 },
-                    { 'hc-key': 'ug-1678', value: 12 },
-                    { 'hc-key': 'ug-1682', value: 13 },
-                    { 'hc-key': 'ug-1683', value: 14 },
-                    { 'hc-key': 'ug-1685', value: 15 },
-                    { 'hc-key': 'ug-7072', value: 16 },
-                    { 'hc-key': 'ug-2759', value: 17 },
-                    { 'hc-key': 'ug-7051', value: 18 },
-                    { 'hc-key': 'ug-2762', value: 19 },
-                    { 'hc-key': 'ug-2767', value: 20 },
-                    { 'hc-key': 'ug-2777', value: 21 },
-                    { 'hc-key': 'ug-2778', value: 22 },
-                    { 'hc-key': 'ug-2780', value: 23 },
-                    { 'hc-key': 'ug-2781', value: 24 },
-                    { 'hc-key': 'ug-2782', value: 25 },
-                    { 'hc-key': 'ug-2783', value: 26 },
-                    { 'hc-key': 'ug-2779', value: 27 },
-                    { 'hc-key': 'ug-2784', value: 28 },
-                    { 'hc-key': 'ug-3382', value: 29 },
-                    { 'hc-key': 'ug-3384', value: 30 },
-                    { 'hc-key': 'ug-3381', value: 31 },
-                    { 'hc-key': 'ug-3383', value: 32 },
-                    { 'hc-key': 'ug-3390', value: 33 },
-                    { 'hc-key': 'ug-3386', value: 34 },
-                    { 'hc-key': 'ug-3391', value: 35 },
-                    { 'hc-key': 'ug-3392', value: 36 },
-                    { 'hc-key': 'ug-3394', value: 37 },
-                    { 'hc-key': 'ug-2750', value: 38 },
-                    { 'hc-key': 'ug-7048', value: 39 },
-                    { 'hc-key': 'ug-7080', value: 40 },
-                    { 'hc-key': 'ug-7081', value: 41 },
-                    { 'hc-key': 'ug-1684', value: 42 },
-                    { 'hc-key': 'ug-7082', value: 43 },
-                    { 'hc-key': 'ug-7068', value: 44 },
-                    { 'hc-key': 'ug-7070', value: 45 },
-                    { 'hc-key': 'ug-7049', value: 46 },
-                    { 'hc-key': 'ug-2787', value: 47 },
-                    { 'hc-key': 'ug-7055', value: 48 },
-                    { 'hc-key': 'ug-2769', value: 49 },
-                    { 'hc-key': 'ug-7052', value: 50 },
-                    { 'hc-key': 'ug-2774', value: 51 },
-                    { 'hc-key': 'ug-7059', value: 52 },
-                    { 'hc-key': 'ug-7083', value: 53 },
-                    { 'hc-key': 'ug-7057', value: 54 },
-                    { 'hc-key': 'ug-2790', value: 55 },
-                    { 'hc-key': 'ug-2776', value: 56 },
-                    { 'hc-key': 'ug-7067', value: 57 },
-                    { 'hc-key': 'ug-7065', value: 58 },
-                    { 'hc-key': 'ug-7066', value: 59 },
-                    { 'hc-key': 'ug-7069', value: 60 },
-                    { 'hc-key': 'ug-7061', value: 61 },
-                    { 'hc-key': 'ug-3389', value: 62 },
-                    { 'hc-key': 'ug-7062', value: 63 },
-                    { 'hc-key': 'ug-7063', value: 64 },
-                    { 'hc-key': 'ug-7064', value: 65 },
-                    { 'hc-key': 'ug-7086', value: 66 },
-                    { 'hc-key': 'ug-2744', value: 67 },
-                    { 'hc-key': 'ug-1679', value: 68 },
-                    { 'hc-key': 'ug-1680', value: 69 },
-                    { 'hc-key': 'ug-7054', value: 70 },
-                    { 'hc-key': 'ug-1686', value: 71 },
-                    { 'hc-key': 'ug-7078', value: 72 },
-                    { 'hc-key': 'ug-1677', value: 73 },
-                    { 'hc-key': 'ug-1688', value: 74 },
-                    { 'hc-key': 'ug-1690', value: 75 },
-                    { 'hc-key': 'ug-2745', value: 76 },
-                    { 'hc-key': 'ug-2752', value: 77 },
-                    { 'hc-key': 'ug-2754', value: 78 },
-                    { 'hc-key': 'ug-1687', value: 79 },
-                    { 'hc-key': 'ug-2757', value: 80 },
-                    { 'hc-key': 'ug-7060', value: 81 },
-                    { 'hc-key': 'ug-1689', value: 82 },
-                    { 'hc-key': 'ug-2760', value: 83 },
-                    { 'hc-key': 'ug-2761', value: 84 },
-                    { 'hc-key': 'ug-2766', value: 85 },
-                    { 'hc-key': 'ug-2765', value: 86 },
-                    { 'hc-key': 'ug-2764', value: 87 },
-                    { 'hc-key': 'ug-2749', value: 88 },
-                    { 'hc-key': 'ug-2768', value: 89 },
-                    { 'hc-key': 'ug-2763', value: 90 },
-                    { 'hc-key': 'ug-2748', value: 91 },
-                    { 'hc-key': 'ug-2771', value: 92 },
-                    { 'hc-key': 'ug-2772', value: 93 },
-                    { 'hc-key': 'ug-2775', value: 94 },
-                    { 'hc-key': 'ug-2788', value: 95 },
-                    { 'hc-key': 'ug-2789', value: 96 },
-                    { 'hc-key': 'ug-3387', value: 97 },
-                    { 'hc-key': 'ug-3393', value: 98 },
-                    { 'hc-key': 'ug-7079', value: 99 },
-                    { 'hc-key': 'ug-7076', value: 100 },
-                    { 'hc-key': 'ug-2746', value: 101 },
-                    { 'hc-key': 'ug-2747', value: 102 },
-                    { 'hc-key': 'ug-2751', value: 103 },
-                    { 'hc-key': 'ug-2758', value: 104 },
-                    { 'hc-key': 'ug-2756', value: 105 },
-                    { 'hc-key': 'ug-7053', value: 106 },
-                    { 'hc-key': 'ug-2770', value: 107 },
-                    { 'hc-key': 'ug-2773', value: 108 },
-                    { 'hc-key': 'ug-1681', value: 109 },
-                    { 'hc-key': 'ug-2753', value: 110 },
-                    { 'hc-key': 'ug-2755', value: 111 }];
-
-                    
-                // Initiate the chart
-                $('#container3').highcharts('Map', {
-                    
-                    title : {
-                        text : 'Applicants per district'
-                    },
-
-                    subtitle : {
-                        text : 'Source map: <a href="<?= base_url(); ?>js/ug-all.js">countries/ug/ug-all</a>'
-                    },
-
-                    mapNavigation: {
-                        enabled: true,
-                        buttonOptions: {
-                            verticalAlign: 'bottom'
-                        }
-                    },
-
-                    colorAxis: {
-                        min: 0
-                    },
-
-                    series : [{
-                        data : data,
-                        mapData: Highcharts.maps['countries/ug/ug-all'],
-                        joinBy: 'hc-key',
-                        name: 'Random data',
-                        states: {
-                            hover: {
-                                color: '#BADA55'
-                            }
-                        },
-                        dataLabels: {
-                            enabled: true,
-                            format: '{point.name}'
-                        }
-                    }]
-                });
-            });
-        </script>
-        
+        }, {
+            name: 'Number',
+            type: 'spline',
+            data: [<?php echo count($female); ?>, <?php  echo count($male); ?>],
+            tooltip: {
+                valueSuffix: 'No.'
+            }
+        }]
+    });
+});
+</script>
 
   
-<script src="<?= base_url(); ?>js/highmaps.js"></script>
- 
-	<script type="text/javascript" src="<?= base_url(); ?>js/highcharts.js"></script>
 
-<script src="<?= base_url(); ?>js/ug-all.js"></script>
-<script type="text/javascript"  src="<?= base_url(); ?>js/modules/exporting.js"></script>
+<script type="text/javascript" src="<?= base_url(); ?>js/highcharts.js"></script>
 <script type="text/javascript" src="<?= base_url(); ?>js/highcharts-3d.js"></script>
- 
+<script type="text/javascript"  src="<?= base_url(); ?>js/modules/exporting.js"></script>
+
+              
+	

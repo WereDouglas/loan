@@ -34,6 +34,30 @@ class Welcome extends CI_Controller {
         } else {
             $data['courses'] = array();
         }
+                        $query = $this->Md->query("SELECT sum(amount) as sum from remittance");
+        if ($query) {
+            $data['remittance'] = $query;
+        } else {
+            $data['remittance'] = array();
+        }
+         $query = $this->Md->query("SELECT sum(amount) as sum from refund");
+        if ($query) {
+            $data['refund'] = $query;
+        } else {
+            $data['refund'] = array();
+        }
+          $query = $this->Md->query("SELECT *  from studentinfo WHERE gender='Male'");
+        if ($query) {
+            $data['male'] = $query;
+        } else {
+            $data['male'] = array();
+        }
+         $query = $this->Md->query("SELECT * from studentinfo WHERE gender='Female'");
+        if ($query) {
+            $data['female'] = $query;
+        } else {
+            $data['female'] = array();
+        }
         
         
         $this->load->view('index',$data);

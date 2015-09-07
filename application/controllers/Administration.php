@@ -40,6 +40,18 @@ class Administration extends CI_Controller {
         } else {
             $data['refund'] = array();
         }
+          $query = $this->Md->query("SELECT *  from studentinfo WHERE gender='Male'");
+        if ($query) {
+            $data['male'] = $query;
+        } else {
+            $data['male'] = array();
+        }
+         $query = $this->Md->query("SELECT * from studentinfo WHERE gender='Female'");
+        if ($query) {
+            $data['female'] = $query;
+        } else {
+            $data['female'] = array();
+        }
         
   
 		$this->load->view('admin-report',$data);
@@ -97,7 +109,7 @@ class Administration extends CI_Controller {
         public function reports()
 	{
         
-            $query = $this->Md->query("SELECT sum(amount) as sum from remittance");
+        $query = $this->Md->query("SELECT sum(amount) as sum from remittance");
         if ($query) {
             $data['remittance'] = $query;
         } else {
@@ -108,6 +120,18 @@ class Administration extends CI_Controller {
             $data['refund'] = $query;
         } else {
             $data['refund'] = array();
+        }
+         $query = $this->Md->query("SELECT *  from studentinfo WHERE gender='Male'");
+        if ($query) {
+            $data['male'] = $query;
+        } else {
+            $data['male'] = array();
+        }
+         $query = $this->Md->query("SELECT * from studentinfo WHERE gender='Female'");
+        if ($query) {
+            $data['female'] = $query;
+        } else {
+            $data['female'] = array();
         }
         
         
