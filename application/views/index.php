@@ -32,10 +32,7 @@
         <script src="<?= base_url(); ?>js/plugins.js"></script>
         <script src="<?= base_url(); ?>js/main.js"></script>
      
-        <script>
-         new WOW(
-            ).init();
-        </script>
+     
 
         <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
@@ -229,6 +226,7 @@ Wrong information may affect the success of your application make sure that you 
 
          <script type="text/javascript">
 $(function () {
+   
     $('#container').highcharts({
         chart: {
             type: 'pie',
@@ -237,6 +235,7 @@ $(function () {
                 alpha: 45
             }
         },
+          colors: ['#562F1E', '#AF7F24', '#263249', '#5F7F90', '#D9CDB6'],
         title: {
             text: 'Payments Vs Loan'
         },
@@ -252,8 +251,7 @@ $(function () {
         series: [{
             name: 'amount(Shs)',
             data: [
-                ['Refund',  <?php
-                                                            if (is_array($refund) && count($refund)) {
+                ['Refund', <?php if (is_array($refund) && count($refund)) {
                                                                 foreach ($refund as $loop) {
                                                          echo   $loop->sum;        
                                                          }}?>],
@@ -267,9 +265,12 @@ $(function () {
         }]
     });
 });
+
+
  </script>
 <script type="text/javascript">
 $(function () {
+     
     $('#container2').highcharts({
         chart: {
             zoomType: 'xy'
@@ -277,6 +278,7 @@ $(function () {
         title: {
             text: 'Monthly Applications by gender'
         },
+        colors: ['#2f7ed8','#910000','#8bbc21','#1aadce'],
         subtitle: {
             text: ''
         },
@@ -288,26 +290,26 @@ $(function () {
             labels: {
                 format: '{value} No.',
                 style: {
-                    color: Highcharts.getOptions().colors[1]
+                    color: Highcharts.getOptions().colors[4]
                 }
             },
             title: {
                 text: 'Students',
                 style: {
-                    color: Highcharts.getOptions().colors[1]
+                    color: Highcharts.getOptions().colors[4]
                 }
             }
         }, { // Secondary yAxis
             title: {
                 text: 'Students',
                 style: {
-                    color: Highcharts.getOptions().colors[0]
+                    color: Highcharts.getOptions().colors[3]
                 }
             },
             labels: {
                 format: '{value} No.',
                 style: {
-                    color: Highcharts.getOptions().colors[0]
+                    color: Highcharts.getOptions().colors[2]
                 }
             },
             opposite: true
@@ -331,7 +333,9 @@ $(function () {
             data: [<?php echo count($female); ?>, <?php  echo count($male); ?> ],
             tooltip: {
                 valueSuffix: 'No.'
-            }
+            }, style: {
+                    color: Highcharts.getOptions().colors[4]
+                }
 
         }, {
             name: 'Number',
@@ -339,7 +343,10 @@ $(function () {
             data: [<?php echo count($female); ?>, <?php  echo count($male); ?>],
             tooltip: {
                 valueSuffix: 'No.'
-            }
+            },
+            style: {
+                    color: Highcharts.getOptions().colors[2]
+                }
         }]
     });
 });

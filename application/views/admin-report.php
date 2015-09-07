@@ -9,7 +9,7 @@
         </div></div></div>
     </div>
   </div>
-<?=  count($female);?>
+
 <!--Service-->
 
 
@@ -36,6 +36,7 @@ $(function () {
                 alpha: 45
             }
         },
+          colors: ['#3C8DBC', '#FCD209', '#263249', '#5F7F90', '#D9CDB6'],
         title: {
             text: 'Payments Vs Loan'
         },
@@ -76,6 +77,7 @@ $(function () {
         title: {
             text: 'Monthly Applications by gender'
         },
+          colors: ['#2E8965', '#F4A034', '#263249', '#5F7F90', '#D9CDB6'],
         subtitle: {
             text: ''
         },
