@@ -180,7 +180,7 @@ The Student Loans Repayment and Recovery System is a system for the HESFB that h
                           <h4 class="media-heading"> REQUIREMENTS</h4>
                              
 In order to benefit from the system you must be a student that has completed A level and qualifies to join any institution of higher learning. If you are not a student you will not be able to benefit from the system. Actually you will be treated as an un-authorised user. If you are a student you can click on Regester to be able to go through the application process. 
-WRONG INPUTS 
+<h4 class="media-heading">WRONG INPUTS </h4>
 Wrong information may affect the success of your application make sure that you give only correct information to complete the task successful. 
              
                     </div>
@@ -188,26 +188,7 @@ Wrong information may affect the success of your application make sure that you 
             </div>
         </div>
     </section>
-
-
-    <section id="utility-2">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 col-sm-6 wow fadeInLeft" data-wow-delay=".8s">
-                    <div class="block">
-                       <h4> WRONG INPUTS </h4>
-Wrong information may affect the success of your application make sure that you give only correct information to complete the task successful. 
-
-                    </div>
-                </div>
-                <div class="col-md-6 col-sm-6 wow fadeInRight" data-wow-delay=".8s">
-                    <img class="img-responsive" src="images/app-screen.png" alt="">
-                </div>
-            </div>
-        </div>
-    </section>
-
-
+  
     <footer class="wow fadeInUp" data-wow-delay=".8s">
         <div class="container text-center">
             <div class="row">
