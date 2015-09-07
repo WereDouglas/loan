@@ -355,8 +355,7 @@
                         Duration:  <?= $loop->duration; ?><br>
                         Fees per year:<?= number_format($loop->fees, 0); ?><br>
                         Is Disabled?:<?= $loop->disabled; ?><br>
-                        Approved<input  type="text" id="approved" value="<?= $loop->approved; ?>"/>
-
+                        Approved:<?= $loop->approved; ?>
                         <?php
                     }
                 }

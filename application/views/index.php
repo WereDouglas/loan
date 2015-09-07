@@ -235,7 +235,7 @@ $(function () {
                 alpha: 45
             }
         },
-          colors: ['#562F1E', '#AF7F24', '#263249', '#5F7F90', '#D9CDB6'],
+          colors: ['#00AFEC', '#8883BC', '#263249', '#5F7F90', '#D9CDB6'],
         title: {
             text: 'Payments Vs Loan'
         },

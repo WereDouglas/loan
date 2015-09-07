@@ -233,8 +233,8 @@ class Student extends CI_Controller {
     public function image() {
 
         $this->load->helper(array('form', 'url'));
-        $action = $this->uri->segment(3);
-        $studentID = $this->session->userdata('id');
+     
+        $studentID = $this->session->userdata('session');
         //$studentID = 6;
 
 
@@ -435,8 +435,18 @@ class Student extends CI_Controller {
         if (!$get_result) {
 
             echo '<div class="alert alert-error">                                                  
-                                                <strong>ALREADY  REGISTERED </strong>									
+                                                <strong> CONTINUE TO NEXT SECTION YOU ALREADY  REGISTERED </strong>									
 						</div>';
+            
+              $get_result = $this->Md->get('email', $email, 'studentinfo');
+              if ($get_result) {
+                foreach ($get_result as $loop) {
+
+                    $id = $loop->id ;
+                }
+             }
+                   $newdata = array('session' => $id);
+                    $this->session->set_userdata($newdata);
             return;
         } else {
 
@@ -448,8 +458,15 @@ class Student extends CI_Controller {
 
                     $newdata = array('session' => $id);
                     $this->session->set_userdata($newdata);
+                      echo '<div class="alert alert-info">                                                  
+                                                <strong>Information submitted continue to next section </strong>									
+						</div>';
+            return;
                 } else {
                     $session = $this->session->userdata('session');
+                       echo '<div class="alert alert-error">                                                  
+                                                <strong>Information already submitted continue to next section </strong>									
+						</div>';
                 }
             }
         }
@@ -525,7 +542,7 @@ class Student extends CI_Controller {
             } else {
 
 
-                $course = array('studentID' => $studentID,'yearpay'=>$yearpay, 'aid' => $aid, 'total' => $total, 'research' => $research, 'functional' => $functional, 'university' => $university, 'stdNo' => $stdNo, 'course' => $course, 'duration' => $duration, 'fees' => $fees, 'approved' => 'No', 'yearstudy' => $yearstudy, 'yearadmitted' => $yearadmitted, 'created' => date('Y-m-d H:i:s'));
+                $course = array('studentID' => $studentID,'yearpay'=>$yearpay, 'aid' => $aid, 'total' => $total, 'research' => $research, 'functional' => $functional, 'university' => $university, 'stdNo' => $stdNo, 'course' => $course, 'duration' => $duration, 'fees' => $fees, 'approved' => 'None', 'yearstudy' => $yearstudy, 'yearadmitted' => $yearadmitted, 'created' => date('Y-m-d H:i:s'));
                 $id = $this->Md->save($course, 'course');
                 $personal = array('institution' => $personal, 'created' => date('Y-m-d H:i:s'));
                 $this->Md->update($id, $personal, 'studentinfo');
@@ -1617,8 +1634,8 @@ class Student extends CI_Controller {
 
     public function images() {
         $id = $this->uri->segment(3);
-        $query = $this->MD->remove($id);
-        $query = $this->MD->delete($id, 'image');
+        $query = $this->Md->remove($id);
+        $query = $this->Md->delete($id, 'image');
 
         if ($this->db->affected_rows() > 0) {
             $msg = '<span style="color:red">Information Deleted </span>';

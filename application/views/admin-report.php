@@ -1,10 +1,30 @@
-
+       <script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4&appId=440972012749987";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<style>
+    .fb-page {
+    width: 100% ! Important;
+    }
+    .fb-page iframe, span {
+      width: 100% ! Important;
+    }
+       </style>
        <div class="container">
     <div class="service_wrapper">
+         
         <div class="row">
-            
+             
               <div id="container" style="height: 400px"></div>
               <div id="container2" style="min-width: 210px; height: 200px; margin: 0 auto"></div>
+              
+              <div class="fb-page" data-href="https://www.facebook.com/pages/Higher-Education-Students-Financing-Board/1418927295060943" data-width="900" data-height="300" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="true">
+                  <div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/pages/Higher-Education-Students-Financing-Board/1418927295060943">
+                          <a href="https://www.facebook.com/pages/Civic-Response-on-Environment-Development/1412115559052900">Civic Response on Environment &amp; Development</a></blockquote></div></div>
+           
             
         </div></div></div>
     </div>

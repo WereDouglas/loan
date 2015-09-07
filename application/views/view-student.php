@@ -395,10 +395,10 @@
                                                       <span id="Loadingsa_<?= $loop->id; ?>" name="Loadingsa" class ="Loading"><img src="<?= base_url(); ?>images/ajax-loader.gif" alt="ajax Indicator" /></span><br>
                                      
    
-                                                
+                            <?php if ($this->session->userdata('level')=="Loan officer"){?>
                                                 <a  type="" id="<?= $loop->id; ?>" class=" edit_trsa  btn btn-primary">Approve</a>
                                                 <a  type="" id="<?= $loop->id; ?>" class=" edit_trsd  btn btn-danger">dis-approve</a>
-                                                
+                            <?php }?>
                                             </div>
 
                                 <?php

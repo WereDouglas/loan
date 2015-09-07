@@ -373,7 +373,7 @@
                             <div class="col-md-4 ">
                                 <div class="form-group">
                                     <div class="col-sm-12">
-                                         Start if loan repayment: <input type="text" name="yearpay" id="yearpay" class="form-control">
+                                         Start of loan repayment: <input type="text" name="yearpay" id="yearpay" class="form-control">
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -1157,13 +1157,17 @@
             $('#' + id).fadeIn();
         }
     })
-    
-     $("#institute-form").submit(function (e) {
+
+
+   $("#institute-form").submit(function (e) {
         e.preventDefault();
+
        // console.log($(this).serializeArray());
         $('#loading_institute').show();
         var posts = $(this).serializeArray();
-        var university = $("#institute").val();
+       
+        var  uni = $("#institute option:selected").text();
+                   console.log(uni)
         var stdNo = $("#stdNo").val();
         var course = $("#course").val();
         var yearadmitted = $("#yearadmitted").val();
@@ -1171,6 +1175,7 @@
         var duration = $("#duration").val();
         var fees = $("#fees").val();
         var disabled = $("#disabled").val();
+          var yearpay = $("#yearpay").val();
         var functional = $("#functional").val();
         var research = $("#research").val();
         var aid = $("#aid").val();
@@ -1180,11 +1185,12 @@
         $("#stdNo").html('<img src="<?= base_url(); ?>images/loading.gif" />'); // Loading image
         $("#course").html('<img src="<?= base_url(); ?>images/loading.gif" />'); // Loading image
 
-        if (university.length > 0 && stdNo.length > 0)        {
+        if (uni.length > 0 && stdNo.length > 0)        {
 
-            $.post("<?php echo base_url() ?>index.php/student/institute", {functional:functional,research:research,aid:aid,total:total,posts: posts, university: university, stdNo:stdNo, course: course, yearadmitted: yearadmitted, yearstudy: yearstudy, duration:duration,fees:fees,disabled:disabled}
+            $.post("<?php echo base_url() ?>index.php/student/institute", {functional:functional,research:research,aid:aid,total:total,posts: posts, university: uni, stdNo:stdNo, course: course, yearadmitted: yearadmitted, yearstudy: yearstudy,yearpay: yearpay, duration:duration,fees:fees,disabled:disabled}
             , function (response) {
-                //#emailInfo is a span which will show you message
+         
+                console.log(response)
                 $('#loading_institute').hide();
                 setTimeout(finishAjax('loading_institute', escape(response)), 200);
 
@@ -1202,6 +1208,7 @@
 
 
     })
+     
     
     $('#loading_education').hide();
       $("#education-form").submit(function (e) {
