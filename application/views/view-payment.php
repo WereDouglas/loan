@@ -108,14 +108,12 @@
                                 foreach ($refund as $loop) {
                                     ?> 
 						                <tr>
-                                                                   <th><img height="100px" width="50px" class="pull-left" alt="<?= $loop->proof?>" src="<?= base_url(); ?>uploads/<?= $loop->proof;?>" />
-                   </th>
+                                                                <th><img height="100px" width="50px" class="pull-left" alt="<?= $loop->proof?>" src="<?= base_url(); ?>uploads/<?= $loop->proof;?>" /></th>
 						                  <td><?=$loop->dor;?></td>
 						                  <td><?=$loop->method;?></td>
 						                  <td><?=number_format($loop->amount,0);?></td>
 						                  <td><?=$loop->created;?></td>
-                                                                 
-                                                                      <td>
+                                                                  <td>
                                                                        
                                                                        <?php 
                          if( $loop->active == "False"){
