@@ -15,8 +15,8 @@
 
        
           
-                <h3>Current job description</h3>
-
+                <h3 class="blue smaller">Employment/Income</h3>
+<hr>
               
 
             <div class="span12">

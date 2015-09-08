@@ -391,8 +391,8 @@
                                 Approved<span   id="approved" value="<?= $loop->approved; ?>"><?= $loop->approved; ?></span>
                                            
                                 
- <div style="float: right">
-                                                      <span id="Loadingsa_<?= $loop->id; ?>" name="Loadingsa" class ="Loading"><img src="<?= base_url(); ?>images/ajax-loader.gif" alt="ajax Indicator" /></span><br>
+                       <div style="float: right">
+                       <span id="Loadingsa_<?= $loop->id; ?>" name="Loadingsa" class ="Loading"><img src="<?= base_url(); ?>images/ajax-loader.gif" alt="ajax Indicator" /></span><br>
                                      
    
                             <?php if ($this->session->userdata('level')=="Loan officer"){?>

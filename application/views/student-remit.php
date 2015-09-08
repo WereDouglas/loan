@@ -14,15 +14,10 @@
         <div class="widget-main padding-8">
 
             <div class="row-fluid">
-  
+   <h4 class="blue smaller">Remittances </h4>
             </div>
       
          
-            <div class="span12">
-
-               
-    
-            </div>
             <div class="span12">
                 <table class="table table-striped">
 						              <thead>

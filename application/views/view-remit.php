@@ -24,7 +24,8 @@
 
             <div class="row-fluid">
                 <div id="profile-feed-1" class="span12 profile-feed">
-
+   <h4 class="blue smaller">Your remittances </h4>
+  <hr>
 
                     <?php
                     if (is_array($profile) && count($profile)) {
