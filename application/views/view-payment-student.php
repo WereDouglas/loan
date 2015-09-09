@@ -50,7 +50,7 @@
                    <a class="user" href="<?php echo base_url() . "index.php/student/view_payment/".$loop->id; ?>"> 
   <div>
                         <img class="pull-left" alt="<?= $loop->name?>" src="<?= base_url(); ?>uploads/<?= $loop->image;?>" />
-                                       
+                      <?= $loop->name;?>                 
 GENDER: <?= $loop->gender;?>
                    EMAIL:    <?= $loop->email;?>
 

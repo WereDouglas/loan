@@ -113,7 +113,7 @@
                 <div class="col-md-6 col-md-offset-1 col-sm-6">
                     <div class="block">
                         <h3>
-                        Student Loan Repayment and Recovery Management Information System
+                        Student Loan Repayment and Recovery  Information Management System
                         </h3>
                         <p>
                             <Strong> Welcome</strong> <br>
